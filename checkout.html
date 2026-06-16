@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | PUKHRAJ JEWELLERS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PUKHRAJ JEWELLERS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="icon-btn" title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </a>
+            <a href="#" class="icon-btn" title="Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <div class="cart-icon" id="cart-icon" title="View Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span class="cart-count">0</span>
+            </div>
+            <a href="collection.html" class="nav-btn">Order Now</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-form-container">
+                <h2 style="color: var(--primary-color); font-family: var(--font-heading); margin-bottom: 2rem; font-size: 2rem;">Billing Details</h2>
+                <form id="checkout-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name <span style="color: red;">*</span></label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name <span style="color: red;">*</span></label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address <span style="color: red;">*</span></label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span style="color: red;">*</span></label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Street Address <span style="color: red;">*</span></label>
+                        <input type="text" placeholder="House number and street name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City <span style="color: red;">*</span></label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pincode / ZIP <span style="color: red;">*</span></label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Order Notes (Optional)</label>
+                        <textarea rows="3" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                    </div>
+                    
+                    <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--primary-color); font-family: var(--font-heading);">Payment Method</h3>
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cod" checked>
+                            <span style="font-weight: 500;">Cash on Delivery</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <span style="font-weight: 500;">Credit / Debit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="upi">
+                            <span style="font-weight: 500;">UPI / Wallet</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 2rem; padding: 1.2rem; font-size: 1.1rem; border-radius: 4px;">Place Order</button>
+                </form>
+            </div>
+            
+            <div class="checkout-summary">
+                <h2 style="color: var(--primary-color); font-family: var(--font-heading); margin-bottom: 2rem; font-size: 2rem;">Order Summary</h2>
+                <div id="checkout-items-list">
+                    <!-- Items populated by JS -->
+                </div>
+                <div class="summary-totals">
+                    <div class="summary-row">
+                        <span style="color: #666;">Subtotal</span>
+                        <span id="checkout-subtotal" style="font-weight: 600;">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span style="color: #666;">Shipping</span>
+                        <span style="font-weight: 600; color: green;">Free</span>
+                    </div>
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 1.5rem 0;">
+                    <div class="summary-row total" style="font-size: 1.3rem; color: var(--primary-color);">
+                        <span style="font-weight: bold;">Total</span>
+                        <span id="checkout-final-total" style="font-weight: bold;">₹0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Success Modal overlay inside checkout -->
+        <div class="order-success-overlay" id="order-success" style="display:none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 3000; align-items: center; justify-content: center;">
+            <div class="order-success-modal" style="background: #fff; padding: 4rem; border-radius: 12px; text-align: center; max-width: 500px;">
+                <div style="font-size: 5rem; color: green; margin-bottom: 1rem;">✓</div>
+                <h1 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-heading);">Order Placed Successfully!</h1>
+                <p style="color: #555; line-height: 1.6;">Thank you for shopping with Pukhraj Jewellers. Your order has been received and is being processed.</p>
+                <a href="index.html" class="btn" style="margin-top: 2rem;">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">PUKHRAJ JEWELLERS</div>
+                <p class="footer-desc">Crafting timeless elegance and preserving Indian heritage.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Checkout specific logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('pukhraj_cart')) || [];
+            const checkoutItemsList = document.getElementById('checkout-items-list');
+            const subtotalEl = document.getElementById('checkout-subtotal');
+            const finalTotalEl = document.getElementById('checkout-final-total');
+            
+            if (cart.length === 0) {
+                checkoutItemsList.innerHTML = '<p style="color: #666;">Your cart is empty.</p>';
+            } else {
+                checkoutItemsList.innerHTML = cart.map(item => `
+                    <div class="summary-item" style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee;">
+                        <div>
+                            <h4 style="margin-bottom: 0.3rem; color: #333;">${item.name}</h4>
+                            <p style="color: #777; font-size: 0.9rem;">Qty: ${item.quantity}</p>
+                        </div>
+                        <p style="font-weight: 600; color: var(--text-color);">₹${(item.price * item.quantity).toLocaleString('en-IN')}</p>
+                    </div>
+                `).join('');
+                
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                subtotalEl.textContent = '₹' + total.toLocaleString('en-IN');
+                finalTotalEl.textContent = '₹' + total.toLocaleString('en-IN');
+            }
+
+            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Clear cart
+                localStorage.setItem('pukhraj_cart', JSON.stringify([]));
+                // Show success
+                document.getElementById('order-success').style.display = 'flex';
+            });
+        });
+    </script>
+</body>
+</html>

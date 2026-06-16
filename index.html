@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUKHRAJ JEWELLERS</title>
+    <meta name="description" content="Discover premium, handcrafted jewelry.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PUKHRAJ JEWELLERS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="icon-btn" title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </a>
+            <a href="#" class="icon-btn" title="Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <div class="cart-icon" id="cart-icon" title="View Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span class="cart-count">0</span>
+            </div>
+            <a href="collection.html" class="nav-btn">Order Now</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Slider Section -->
+        <section id="home" class="hero-slider">
+            <div class="slide active" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2070&auto=format&fit=crop');">
+                <div class="hero-content">
+                    <h1>Elegance in Every Detail</h1>
+                    <p>Discover our exclusive collection of fine jewelry, crafted for life's most precious moments.</p>
+                    <a href="collection.html" class="btn">Explore Collection</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2070&auto=format&fit=crop');">
+                <div class="hero-content">
+                    <h1>Timeless Beauty</h1>
+                    <p>Embrace the luxury of carefully curated designs that celebrate your unique style.</p>
+                    <a href="collection.html" class="btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('assets/indian_gold_bangles.png');">
+                <div class="hero-content">
+                    <h1>Master Craftsmanship</h1>
+                    <p>Experience the finest Indian heritage jewelry crafted by our master artisans.</p>
+                    <a href="contact.html" class="btn">Contact Us</a>
+                </div>
+            </div>
+            
+            <button class="slider-btn prev-btn">&#10094;</button>
+            <button class="slider-btn next-btn">&#10095;</button>
+            
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </section>
+
+       
+
+        <!-- Our Collection Preview Section -->
+        <section class="collection" style="background-color: #fff; padding: 5rem 5%;">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Our Collection</h2>
+            <div class="grid">
+                <div class="card" data-id="#JW-101" data-metal="22K Gold" data-weight="12 gm">
+                    <div class="card-img placeholder" style="background-image: url('assets/gold_earrings.png');"></div>
+                    <h3>22K Gold Earrings</h3>
+                    <p>₹35,000</p>
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card" data-id="#JW-102" data-metal="925 Sterling Silver" data-weight="45 gm">
+                    <div class="card-img placeholder" style="background-image: url('assets/silver_necklace.png');"></div>
+                    <h3>Elegant Silver Necklace</h3>
+                    <p>₹12,500</p>
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+                <div class="card" data-id="#JW-103" data-metal="18K Gold & Silver" data-weight="8 gm">
+                    <div class="card-img placeholder" style="background-image: url('assets/gold_rings.png');"></div>
+                    <h3>Gold & Silver Rings</h3>
+                    <p>₹25,000</p>
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="collection.html" class="btn">View Full Collection</a>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #777; font-style: italic;">* Please note: Final prices may vary according to daily gold and silver market rates.</p>
+        </section>
+
+        <!-- Best Design Section -->
+        <section class="best-design" style="padding: 5rem 5%;">
+            <div class="about-container">
+                <div class="about-content-text" style="display: flex; flex-direction: column; justify-content: center;">
+                    <p class="testimonial-subtitle">MASTERPIECE</p>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Our Best <span style="color: var(--primary-color);">Design</span></h2>
+                    <p style="margin-bottom: 2rem; color: #555;">Discover the pinnacle of our craftsmanship with this exquisite traditional 22K gold bridal necklace set. Featuring intricate filigree work and kundan style detailing, it stands as a testament to our dedication to preserving Indian heritage and timeless elegance.</p>
+                    <a href="contact.html" class="btn" style="align-self: flex-start;">Inquire Now</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/indian_gold_necklace.png" alt="Best Design Necklace" style="width: 100%; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+        </section>
+
+         <!-- New Arrivals Section -->
+        <section class="new-arrivals" style="position: relative; margin: 0 0 8rem 0; padding-bottom: 2rem; background: var(--bg-color);">
+            <!-- Background Banner -->
+            <div style="background-image: url('assets/new_arrivals_bg.png'); background-size: cover; background-position: center; padding: 5rem 5%; height: 450px; position: relative;">
+                <!-- Overlay to ensure text readability -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);"></div>
+                
+                <div style="position: relative; z-index: 2; max-width: 800px; color: #fff;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                        <h2 style="font-size: 3.5rem; font-family: var(--font-heading); margin: 0;">New Arrivals</h2>
+                        <span style="background: rgba(255,255,255,0.25); padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.95rem; font-weight: 600; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: center; gap: 5px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"></path><path d="M11 3 8 9l4 13 4-13-3-6"></path><path d="M2 9h20"></path></svg>
+                            500+ New Items
+                        </span>
+                    </div>
+                    <p style="font-size: 1.2rem; line-height: 1.6; opacity: 0.9; max-width: 600px;">New Arrivals Dropping Daily, Monday through Friday.<br>Explore the Latest Launches Now!</p>
+                </div>
+            </div>
+
+            <!-- Overlapping Cards -->
+            <div style="max-width: 1200px; margin: -120px auto 0; position: relative; z-index: 5; padding: 0 5%; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+                
+                <!-- Card 1 -->
+                <div class="arrival-card" style="flex: 1; min-width: 300px; height: 380px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.2); cursor: pointer; border: 4px solid #fff; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background-image: url('assets/silver_idol.png'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s;" class="arrival-img"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2.5rem 2rem 2rem 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff;">
+                        <h3 style="font-size: 1.8rem; margin: 0; font-family: var(--font-heading); font-weight: 500;">Silver Idols</h3>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="arrival-card" style="flex: 1; min-width: 300px; height: 380px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.2); cursor: pointer; border: 4px solid #fff; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background-image: url('assets/station_mangalsutra.png'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s;" class="arrival-img"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2.5rem 2rem 2rem 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff;">
+                        <h3 style="font-size: 1.8rem; margin: 0; font-family: var(--font-heading); font-weight: 500;">Station Mangalsutra</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Our World Section -->
+        <section class="our-world" style="padding: 5rem 5%; background-color: #fff;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3.5rem; font-family: var(--font-heading); color: var(--text-color); margin-bottom: 0.5rem;">Pukhraj World</h2>
+                <p style="font-size: 1.2rem; color: #777; font-weight: 300;">A companion for every occasion</p>
+            </div>
+            
+            <div class="world-grid" style="max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Wedding (Tall) -->
+                <div class="world-item tall" style="position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; height: 600px;">
+                    <div style="background-image: url('assets/wedding.png'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.6s ease;" class="world-img"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem 2rem 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-align: center;">
+                        <h3 style="color: #fff; font-size: 2.2rem; font-family: var(--font-heading); margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Wedding</h3>
+                    </div>
+                </div>
+
+                <div class="world-stack" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Diamond (Top Right) -->
+                    <div class="world-item" style="position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; height: 290px;">
+                        <div style="background-image: url('assets/diamond.png'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.6s ease;" class="world-img"></div>
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem 2rem 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-align: center;">
+                            <h3 style="color: #fff; font-size: 2rem; font-family: var(--font-heading); margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Diamond</h3>
+                        </div>
+                    </div>
+
+                    <!-- Everyday (Bottom Right) -->
+                    <div class="world-item" style="position: relative; border-radius: 16px; overflow: hidden; cursor: pointer; height: 290px;">
+                        <div style="background-image: url('assets/everyday.png'); background-size: cover; background-position: center 20%; width: 100%; height: 100%; transition: transform 0.6s ease;" class="world-img"></div>
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem 2rem 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-align: center;">
+                            <h3 style="color: #fff; font-size: 2rem; font-family: var(--font-heading); margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Everyday</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customize Jewelry Section -->
+        <section class="customize-section" style="background-color: #faf9f6; padding: 5rem 5%;">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=1000&auto=format&fit=crop" alt="Jewelry Crafting" style="width: 100%; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                </div>
+                <div class="about-content-text" style="display: flex; flex-direction: column; justify-content: center;">
+                    <p class="testimonial-subtitle">BESPOKE SERVICES</p>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Customize Your <span style="color: var(--primary-color);">Jewelry</span></h2>
+                    <p style="margin-bottom: 2rem; color: #555;">Bring your dream designs to life. Our master artisans work closely with you to create personalized, one-of-a-kind pieces. Whether designing from scratch or reimagining a family heirloom, we ensure your vision is realized with flawless precision.</p>
+                    <ul style="list-style: none; margin-bottom: 2rem; color: #555;">
+                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--primary-color); margin-right: 10px;">✓</strong> Personalized Consultations</li>
+                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--primary-color); margin-right: 10px;">✓</strong> Hand-Drawn & 3D Design Previews</li>
+                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--primary-color); margin-right: 10px;">✓</strong> Flawless Master Craftsmanship</li>
+                    </ul>
+                    <a href="contact.html" class="btn" style="align-self: flex-start;">Start Your Custom Design</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="testimonial-section">
+            <p class="testimonial-subtitle">CUSTOMER LOVE</p>
+            <h2>What Our Customers <span class="highlight">Say</span></h2>
+            <p class="testimonial-desc">Thousands of happy customers across Nagpur. Here's what they think about Pukhraj Jewellers.</p>
+            
+            <div class="testimonial-quote">
+                <div class="quote-icon">❞</div>
+                <p>"Thank you very much for the excellent service and stunning jewelry. We will definitely come back for our next family occasion!"</p>
+            </div>
+            
+            <a href="contact.html" class="btn-outline">Read All Reviews</a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <div class="feature-icon">★</div>
+                    <h3>Premium Quality</h3>
+                    <p>We use only the finest ethically sourced gold and diamonds, ensuring every piece is pure perfection.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Certified Purity</h3>
+                    <p>Our specialized assessment ensures your delicate jewelry pieces are certified and 100% genuine.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <h3>Master Craftsmanship</h3>
+                    <p>We maintain the highest standards of craftsmanship, following traditional designs and modern techniques.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">PUKHRAJ JEWELLERS</div>
+                <p class="footer-desc">Crafting timeless elegance and preserving trust through generations. Discover jewelry that celebrates life's most precious moments.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong> HOUSE NO.5281, OPPOSITE SIDDHESHWAR MANGAL KARYALAYA, JAWAHAR NAGAR, MANEWADA ROAD, NAGPUR, Maharashtra, 440024</p>
+                <p><strong>Phone:</strong> <a href="tel:+918600871333">8600871333</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@pukhrajjewellers.co.in">info@pukhrajjewellers.co.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
