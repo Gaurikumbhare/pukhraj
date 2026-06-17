@@ -348,32 +348,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Collection Filter Logic
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const megaFilters = document.querySelectorAll('.mega-filter');
     const collectionCards = document.querySelectorAll('#collection .card');
+    
+    let currentCategory = 'all';
+    let currentPrice = 'all';
+    let currentGender = 'all';
 
-    if (filterBtns.length > 0 && collectionCards.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked
-                btn.classList.add('active');
+    if (collectionCards.length > 0) {
+        
+        function applyFilters() {
+            collectionCards.forEach(card => {
+                let match = true;
+                
+                // Check Category / Metal Implicitly
+                // The main buttons actually represent different things. 'all', 'gold', 'silver', 'rings', 'necklace', 'bangles'
+                if (currentCategory !== 'all') {
+                    const categories = card.getAttribute('data-category') || '';
+                    if (!categories.includes(currentCategory)) match = false;
+                }
+                
+                // Check Gender
+                if (currentGender !== 'all') {
+                    const cardGender = card.getAttribute('data-gender') || 'all';
+                    if (cardGender !== 'all' && cardGender !== currentGender) match = false;
+                }
+                
+                // Check Price
+                if (currentPrice !== 'all') {
+                    const price = parseInt(card.getAttribute('data-price') || '0');
+                    if (currentPrice === 'under20' && price >= 20000) match = false;
+                    else if (currentPrice === '20to50' && (price < 20000 || price > 50000)) match = false;
+                    else if (currentPrice === '50to100' && (price < 50000 || price > 100000)) match = false;
+                    else if (currentPrice === 'over100' && price <= 100000) match = false;
+                }
+                
+                card.style.display = match ? 'block' : 'none';
+            });
+        }
 
-                const filterValue = btn.getAttribute('data-filter');
-
-                collectionCards.forEach(card => {
-                    if (filterValue === 'all') {
-                        card.style.display = 'block';
-                    } else {
-                        const categories = card.getAttribute('data-category') || '';
-                        if (categories.includes(filterValue)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
+        // Attach Event Listeners to Top Icons (Main Categories)
+        if (filterBtns.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset sub-filters when main category changes
+                    currentPrice = 'all';
+                    currentGender = 'all';
+                    currentCategory = btn.getAttribute('data-filter');
+                    
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.style.color = '#666'; 
+                    });
+                    btn.classList.add('active');
+                    btn.style.color = 'var(--primary-color)';
+                    
+                    // Reset styling on mega menu links
+                    megaFilters.forEach(m => m.style.fontWeight = 'normal');
+                    
+                    applyFilters();
                 });
             });
-        });
+        }
+        
+        // Attach Event Listeners to Mega Menu Links
+        if (megaFilters.length > 0) {
+            megaFilters.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Auto-select the parent category icon
+                    const parentItem = link.closest('.filter-item');
+                    if (parentItem) {
+                        const parentBtn = parentItem.querySelector('.filter-btn');
+                        if (parentBtn && !parentBtn.classList.contains('active')) {
+                            parentBtn.click(); // This will reset currentPrice/Gender and set category
+                        }
+                    }
+                    
+                    const type = link.getAttribute('data-type');
+                    const val = link.getAttribute('data-value');
+                    
+                    if (type === 'price') currentPrice = val;
+                    if (type === 'gender') currentGender = val;
+                    
+                    // Update bold styling to show active state in mega menu
+                    parentItem.querySelectorAll(`[data-type="${type}"]`).forEach(m => m.style.fontWeight = 'normal');
+                    link.style.fontWeight = 'bold';
+                    link.style.color = 'var(--primary-color)';
+                    
+                    applyFilters();
+                });
+            });
+        }
     }
 
     // Smooth scrolling for anchor links
