@@ -292,6 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextBtn = document.querySelector('.next-btn');
         const prevBtn = document.querySelector('.prev-btn');
         const dots = document.querySelectorAll('.dot');
+        const slideTrack = document.getElementById('slide-track');
         let currentSlide = 0;
         let slideInterval;
 
@@ -301,6 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSlide = (n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
+            if (slideTrack) {
+                slideTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
         }
 
         function nextSlide() {
