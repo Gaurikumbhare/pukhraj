@@ -1,6 +1,6 @@
 :root {
     --primary-color: #7b1e22; /* Maroon */
-    --bg-color: #ffffff; /* White */
+    --bg-color: #faf9f6; /* Off-White */
     --text-color: #3b0e10; /* Dark Maroon for text */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -799,14 +799,14 @@ h2 {
     padding: 0.8rem;
 }
 
-/* Product Modal */
+/* Product Modal - Full Screen Split Layout */
 .product-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.7);
+    background: #fff;
     z-index: 2000;
     display: none;
     opacity: 0;
@@ -815,19 +815,16 @@ h2 {
 
 .product-modal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -45%) scale(0.95);
-    width: 90%;
-    max-width: 900px;
-    background: var(--bg-color);
-    border-radius: 12px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
     z-index: 2001;
     display: none;
     opacity: 0;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
 }
 
 .product-modal.show, .product-modal-overlay.show {
@@ -838,64 +835,167 @@ h2 {
     opacity: 1;
 }
 
-.product-modal.open {
-    transform: translate(-50%, -50%) scale(1);
-}
-
 .close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
+    position: fixed;
+    top: 20px;
+    right: 30px;
     font-size: 2.5rem;
     background: none;
     border: none;
-    cursor: pointer;
     color: #333;
-    z-index: 10;
-    transition: var(--transition);
+    cursor: pointer;
+    z-index: 2005;
+    transition: color 0.3s ease;
 }
+.close-modal:hover { color: var(--primary-color); }
 
-.close-modal:hover {
-    color: var(--primary-color);
-}
-
-.product-modal-content {
+.split-layout {
     display: flex;
-    flex-wrap: wrap;
-    max-height: 90vh;
-    overflow-y: auto;
+    min-height: 100vh;
+    width: 100%;
 }
 
-.product-modal-image {
+.product-modal-left {
     flex: 1;
-    min-width: 300px;
-    min-height: 400px;
-    background-size: cover;
-    background-position: center;
-}
-
-.product-modal-details {
-    flex: 1;
-    min-width: 300px;
-    padding: 4rem 3rem;
+    padding: 5rem 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.product-modal-details h2 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
+.product-modal-right {
+    flex: 1.2;
+    background: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
 }
 
-.modal-price {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
+.sku-header {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #777;
+    letter-spacing: 1px;
 }
+
+.product-modal-image-container {
+    width: 80%;
+    height: 70%;
+    background: #f7f7f7;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.product-modal-image {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Accordion Styles */
+.accordion-container {
+    margin-top: 2rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+}
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    background: #fff;
+    transition: background 0.3s ease;
+}
+.accordion-header:hover {
+    background: #faf9f6;
+}
+
+.acc-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+.acc-title svg { color: #b8860b; }
+
+.acc-icon {
+    font-size: 0.8rem;
+    color: #999;
+    transition: transform 0.3s ease;
+}
+.accordion-item.active .acc-icon {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    background: #fff;
+}
+
+.acc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.acc-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.acc-stat strong {
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    color: #1a1a1a;
+}
+.acc-stat span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+@media (max-width: 900px) {
+    .split-layout {
+        flex-direction: column;
+    }
+    .product-modal-right {
+        order: -1;
+        min-height: 50vh;
+    }
+    .product-modal-left {
+        padding: 3rem 2rem;
+    }
+    .acc-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 
 /* Checkout Page */
 .checkout-page {

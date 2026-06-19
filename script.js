@@ -1,3 +1,21 @@
+window.toggleAccordion = function(element) {
+    const item = element.parentElement;
+    const content = element.nextElementSibling;
+    const isActive = item.classList.contains('active');
+
+    // Close all other accordions (optional, but standard for this UI)
+    const allItems = document.querySelectorAll('.accordion-item');
+    allItems.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.accordion-content').style.display = 'none';
+    });
+
+    if (!isActive) {
+        item.classList.add('active');
+        content.style.display = 'block';
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu
     const mobileMenu = document.getElementById('mobile-menu');
@@ -31,44 +49,121 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="product-modal-overlay" id="product-modal-overlay"></div>
     <div class="product-modal" id="product-modal">
         <button class="close-modal" id="close-modal">&times;</button>
-        <div class="product-modal-content">
-            <div class="product-modal-image" id="modal-image"></div>
-            <div class="product-modal-details">
-                <p class="modal-subtitle" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.5rem; text-transform: uppercase;">Premium Jewelry</p>
-                <h2 id="modal-title">Product Name</h2>
-                <div class="modal-reviews" style="color: #f5b301; margin-bottom: 1rem; font-size: 0.9rem;">
-                    ★★★★★ <span style="color: #777; margin-left: 5px;">(125 customer reviews)</span>
+        <div class="product-modal-content split-layout">
+            
+            <!-- Left Side: Details & Accordion -->
+            <div class="product-modal-left">
+                <div class="modal-header-info">
+                    <h2 id="modal-title" style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Product Name</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <span class="modal-price" id="modal-price" style="font-size: 1.8rem; font-weight: 600;">₹0</span>
+                    </div>
                 </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <span class="modal-price" id="modal-price" style="color: var(--primary-color); font-size: 2rem; font-weight: 600;">₹0</span>
-                    <span style="display: block; font-size: 0.8rem; color: #888; margin-top: 5px; font-style: italic;">* Price may vary based on daily market rates.</span>
-                </div>
-                
-                <p class="modal-desc" id="modal-desc">Product description goes here.</p>
-                
-                <hr style="border: none; border-top: 1px solid #eee; margin: 1.5rem 0;">
 
-                <div class="product-specs">
-                    <div class="spec-row">
-                        <strong>Item ID:</strong> <span id="modal-item-id">#JW-000</span>
+                <div class="accordion-container">
+                    <!-- Metal Details Accordion -->
+                    <div class="accordion-item active">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="acc-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                <span>METAL DETAILS</span>
+                            </div>
+                            <span class="acc-icon">&#10094;</span>
+                        </div>
+                        <div class="accordion-content" style="display: block;">
+                            <div class="acc-grid">
+                                <div class="acc-stat">
+                                    <strong><span id="modal-metal-karat">22K</span></strong>
+                                    <span>Karatage</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong><span id="modal-metal-color">Yellow</span></strong>
+                                    <span>Material Colour</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong><span id="modal-metal-weight">15 gm</span></strong>
+                                    <span>Gross Weight</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong><span id="modal-metal-type">Gold</span></strong>
+                                    <span>Metal</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong><span id="modal-metal-height">2 cm</span></strong>
+                                    <span>Pendant Height</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong><span id="modal-metal-width">1 cm</span></strong>
+                                    <span>Pendant Width</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="spec-row">
-                        <strong>Metal:</strong> <span id="modal-metal">22K Gold</span>
+
+                    <!-- General Details Accordion -->
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="acc-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                                <span>GENERAL DETAILS</span>
+                            </div>
+                            <span class="acc-icon">&#10095;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="acc-grid">
+                                <div class="acc-stat">
+                                    <strong>Gold Jewellery</strong>
+                                    <span>Jewellery Type</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong>Pukhraj</strong>
+                                    <span>Brand</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong>Bestsellers</strong>
+                                    <span>Collection</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong>Women</strong>
+                                    <span>Gender</span>
+                                </div>
+                                <div class="acc-stat">
+                                    <strong>Modern Wear</strong>
+                                    <span>Occasion</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="spec-group" style="margin-top: 1.5rem;">
-                        <label style="display: block; font-weight: bold; margin-bottom: 0.8rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Select Weight</label>
-                        <div class="weight-pills" style="display: flex; gap: 10px;">
-                            <span class="weight-pill active" id="modal-weight" style="padding: 0.5rem 1.5rem; border: 1px solid var(--primary-color); border-radius: 30px; color: var(--primary-color); cursor: pointer;">15 gm</span>
+
+                    <!-- Description Accordion -->
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="acc-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                <span>DESCRIPTION</span>
+                            </div>
+                            <span class="acc-icon">&#10095;</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p id="modal-desc" style="color: #666; line-height: 1.6;">Product description goes here.</p>
                         </div>
                     </div>
                 </div>
 
-                <div style="display: flex; gap: 1rem; margin-top: 2.5rem;">
-                    <button class="btn" id="modal-add-to-cart" style="flex: 1; padding: 1rem;">Add to Cart</button>
-                    <button class="btn checkout-btn-direct" onclick="window.location.href='checkout.html'" style="flex: 1; background: var(--text-color); color: #fff; padding: 1rem;">Buy Now</button>
+                <div class="modal-actions" style="display: flex; gap: 1rem; margin-top: 2.5rem;">
+                    <button class="btn" id="modal-add-to-cart" style="flex: 1; padding: 1rem; background: #fff; color: var(--text-color); border: 1px solid var(--text-color);">Add to Cart</button>
+                    <button class="btn checkout-btn-direct" onclick="window.location.href='checkout.html'" style="flex: 1; padding: 1rem; background: var(--text-color); color: #fff;">Buy Now</button>
                 </div>
             </div>
+
+            <!-- Right Side: Large Image Display -->
+            <div class="product-modal-right">
+                <div class="sku-header">SKU ID : <span id="modal-item-id">#JW-000</span></div>
+                <div class="product-modal-image-container">
+                    <div class="product-modal-image" id="modal-image"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -212,27 +307,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalAddToCartBtn = document.getElementById('modal-add-to-cart');
 
     const modalItemId = document.getElementById('modal-item-id');
-    const modalMetal = document.getElementById('modal-metal');
-    const modalWeight = document.getElementById('modal-weight');
+    const modalMetalKarat = document.getElementById('modal-metal-karat');
+    const modalMetalWeight = document.getElementById('modal-metal-weight');
+    const modalMetalType = document.getElementById('modal-metal-type');
 
     function openModal(card) {
         const title = card.querySelector('h3').textContent;
         const price = card.querySelector('p').textContent;
-        const bgImg = card.querySelector('.card-img').style.backgroundImage;
+        let bgImg = '';
+        if (card.querySelector('.card-img')) {
+            bgImg = card.querySelector('.card-img').style.backgroundImage;
+        } else if (card.querySelector('.arrival-img')) {
+            bgImg = card.querySelector('.arrival-img').style.backgroundImage;
+        }
         
         const desc = card.getAttribute('data-description') || "Indulge in our artisanal jewelry piece. Handcrafted with the finest materials and a perfect balance of elegance and tradition.";
-        const itemId = card.getAttribute('data-id') || "#JW-" + Math.floor(Math.random() * 900 + 100);
-        const metal = card.getAttribute('data-metal') || "22K Gold";
-        const weight = card.getAttribute('data-weight') || "10 gm";
+        const itemId = card.getAttribute('data-id') || "51D3D1PJWAAA002EA000183";
+        const metalStr = card.getAttribute('data-metal') || "22K Gold"; // E.g. "22K Gold"
+        const weight = card.getAttribute('data-weight') || "1.867g";
         
         modalTitle.textContent = title;
         modalPrice.textContent = price;
         modalDesc.textContent = desc;
-        modalImg.style.backgroundImage = bgImg;
+        if (modalImg) modalImg.style.backgroundImage = bgImg;
         
-        modalItemId.textContent = itemId;
-        modalMetal.textContent = metal;
-        modalWeight.textContent = weight;
+        if (modalItemId) modalItemId.textContent = itemId;
+        
+        if (modalMetalKarat) {
+            modalMetalKarat.textContent = metalStr.split(' ')[0] || '22K';
+        }
+        if (modalMetalType) {
+            modalMetalType.textContent = metalStr.split(' ')[1] || 'Gold';
+        }
+        if (modalMetalWeight) {
+            modalMetalWeight.textContent = weight;
+        }
         
         // Setup Add to Cart inside modal
         modalAddToCartBtn.onclick = () => {
