@@ -165,6 +165,46 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
         </div>
+
+        <!-- Similar Products / Featured Collection Section inside Modal -->
+        <div class="modal-featured-collection" style="background-color: #faf9f6; padding: 5rem 5%; width: 100%; box-sizing: border-box; border-top: 1px solid #eee;">
+            <!-- Product Grid -->
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Product 1 -->
+                <div class="card" style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f0f0f0; text-align: center; cursor: pointer; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+                    <div class="card-img" style="width: 100%; height: 250px; background-image: url('assets/gold_earrings.png'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 1.5rem;"></div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: #222; margin-bottom: 0.5rem; font-weight: 600;">22K Gold Earrings</h3>
+                    <p style="color: var(--primary-color); font-weight: bold; font-size: 1.1rem; margin-bottom: 1.5rem;">₹35,000</p>
+                    <button class="btn add-to-cart-btn" style="width: 100%; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); padding: 0.8rem; border-radius: 30px; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; transition: all 0.3s;" onmouseover="this.style.background='var(--text-color)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--text-color)';">ADD TO CART</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="card" style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f0f0f0; text-align: center; cursor: pointer; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+                    <div class="card-img" style="width: 100%; height: 250px; background-image: url('assets/silver_necklace.png'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 1.5rem;"></div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: #222; margin-bottom: 0.5rem; font-weight: 600;">Elegant Silver Necklace</h3>
+                    <p style="color: var(--primary-color); font-weight: bold; font-size: 1.1rem; margin-bottom: 1.5rem;">₹12,500</p>
+                    <button class="btn add-to-cart-btn" style="width: 100%; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); padding: 0.8rem; border-radius: 30px; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; transition: all 0.3s;" onmouseover="this.style.background='var(--text-color)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--text-color)';">ADD TO CART</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="card" style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f0f0f0; text-align: center; cursor: pointer; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+                    <div class="card-img" style="width: 100%; height: 250px; background-image: url('assets/gold_rings.png'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 1.5rem;"></div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: #222; margin-bottom: 0.5rem; font-weight: 600;">Gold & Silver Rings</h3>
+                    <p style="color: var(--primary-color); font-weight: bold; font-size: 1.1rem; margin-bottom: 1.5rem;">₹25,000</p>
+                    <button class="btn add-to-cart-btn" style="width: 100%; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); padding: 0.8rem; border-radius: 30px; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; transition: all 0.3s;" onmouseover="this.style.background='var(--text-color)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--text-color)';">ADD TO CART</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="card" style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #f0f0f0; text-align: center; cursor: pointer; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+                    <div class="card-img" style="width: 100%; height: 250px; background-image: url('assets/indian_gold_necklace.png'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 1.5rem;"></div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: #222; margin-bottom: 0.5rem; font-weight: 600;">Traditional Gold Bridal Set</h3>
+                    <p style="color: var(--primary-color); font-weight: bold; font-size: 1.1rem; margin-bottom: 1.5rem;">₹1,85,000</p>
+                    <button class="btn add-to-cart-btn" style="width: 100%; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); padding: 0.8rem; border-radius: 30px; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; transition: all 0.3s;" onmouseover="this.style.background='var(--text-color)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--text-color)';">ADD TO CART</button>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <!-- Search Modal -->
