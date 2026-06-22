@@ -508,6 +508,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPrice = 'all';
     let currentGender = 'all';
 
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('category')) {
+        currentCategory = urlParams.get('category').toLowerCase();
+    }
+    if (urlParams.has('gender')) {
+        currentGender = urlParams.get('gender').toLowerCase();
+    }
+
     if (collectionCards.length > 0) {
         
         function applyFilters() {
@@ -593,6 +601,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     applyFilters();
                 });
             });
+        }
+        
+        // Initial application of filters if loaded from URL
+        if (currentCategory !== 'all') {
+            filterBtns.forEach(b => {
+                b.classList.remove('active');
+                b.style.color = '#666'; 
+                if (b.getAttribute('data-filter') === currentCategory) {
+                    b.classList.add('active');
+                    b.style.color = 'var(--primary-color)';
+                }
+            });
+            applyFilters();
         }
     }
 
