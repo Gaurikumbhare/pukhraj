@@ -6,328 +6,282 @@
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry.">
     <link rel="stylesheet" href="styles.css?v=2">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">PUKHRAJ JEWELLERS</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="collection.html">Collection</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-actions">
-            <a href="#" class="icon-btn" title="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </a>
-            <a href="#" class="icon-btn" title="Profile">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            </a>
-            <div class="cart-icon" id="cart-icon" title="View Cart">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                <span class="cart-count">0</span>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span>PUKHRAJ: Plan Of Purchase</span>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav class="navbar-new">
+        <!-- Top Row -->
+        <div class="navbar-top">
+            <div class="logo-new">PUKHRAJ</div>
+            
+            <div class="search-container-top">
+                <div class="pincode-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Enter Pincode</span> <span class="arrow-down">&#9662;</span>
+                </div>
+                <div class="search-input-wrapper">
+                    <input type="text" id="top-search-input" placeholder="Search for Necklaces...|">
+                    <button class="search-btn-icon" id="top-search-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </div>
             </div>
-            <a href="collection.html" class="nav-btn">Order Now</a>
-            <div class="menu-toggle" id="mobile-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3b0e10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+
+            <div class="nav-actions-new">
+                <a href="#" class="icon-btn-new" title="Store">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </a>
+                <a href="#" class="icon-btn-new cart-icon-new" title="Wishlist">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span class="badge-count">0</span>
+                </a>
+                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="#" class="icon-btn-new" title="Offers">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3b0e10" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </div>
             </div>
+        </div>
+        
+        <!-- Bottom Row -->
+                        <div class="navbar-bottom">
+            <ul class="nav-links-new">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="new-arrivals.html">New Arrivals</a></li>
+                <li><a href="best-seller.html">Best Seller</a></li>
+                <li><a href="fine-silver.html">Fine Silver</a></li>
+                <li class="nav-has-badge"><span class="nav-badge gold-badge">Luxe</span><a href="9kt-fine-gold.html">9KT Fine Gold</a></li>
+                <li><a href="owners-favourite.html">Owner's Favourite</a></li>
+                <li><a href="gifting.html">Gifting</a></li>
+                <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
         </div>
     </nav>
 
     <main>
         <!-- Hero Slider Section -->
-        <section id="home" class="hero-section" style="padding: 2rem 5%; background-color: var(--bg-color);">
-            <div class="hero-slider-container" style="position: relative; width: 100%; height: 650px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <div class="slide-track" id="slide-track">
-                
-                <!-- Slide 1: Emerald (Moody & Elegant) -->
-                <div class="slide active" style="background-image: url('assets/j8.jpg'); background-position: center center; background-size: cover;">
-                    <div class="slide-overlay"></div>
-                    <div class="hero-content">
-                        <p class="hero-tag">A PUKHRAJ PRODUCT</p>
-                        <h2 class="hero-brand">PUKHRAJ</h2>
-                        <div class="hero-separator-group">
-                            <span class="hero-line"></span>
-                            <p class="hero-subtitle">The Midnight Collection</p>
-                            <span class="hero-line"></span>
-                        </div>
-                        <h1 class="hero-title">Emerald<br><span class="hero-title-italic" style="color: #4ade80;">Elegance</span></h1>
-                        <a href="collection.html" class="hero-btn">DISCOVER THE GEM</a>
-                    </div>
-                </div>
-
-                <!-- Slide 2: Gold Display (Traditional Heritage) -->
-                <div class="slide" style="background-image: url('assets/j6.jpg'); background-position: center bottom; background-size: cover;">
-                    <div class="slide-overlay"></div>
-                    <div class="hero-content">
-                        <p class="hero-tag">A PUKHRAJ PRODUCT</p>
-                        <h2 class="hero-brand">PUKHRAJ</h2>
-                        <div class="hero-separator-group">
-                            <span class="hero-line gold-line"></span>
-                            <p class="hero-subtitle gold-text">Bridal Collection</p>
-                            <span class="hero-line gold-line"></span>
-                        </div>
-                        <h1 class="hero-title">The Royal<br><span class="hero-title-italic gold-text">Heritage</span></h1>
-                        <a href="collection.html" class="hero-btn">SHOP BRIDAL</a>
-                    </div>
-                </div>
-
-                <!-- Slide 3: Rings & Pearls (Minimalist Everyday) -->
-                <div class="slide" style="background-image: url('assets/j4.jpg'); background-position: center bottom; background-size: cover;">
-                    <div class="slide-overlay"></div>
-                    <div class="hero-content">
-                        <p class="hero-tag">A PUKHRAJ PRODUCT</p>
-                        <h2 class="hero-brand">PUKHRAJ</h2>
-                        <div class="hero-separator-group">
-                            <span class="hero-line"></span>
-                            <p class="hero-subtitle">Modern Minimalist</p>
-                            <span class="hero-line"></span>
-                        </div>
-                        <h1 class="hero-title">Everyday<br><span class="hero-title-italic">Classics</span></h1>
-                        <a href="collection.html" class="hero-btn">SHOP ESSENTIALS</a>
-                    </div>
-                </div>
-
-                </div>
-
-
-                
-                <div class="slider-dots" style="bottom: 15px;">
-                    <span class="dot active" data-slide="0" style="background: #fff; border: 1px solid rgba(0,0,0,0.2);"></span>
-                    <span class="dot" data-slide="1" style="background: #fff; border: 1px solid rgba(0,0,0,0.2);"></span>
-                    <span class="dot" data-slide="2" style="background: #fff; border: 1px solid rgba(0,0,0,0.2);"></span>
-                </div>
+        <!-- Hero Static Banner -->
+        <section id="home" class="hero-static" style="background-image: url('assets/j8.jpg');">
+            <div class="hero-overlay"></div>
+            
+            <button class="hero-arrow hero-prev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+            <button class="hero-arrow hero-next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            
+            <div class="hero-content-right">
+                <h1 class="hero-serif-title">Free 9KT Gold Pendant</h1>
+                <p class="hero-small-text">on order above ₹20,000</p>
+                <div style="height: 30px;"></div>
+                <h1 class="hero-serif-title">Flat 15% OFF</h1>
+                <p class="hero-small-text">on gold worth ₹20,000 or below</p>
+                <a href="new-arrivals.html" class="hero-outline-btn">SHOP NOW</a>
             </div>
+
         </section>
 
 
         
-        <!-- Our Collection Preview Section -->
-        <section class="collection" style="padding: 5rem 5%;">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Our Collection</h2>
-            <div class="grid">
-                <div class="card" data-id="#JW-101" data-metal="22K Gold" data-weight="12 gm">
-                    <div class="card-img placeholder" style="background-image: url('assets/gold_earrings.png');"></div>
-                    <h3>22K Gold Earrings</h3>
-                    <p>₹35,000</p>
-                    <button class="btn add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="card" data-id="#JW-102" data-metal="925 Sterling Silver" data-weight="45 gm">
-                    <div class="card-img placeholder" style="background-image: url('assets/silver_necklace.png');"></div>
-                    <h3>Elegant Silver Necklace</h3>
-                    <p>₹12,500</p>
-                    <button class="btn add-to-cart-btn">Add to Cart</button>
-                </div>
-                <div class="card" data-id="#JW-103" data-metal="18K Gold & Silver" data-weight="8 gm">
-                    <div class="card-img placeholder" style="background-image: url('assets/gold_rings.png');"></div>
-                    <h3>Gold & Silver Rings</h3>
-                    <p>₹25,000</p>
-                    <button class="btn add-to-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="collection.html" class="btn">View Full Collection</a>
-            </div>
-            <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #777; font-style: italic;">* Please note: Final prices may vary according to daily gold and silver market rates.</p>
-        </section>
-
-        <!-- Best Design Section -->
-        <section class="best-design" style="padding: 6rem 5%; background-color: #faf9f6;">
-            <div class="about-container" style="max-width: 1200px; gap: 5rem; align-items: stretch;">
-                <div class="about-content-text" style="display: flex; flex-direction: column; justify-content: center; padding-right: 2rem;">
-                    
-                    <h2 style="font-size: 3.5rem; margin-bottom: 2rem; font-family: var(--font-heading); color: #1a1a1a; line-height: 1.2;">Our Best <span style="color: var(--primary-color);">Design</span></h2>
-                    <p style="margin-bottom: 2.5rem; color: #555; font-size: 1.15rem; line-height: 1.8;">Discover the pinnacle of our craftsmanship with this exquisite traditional 22K gold bridal necklace set. Featuring intricate filigree work and kundan style detailing, it stands as a testament to our dedication to preserving Indian heritage and timeless elegance.</p>
-                    <a href="contact.html" class="btn" style="align-self: flex-start; padding: 1.2rem 2.5rem; font-size: 0.9rem; letter-spacing: 2px; font-weight: 500; background-color: #3b0e10; color: #fff; border-radius: 4px; text-transform: uppercase;">Inquire Now</a>
-                </div>
-                <div class="about-image" style="flex: 1; display: flex; align-items: center;">
-                    <img src="assets/j5.jpg" alt="Best Design Necklace" style="width: 100%; height: 750px; object-fit: cover; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
-                </div>
+        <!-- Everyday Demifine Jewellery (Categories) -->
+        <section class="category-circles-section" style="padding: 4rem 5%; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem;">Everyday Demifine Jewellery</h2>
+            <div class="category-circles">
+                <a href="earrings.html" class="category-circle-item">
+                    <div class="circle-img" style="background-image: url('assets/gold_earrings.png');"></div>
+                    <span>Earrings</span>
+                </a>
+                <a href="necklaces.html" class="category-circle-item">
+                    <div class="circle-img" style="background-image: url('assets/silver_necklace.png');"></div>
+                    <span>Necklaces</span>
+                </a>
+                <a href="bracelets.html" class="category-circle-item">
+                    <div class="circle-img" style="background-image: url('assets/indian_gold_bangles.png');"></div>
+                    <span>Bracelets</span>
+                </a>
+                <a href="rings.html" class="category-circle-item">
+                    <div class="circle-img" style="background-image: url('assets/gold_rings.png');"></div>
+                    <span>Rings</span>
+                </a>
+                <a href="new-arrivals.html" class="category-circle-item">
+                    <div class="circle-img" style="background-image: url('assets/station_mangalsutra.png');"></div>
+                    <span>Mangalsutra</span>
+                </a>
+                <a href="new-arrivals.html" class="category-circle-item">
+                    <div class="circle-img" style="background-image: url('assets/silver_idol.png');"></div>
+                    <span>Men</span>
+                </a>
             </div>
         </section>
 
-
-<!-- Sparkle Category Showcase Section -->
-        <section class="sparkle-showcase">
-            <div class="sparkle-container">
-                <div class="sparkle-content">
-                    <h2>How would you like to <span>Sparkle?</span></h2>
-                    <p>From timeless gold essentials to bold statement designs, explore over 32,000+ designs each intricately crafted to elevate your everyday style.</p>
-                </div>
-                <div class="sparkle-grid">
-                    <a href="collection.html?category=earrings" class="sparkle-card" style="background-image: url('assets/gold_earrings.png');">
-                        <div class="sparkle-card-content">
-                            <h3>Earrings</h3>
-                            <p>Shimmer to every love song</p>
-                        </div>
-                        <div class="sparkle-arrow">&#10230;</div>
-                    </a>
-                    <a href="collection.html?category=necklace" class="sparkle-card" style="background-image: url('assets/silver_necklace.png');">
-                        <div class="sparkle-card-content">
-                            <h3>Necklaces</h3>
-                            <p>Wrapped around your neck like love</p>
-                        </div>
-                        <div class="sparkle-arrow">&#10230;</div>
-                    </a>
-                    <a href="collection.html?category=rings" class="sparkle-card" style="background-image: url('assets/gold_rings.png');">
-                        <div class="sparkle-card-content">
-                            <h3>Rings</h3>
-                            <p>Some promises are meant to be worn</p>
-                        </div>
-                        <div class="sparkle-arrow">&#10230;</div>
-                    </a>
-                    <a href="collection.html?category=bangles" class="sparkle-card" style="background-image: url('assets/indian_gold_bangles.png');">
-                        <div class="sparkle-card-content">
-                            <h3>Bangles</h3>
-                            <p>Where wrists blush with joy</p>
-                        </div>
-                        <div class="sparkle-arrow">&#10230;</div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        
-
-         <!-- New Arrivals Section -->
-        <section class="new-arrivals" style="position: relative; margin: 0 0 8rem 0; padding-bottom: 2rem; background: var(--bg-color);">
-            <!-- Background Banner -->
-            <div style="background-image: url('assets/new_arrivals_bg.png'); background-size: cover; background-position: center; padding: 5rem 5%; height: 450px; position: relative;">
-                <!-- Overlay to ensure text readability -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%);"></div>
-                
-                <div style="position: relative; z-index: 2; max-width: 800px; color: #fff;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
-                        <h2 style="font-size: 3.5rem; font-family: var(--font-heading); margin: 0;">New Arrivals</h2>
-                        <span style="background: rgba(255,255,255,0.25); padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.95rem; font-weight: 600; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: center; gap: 5px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"></path><path d="M11 3 8 9l4 13 4-13-3-6"></path><path d="M2 9h20"></path></svg>
-                            500+ New Items
-                        </span>
-                    </div>
-                    <p style="font-size: 1.2rem; line-height: 1.6; opacity: 0.9; max-width: 600px;">New Arrivals Dropping Daily, Monday through Friday.<br>Explore the Latest Launches Now!</p>
-                </div>
-            </div>
-
-            <!-- Overlapping Cards -->
-            <div style="max-width: 1200px; margin: -120px auto 0; position: relative; z-index: 5; padding: 0 5%; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-                
-                <!-- Card 1 -->
-                <div class="arrival-card" style="flex: 1; min-width: 300px; height: 380px; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.2); cursor: pointer; border: 4px solid #fff; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-image: url('assets/silver_idol.png'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s;" class="arrival-img"></div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2.5rem 2rem 2rem 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff;">
-                        <h3 style="font-size: 1.8rem; margin: 0; font-family: var(--font-heading); font-weight: 500;">Silver Idols</h3>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="arrival-card" style="flex: 1; min-width: 300px; height: 380px; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.2); cursor: pointer; border: 4px solid #fff; transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <div style="background-image: url('assets/station_mangalsutra.png'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.5s;" class="arrival-img"></div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2.5rem 2rem 2rem 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: #fff;">
-                        <h3 style="font-size: 1.8rem; margin: 0; font-family: var(--font-heading); font-weight: 500;">Station Mangalsutra</h3>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Shop By Recipient Section -->
-        <section class="shop-by-recipient" style="padding: 5rem 5%; background-color: #fff; text-align: center;">
-            <h2 style="font-size: 1.8rem; font-family: var(--font-body); color: #333; margin-bottom: 3rem; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;">Shop By Recipient</h2>
+        <!-- Top Styles (Bestsellers with filters) -->
+        <section class="top-styles-section" style="padding: 2rem 5% 5rem; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">Pukhraj Top Styles</h2>
             
-            <div class="recipient-grid">
-                
-                <!-- Gifts For Her -->
-                <a href="collection.html?gender=women" class="recipient-card">
-                    <div class="recipient-img-wrapper">
-                        <img src="https://i.pinimg.com/736x/39/3a/fd/393afda74ab014552e8c15b8fd4d8049.jpg" alt="Gifts For Her">
-                    </div>
-                    <div class="recipient-info">
-                        <h3>Gifts For <strong>Her</strong></h3>
-                        <div class="recipient-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                              <circle cx="12" cy="12" r="12" fill="#000"/>
-                              <polyline points="10 8 14 12 10 16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
+            
 
-                <!-- Gifts For Him -->
-                <a href="collection.html?gender=men" class="recipient-card">
-                    <div class="recipient-img-wrapper">
-                        <img src="https://vyjewelry.shop/cdn/shop/products/925_sterling_silver_mens_italy_chain_bracelet_vy_jewelry_178f89b5-4d23-422d-b77a-5703fae9439a_580x@2x.jpg?v=1597900185" alt="Gifts For Him">
+            <div class="product-grid-4">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="earrings">
+                    <div class="product-img-wrapper">
+                        <span class="badge best-seller">Best Seller</span>
+                        <img src="assets/silver_idol.png" alt="Product">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
                     </div>
-                    <div class="recipient-info">
-                        <h3>Gifts For <strong>Him</strong></h3>
-                        <div class="recipient-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                              <circle cx="12" cy="12" r="12" fill="#000"/>
-                              <polyline points="10 8 14 12 10 16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
+                    <div class="product-info">
+                        <h3>Golden Heart Love Hoops</h3>
+                        <p class="price"><span class="price-sale">₹2,500</span> <span class="price-regular">₹3,500</span> <span class="price-discount">(28% off)</span></p>
                     </div>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- Our World Section -->
-        <section class="our-world" style="padding: 5rem 5%;">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 3.5rem; font-family: var(--font-heading); color: var(--text-color); margin-bottom: 0.5rem;">Pukhraj World</h2>
-                <p style="font-size: 1.2rem; color: #777; font-weight: 300;">A companion for every occasion</p>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card" data-category="mangalsutras">
+                    <div class="product-img-wrapper">
+                        <span class="badge best-seller">Best Seller</span>
+                        <img src="assets/everyday.png" alt="Product">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Crystal Line CZ Bracelet</h3>
+                        <p class="price"><span class="price-sale">₹3,200</span> <span class="price-regular">₹4,500</span> <span class="price-discount">(28% off)</span></p>
+                    </div>
+                </div>
+                <!-- Product 3 (Lifestyle) -->
+                <div class="product-card" data-category="bracelets">
+                    <div class="product-img-wrapper">
+                        <span class="badge best-seller">Best Seller</span>
+                        <img src="assets/j6.jpg" alt="Model" style="object-fit: cover;">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Diamond Motif Bracelet</h3>
+                        <p class="price"><span class="price-sale">₹4,500</span> <span class="price-regular">₹6,500</span> <span class="price-discount">(30% off)</span></p>
+                    </div>
+                </div>
+                <!-- Product 4 (Lifestyle) -->
+                <div class="product-card" data-category="necklaces">
+                    <div class="product-img-wrapper">
+                        <span class="badge best-seller">Best Seller</span>
+                        <img src="assets/j4.jpg" alt="Model" style="object-fit: cover;">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Everyday Chain Necklace</h3>
+                        <p class="price"><span class="price-sale">₹2,800</span> <span class="price-regular">₹4,000</span> <span class="price-discount">(30% off)</span></p>
+                    </div>
+                </div>
             </div>
             
-            <div class="world-grid" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                
-                <!-- Wedding -->
-                <div class="world-item" style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer; height: 550px;">
-                    <div style="background-image: url('assets/j1.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.6s ease;" class="world-img"></div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem 2rem 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-align: center;">
-                        <h3 style="color: #fff; font-size: 2.2rem; font-family: var(--font-heading); margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Wedding</h3>
-                    </div>
-                </div>
+            <a href="new-arrivals.html" class="view-all-link">View all &rarr;</a>
+        </section>
 
-                <!-- Diamond -->
-                <div class="world-item" style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer; height: 550px;">
-                    <div style="background-image: url('assets/j2.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.6s ease;" class="world-img"></div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem 2rem 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-align: center;">
-                        <h3 style="color: #fff; font-size: 2.2rem; font-family: var(--font-heading); margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Diamond</h3>
-                    </div>
-                </div>
+        <!-- Gift Combos Banner -->
+        <section class="promo-banner" style="width: 100%; height: 500px; background-image: url('assets/new_arrivals_bg.png'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: flex-end; padding: 0 10%;">
+            <div class="banner-content" style="text-align: right; color: #fff; background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 4px;">
+                <p style="font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; text-transform: uppercase;">Gift Combos</p>
+                <h2 style="font-size: 3rem; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 1px; color: #fff;">FLAT 50% OFF</h2>
+                <a href="new-arrivals.html" style="color: #fff; text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 2px; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">Shop Now</a>
+            </div>
+        </section>
 
-                <!-- Everyday -->
-                <div class="world-item" style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer; height: 550px;">
-                    <div style="background-image: url('assets/j3.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; transition: transform 0.6s ease;" class="world-img"></div>
-                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem 2rem 2rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-align: center;">
-                        <h3 style="color: #fff; font-size: 2.2rem; font-family: var(--font-heading); margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Everyday</h3>
+        <!-- Shop For Someone -->
+        <section class="shop-for-someone" style="padding: 5rem 5%; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3rem;">Shop For Someone</h2>
+            <div class="shop-recipient-flex" style="display: flex; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
+                <a href="collection.html?filter=her" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
+                    <img src="assets/j5.jpg" alt="Gifts For Her" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
+                        <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Her &rarr;</span>
                     </div>
+                </a>
+                <a href="collection.html?filter=him" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
+                    <img src="assets/925_sterling_silver_mens_italy_chain_bracelet_vy_jewelry_178f89b5-4d23-422d-b77a-5703fae9439a_580x@2x.webp" alt="Gifts For Him" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
+                        <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Him &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- For Every You (Staggered Lifestyle) -->
+        <section class="for-every-you" style="padding: 2rem 5% 5rem; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3rem;">For Every You</h2>
+            <div class="staggered-grid" style="display: flex; gap: 2rem; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
+                <div class="staggered-item small" style="flex: 1; min-width: 250px; position: relative; height: 400px; overflow: hidden; border-radius: 4px;">
+                    <img src="assets/j1.jpg" alt="Office Wear" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="staggered-label" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: #fff; font-weight: 600; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">OFFICE WEAR</div>
+                </div>
+                <div class="staggered-item large" style="flex: 1.2; min-width: 300px; position: relative; height: 550px; overflow: hidden; border-radius: 4px; z-index: 2; margin-top: -30px;">
+                    <img src="assets/j2.jpg" alt="Daily Wear" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="staggered-label" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: #fff; font-weight: 600; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">DAILY WEAR</div>
+                </div>
+                <div class="staggered-item small" style="flex: 1; min-width: 250px; position: relative; height: 400px; overflow: hidden; border-radius: 4px;">
+                    <img src="assets/j7.jpg" alt="Party Wear" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="staggered-label" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: #fff; font-weight: 600; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">PARTY WEAR</div>
                 </div>
             </div>
         </section>
 
-        <!-- Customize Jewelry Section -->
-        <section class="customize-section" style="padding: 5rem 5%;">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="assets/j7.jpg" alt="Jewelry Crafting" style="width: 100%; height: 600px; object-fit: cover; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+        <!-- 18K Fine Gold -->
+        <section class="fine-gold-section" style="padding: 2rem 5% 5rem; background-color: #fff; text-align: center;">
+            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3rem;">18K Fine Gold</h2>
+            <div class="product-grid-4">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper" style="background-color: #f9f9f9; padding: 2rem;">
+                        <img src="assets/gold_rings.png" alt="Product" style="mix-blend-mode: multiply;">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Solid Gold Minimal Ring</h3>
+                        <p class="price"><span class="price-sale">₹12,500</span></p>
+                    </div>
                 </div>
-                <div class="about-content-text" style="display: flex; flex-direction: column; justify-content: center;">
-                    <p class="testimonial-subtitle">BESPOKE SERVICES</p>
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Customize Your <span style="color: var(--primary-color);">Jewelry</span></h2>
-                    <p style="margin-bottom: 2rem; color: #555;">Bring your dream designs to life. Our master artisans work closely with you to create personalized, one-of-a-kind pieces. Whether designing from scratch or reimagining a family heirloom, we ensure your vision is realized with flawless precision.</p>
-                    <ul style="list-style: none; margin-bottom: 2rem; color: #555;">
-                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--primary-color); margin-right: 10px;">✓</strong> Personalized Consultations</li>
-                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--primary-color); margin-right: 10px;">✓</strong> Hand-Drawn & 3D Design Previews</li>
-                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--primary-color); margin-right: 10px;">✓</strong> Flawless Master Craftsmanship</li>
-                    </ul>
-                    <a href="contact.html" class="btn" style="align-self: flex-start;">Start Your Custom Design</a>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper" style="background-color: #f9f9f9; padding: 2rem;">
+                        <img src="assets/silver_necklace.png" alt="Product" style="mix-blend-mode: multiply;">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>18k Gold Chain</h3>
+                        <p class="price"><span class="price-sale">₹18,000</span></p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper" style="background-color: #f9f9f9; padding: 2rem;">
+                        <img src="assets/indian_gold_necklace.png" alt="Product" style="mix-blend-mode: multiply;">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Gold Pendant Necklace</h3>
+                        <p class="price"><span class="price-sale">₹22,500</span></p>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper" style="background-color: #f9f9f9; padding: 2rem;">
+                        <img src="assets/gold_earrings.png" alt="Product" style="mix-blend-mode: multiply;">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Solid Gold Studs</h3>
+                        <p class="price"><span class="price-sale">₹15,000</span></p>
+                    </div>
                 </div>
             </div>
+            
+            <a href="new-arrivals.html" class="view-all-link">View all &rarr;</a>
         </section>
-
-        <!-- Testimonial Section -->
         <section class="testimonial-section-new" style="padding: 5rem 5%; background-color: #fff; text-align: center;">
             <h2 style="font-size: 2.5rem; font-family: var(--font-heading); font-style: italic; color: #2f4f4f; font-weight: 400; margin-bottom: 3rem;">Trusted by our community</h2>
             
@@ -402,28 +356,28 @@
         </section>
 
         <!-- Features Section -->
-        <section class="features-section">
+        <section class="features-section" style="padding: 4rem 5%; background-color: #fff; border-top: 1px solid #f0f0f0;">
             <div class="features-container">
                 <div class="feature-item">
-                    <div class="feature-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 12A4 4 0 0 0 8 12"></path></svg>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 1rem; color: #1a1a1a;">Premium Quality</h3>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">We use only the finest ethically sourced gold and diamonds, ensuring every piece is pure perfection.</p>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a;">18k Gold Plated</h3>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Thick layer of 18k gold on sterling silver for a premium finish.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 1rem; color: #1a1a1a;">Certified Purity</h3>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">Our specialized assessment ensures your delicate jewelry pieces are certified and 100% genuine.</p>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a;">Waterproof & Anti-Tarnish</h3>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Wear it in the shower, the pool, or the gym without worrying.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="6.5"></line></svg>
+                    <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 1rem; color: #1a1a1a;">Master Craftsmanship</h3>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">We maintain the highest standards of craftsmanship, following traditional designs and modern techniques.</p>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a;">Hypoallergenic</h3>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Safe for sensitive skin. No nickel, no lead, no brass.</p>
                 </div>
             </div>
         </section>
@@ -439,7 +393,7 @@
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="new-arrivals.html">Collection</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -455,6 +409,22 @@
             <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Filter Sidebar -->
+    <div class="filter-sidebar-overlay" id="filter-sidebar-overlay"></div>
+    <div class="filter-sidebar" id="filter-sidebar">
+        <div class="filter-sidebar-header">
+            <h3>Filter</h3>
+            <button id="close-filter-sidebar" class="close-filter-btn">&times;</button>
+        </div>
+                <ul class="filter-list" style="list-style: none; padding: 0; margin: 0;">
+            <li><a href="index.html" class="filter-list-item active" style="display:block; text-decoration:none; color:inherit;">All</a></li>
+            <li><a href="necklaces.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Necklace</a></li>
+            <li><a href="bracelets.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Bracelets</a></li>
+            <li><a href="rings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Rings</a></li>
+            <li><a href="earrings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Earrings</a></li>
+        </ul>
+    </div>
 
     <script src="script.js"></script>
 </body>

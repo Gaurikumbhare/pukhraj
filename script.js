@@ -352,13 +352,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalMetalType = document.getElementById('modal-metal-type');
 
     function openModal(card) {
-        const title = card.querySelector('h3').textContent;
-        const price = card.querySelector('p').textContent;
+        const title = card.querySelector('h3') ? card.querySelector('h3').textContent : 'Product';
+        const priceEl = card.querySelector('.price-sale') || card.querySelector('.price') || card.querySelector('p');
+        const price = priceEl ? priceEl.textContent.trim() : '₹0';
         let bgImg = '';
-        if (card.querySelector('.card-img')) {
+        if (card.querySelector('.product-img-wrapper img')) {
+            bgImg = `url("${card.querySelector('.product-img-wrapper img').src}")`;
+        } else if (card.querySelector('.card-img')) {
             bgImg = card.querySelector('.card-img').style.backgroundImage;
         } else if (card.querySelector('.arrival-img')) {
             bgImg = card.querySelector('.arrival-img').style.backgroundImage;
+        } else if (card.querySelector('img')) {
+            bgImg = `url("${card.querySelector('img').src}")`;
         }
         
         const desc = card.getAttribute('data-description') || "Indulge in our artisanal jewelry piece. Handcrafted with the finest materials and a perfect balance of elegance and tradition.";
@@ -423,15 +428,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if(closeModal) closeModal.addEventListener('click', closeModalFunc);
     if(modalOverlay) modalOverlay.addEventListener('click', closeModalFunc);
 
-    // Open modal when clicking on card image or title
-    document.querySelectorAll('.card-img, .card h3').forEach(el => {
-        el.style.cursor = 'pointer';
-        el.addEventListener('click', (e) => {
-            const card = e.target.closest('.card');
+    // Open modal when clicking anywhere on the product card
+    document.querySelectorAll('.card, .product-card').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            // Ignore if clicked on a button or link inside the card
+            if (e.target.closest('button') || e.target.closest('.wishlist-btn') || e.target.closest('.add-to-cart-btn') || e.target.closest('a')) return;
             openModal(card);
         });
     });
 
+    
     // Initialize UI
     updateCartUI();
 
@@ -631,12 +638,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     // --- Search & Profile Icon Logic ---
-    const searchBtn = document.querySelector('a[title="Search"]');
+    var searchBtn = document.querySelector('a[title="Search"]');
     const profileBtn = document.querySelector('a[title="Profile"]');
     
     const searchModalDOM = document.getElementById('search-modal');
     const closeSearch = document.getElementById('close-search');
-    const searchInput = document.getElementById('search-input');
+    var searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
     
     const loginModalDOM = document.getElementById('login-modal');
@@ -743,5 +750,90 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Welcome! You have successfully logged in.');
             closeLoginFunc();
         });
+    }
+
+    // Search Logic
+    var searchInput = document.getElementById('top-search-input');
+    var searchBtn = document.getElementById('top-search-btn');
+    
+    function performSearch() {
+        if (!searchInput) return;
+        const query = searchInput.value.toLowerCase();
+        const allCards = document.querySelectorAll('.product-card');
+        
+        allCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+    }
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+    }
+
+    // Filter Sidebar Logic
+    const openFilterBtn = document.getElementById('open-filter-btn');
+    const closeFilterBtn = document.getElementById('close-filter-sidebar');
+    const filterSidebar = document.getElementById('filter-sidebar');
+    const filterOverlay = document.getElementById('filter-sidebar-overlay');
+    
+    function openFilter() {
+        if (!filterSidebar || !filterOverlay) return;
+        filterOverlay.classList.add('show');
+        setTimeout(() => {
+            filterOverlay.classList.add('open');
+            filterSidebar.classList.add('open');
+        }, 10);
+    }
+
+    function closeFilter() {
+        if (!filterSidebar || !filterOverlay) return;
+        filterSidebar.classList.remove('open');
+        filterOverlay.classList.remove('open');
+        setTimeout(() => {
+            filterOverlay.classList.remove('show');
+        }, 300);
+    }
+
+    if (openFilterBtn) openFilterBtn.addEventListener('click', openFilter);
+    if (closeFilterBtn) closeFilterBtn.addEventListener('click', closeFilter);
+    if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
+
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // URL Filter Logic
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterType = urlParams.get('filter');
+    if (filterType) {
+        const allCards = document.querySelectorAll('.product-card');
+        allCards.forEach(card => {
+            const gender = card.getAttribute('data-gender');
+            if (gender === filterType || !gender) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        const heroTitle = document.querySelector('.hero-serif-title');
+        const heroSub = document.querySelector('.hero-small-text');
+        if (heroTitle) {
+            heroTitle.textContent = filterType === 'her' ? 'Gifts For Her' : 'Gifts For Him';
+        }
+        if (heroSub) {
+            heroSub.textContent = filterType === 'her' ? 'Curated elegance for the woman you love' : 'Distinguished pieces for him';
+        }
     }
 });
