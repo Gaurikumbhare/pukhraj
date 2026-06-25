@@ -9,6 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Search Modal -->
+    <div class="login-modal-overlay" id="search-modal-overlay"></div>
+    <div class="search-modal" id="search-modal" style="width: 90%; max-width: 500px; text-align: center;">
+        <h2 style="font-family: var(--font-heading); margin-bottom: 1.5rem;">Search</h2>
+        <div class="search-container" style="display: flex; align-items: center; border-bottom: 2px solid #eee;">
+            <input type="text" id="mobile-search-input" placeholder="Search for Necklaces..." style="flex: 1; border: none; outline: none; padding: 1rem; font-size: 1.2rem;">
+            <button id="mobile-search-btn" style="background: none; border: none; cursor: pointer; padding: 1rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+        <button id="close-search-modal" style="margin-top: 1.5rem; padding: 0.8rem 2rem; background: #333; color: #fff; border: none; cursor: pointer;">Close</button>
+    </div>
+
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <span>PUKHRAJ: Plan Of Purchase</span>
@@ -34,12 +47,13 @@
             </div>
 
             <div class="nav-actions-new">
-                <a href="#" class="icon-btn-new" title="Store">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+
+                <a href="#" class="icon-btn-new mobile-search-icon" title="Search" style="display: none;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </a>
-                <a href="#" class="icon-btn-new cart-icon-new" title="Wishlist">
+                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span class="badge-count">0</span>
+                    <span class="badge-count" id="wishlist-count">0</span>
                 </a>
                 <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
@@ -76,8 +90,7 @@
         <section id="home" class="hero-static" style="background-image: url('assets/j8.jpg');">
             <div class="hero-overlay"></div>
             
-            <button class="hero-arrow hero-prev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-            <button class="hero-arrow hero-next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+
             
             <div class="hero-content-right">
                 <h1 class="hero-serif-title">Free 9KT Gold Pendant</h1>
@@ -180,7 +193,7 @@
                 </div>
             </div>
             
-            <a href="new-arrivals.html" class="view-all-link">View all &rarr;</a>
+            <a href="collection.html" class="view-all-link">View all &rarr;</a>
         </section>
 
         <!-- Gift Combos Banner -->
@@ -280,7 +293,7 @@
                 </div>
             </div>
             
-            <a href="new-arrivals.html" class="view-all-link">View all &rarr;</a>
+            <a href="collection.html" class="view-all-link">View all &rarr;</a>
         </section>
         <section class="testimonial-section-new" style="padding: 5rem 5%; background-color: #fff; text-align: center;">
             <h2 style="font-size: 2.5rem; font-family: var(--font-heading); font-style: italic; color: #2f4f4f; font-weight: 400; margin-bottom: 3rem;">Trusted by our community</h2>
@@ -393,7 +406,7 @@
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="new-arrivals.html">Collection</a></li>
+                    <li><a href="collection.html">Collection</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>

@@ -17,13 +17,13 @@ window.toggleAccordion = function(element) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    const navbarBottom = document.querySelector('.navbar-bottom');
 
-    if(mobileMenu) {
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    if (mobileMenuBtn && navbarBottom) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navbarBottom.classList.toggle('active');
         });
     }
 
@@ -44,6 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
     <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="cart-sidebar" id="wishlist-sidebar">
+        <div class="cart-header">
+            <h2>Your Wishlist</h2>
+            <button id="close-wishlist" class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="wishlist-items-container">
+            <p style="padding: 1rem; color: #777;">Your wishlist is empty.</p>
+        </div>
+    </div>
+    <div class="cart-overlay" id="wishlist-overlay"></div>
 
     <!-- Product Modal -->
     <div class="product-modal-overlay" id="product-modal-overlay"></div>
@@ -68,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                                 <span>METAL DETAILS</span>
                             </div>
-                            <span class="acc-icon">&#10094;</span>
+                            <span class="acc-icon">&#10095;</span>
                         </div>
                         <div class="accordion-content" style="display: block;">
                             <div class="acc-grid">
@@ -371,49 +383,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const metalStr = card.getAttribute('data-metal') || "22K Gold"; // E.g. "22K Gold"
         const weight = card.getAttribute('data-weight') || "1.867g";
         
-        modalTitle.textContent = title;
-        modalPrice.textContent = price;
-        modalDesc.textContent = desc;
-        if (modalImg) modalImg.style.backgroundImage = bgImg;
+        const params = new URLSearchParams({
+            title: title,
+            price: price,
+            img: bgImg,
+            desc: desc,
+            id: itemId,
+            metal: metalStr,
+            weight: weight
+        });
         
-        if (modalItemId) modalItemId.textContent = itemId;
-        
-        if (modalMetalKarat) {
-            modalMetalKarat.textContent = metalStr.split(' ')[0] || '22K';
-        }
-        if (modalMetalType) {
-            modalMetalType.textContent = metalStr.split(' ')[1] || 'Gold';
-        }
-        if (modalMetalWeight) {
-            modalMetalWeight.textContent = weight;
-        }
-        
-        // Setup Add to Cart inside modal
-        modalAddToCartBtn.onclick = () => {
-            const rawPrice = price.replace(/[^0-9]/g, '');
-            const id = title.toLowerCase().replace(/[^a-z0-9]/g, '-');
-            addToCart(id, title, rawPrice);
-            
-            // Give user feedback
-            modalAddToCartBtn.textContent = "Added to Cart ✓";
-            modalAddToCartBtn.style.backgroundColor = "green";
-            modalAddToCartBtn.style.color = "white";
-            
-            setTimeout(() => {
-                modalAddToCartBtn.textContent = "Add to Cart";
-                modalAddToCartBtn.style.backgroundColor = "";
-                modalAddToCartBtn.style.color = "";
-            }, 2000);
-        };
-
-        modalOverlay.classList.add('show');
-        modal.classList.add('show');
-        
-        // Small delay for transition
-        setTimeout(() => {
-            modalOverlay.classList.add('open');
-            modal.classList.add('open');
-        }, 10);
+        window.location.href = 'product.html?' + params.toString();
     }
 
     function closeModalFunc() {
@@ -813,15 +793,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // URL Filter Logic
+    // URL Filter & Search Logic
     const urlParams = new URLSearchParams(window.location.search);
     const filterType = urlParams.get('filter');
-    if (filterType) {
+    const searchQuery = urlParams.get('search');
+    
+    if (filterType || searchQuery) {
         const allCards = document.querySelectorAll('.product-card');
+        let visibleCount = 0;
+        
         allCards.forEach(card => {
-            const gender = card.getAttribute('data-gender');
-            if (gender === filterType || !gender) {
+            let showCard = true;
+            
+            if (filterType) {
+                const gender = card.getAttribute('data-gender');
+                if (gender !== filterType && gender) {
+                    showCard = false;
+                }
+            }
+            
+            if (searchQuery && showCard) {
+                const title = card.querySelector('h3');
+                if (title && !title.textContent.toLowerCase().includes(searchQuery.toLowerCase())) {
+                    showCard = false;
+                }
+            }
+            
+            if (showCard) {
                 card.style.display = 'block';
+                visibleCount++;
             } else {
                 card.style.display = 'none';
             }
@@ -829,11 +829,227 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const heroTitle = document.querySelector('.hero-serif-title');
         const heroSub = document.querySelector('.hero-small-text');
-        if (heroTitle) {
+        
+        if (filterType && heroTitle) {
             heroTitle.textContent = filterType === 'her' ? 'Gifts For Her' : 'Gifts For Him';
-        }
-        if (heroSub) {
-            heroSub.textContent = filterType === 'her' ? 'Curated elegance for the woman you love' : 'Distinguished pieces for him';
+            if (heroSub) heroSub.textContent = filterType === 'her' ? 'Curated elegance for the woman you love' : 'Distinguished pieces for him';
+        } else if (searchQuery && heroTitle) {
+            heroTitle.textContent = `Search Results: "${searchQuery}"`;
+            if (heroSub) heroSub.textContent = `Found ${visibleCount} items`;
         }
     }
+});
+
+// Search Trigger Logic
+document.addEventListener('DOMContentLoaded', () => {
+    // Desktop Search
+    const searchInput = document.getElementById('top-search-input');
+    const searchBtn = document.getElementById('top-search-btn');
+    
+    // Mobile Search Modal
+    const mobileSearchIcon = document.querySelector('.mobile-search-icon');
+    const searchModal = document.getElementById('search-modal');
+    const searchModalOverlay = document.getElementById('search-modal-overlay');
+    const closeSearchModalBtn = document.getElementById('close-search-modal');
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+    const mobileSearchBtn = document.getElementById('mobile-search-btn');
+    
+    function executeSearch(inputElement) {
+        if (!inputElement) return;
+        const query = inputElement.value.trim();
+        if (query) {
+            window.location.href = `collection.html?search=${encodeURIComponent(query)}`;
+        }
+    }
+    
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => executeSearch(searchInput));
+    }
+    
+    if (searchInput) {
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                executeSearch(searchInput);
+            }
+        });
+    }
+
+    // Mobile Search Modal Logic
+    function openSearchModal(e) {
+        if (e) e.preventDefault();
+        if (searchModal && searchModalOverlay) {
+            searchModal.classList.add('show');
+            searchModalOverlay.classList.add('show');
+            if (mobileSearchInput) mobileSearchInput.focus();
+        }
+    }
+
+    function closeSearchModal() {
+        if (searchModal && searchModalOverlay) {
+            searchModal.classList.remove('show');
+            searchModalOverlay.classList.remove('show');
+        }
+    }
+
+    if (mobileSearchIcon) mobileSearchIcon.addEventListener('click', openSearchModal);
+    if (closeSearchModalBtn) closeSearchModalBtn.addEventListener('click', closeSearchModal);
+    if (searchModalOverlay) searchModalOverlay.addEventListener('click', closeSearchModal);
+
+    if (mobileSearchBtn) {
+        mobileSearchBtn.addEventListener('click', () => executeSearch(mobileSearchInput));
+    }
+    
+    if (mobileSearchInput) {
+        mobileSearchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                executeSearch(mobileSearchInput);
+            }
+        });
+    }
+});
+
+// Wishlist Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const wishlistBadge = document.getElementById('wishlist-count');
+    const wishlistIcon = document.getElementById('wishlist-icon');
+    const wishlistSidebar = document.getElementById('wishlist-sidebar');
+    const wishlistOverlay = document.getElementById('wishlist-overlay');
+    const closeWishlistBtn = document.getElementById('close-wishlist');
+    const wishlistItemsContainer = document.getElementById('wishlist-items-container');
+
+    let wishlistItems = JSON.parse(localStorage.getItem('wishlist') || '[]');
+
+    function updateWishlistBadge() {
+        if (wishlistBadge) {
+            wishlistBadge.textContent = wishlistItems.length;
+        }
+    }
+    
+    function renderWishlist() {
+        if (!wishlistItemsContainer) return;
+        wishlistItemsContainer.innerHTML = '';
+        if (wishlistItems.length === 0) {
+            wishlistItemsContainer.innerHTML = '<p style="padding: 1rem; color: #777;">Your wishlist is empty.</p>';
+            return;
+        }
+        
+        wishlistItems.forEach((item, index) => {
+            const itemObj = typeof item === 'string' ? { title: item, price: '', image: '' } : item;
+            
+            const div = document.createElement('div');
+            div.className = 'cart-item'; // Reuse cart-item styles
+            div.innerHTML = `
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    ${itemObj.image ? `<img src="${itemObj.image}" alt="${itemObj.title}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">` : ''}
+                    <div>
+                        <h4 style="font-size: 0.9rem; margin: 0 0 0.2rem;">${itemObj.title}</h4>
+                        <p style="font-size: 0.8rem; color: #777; margin: 0;">${itemObj.price}</p>
+                    </div>
+                </div>
+                <button class="remove-wishlist-item" data-index="${index}" style="background: none; border: none; color: red; cursor: pointer; font-size: 1.2rem;">&times;</button>
+            `;
+            wishlistItemsContainer.appendChild(div);
+        });
+
+        // Add event listeners for remove buttons
+        document.querySelectorAll('.remove-wishlist-item').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = e.target.getAttribute('data-index');
+                const removedItem = wishlistItems[idx];
+                const removedTitle = typeof removedItem === 'string' ? removedItem : removedItem.title;
+                
+                wishlistItems.splice(idx, 1);
+                localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+                
+                // Un-highlight product card button if visible
+                document.querySelectorAll('.wishlist-btn').forEach(wBtn => {
+                    const card = wBtn.closest('.product-card');
+                    if (card && card.querySelector('h3') && card.querySelector('h3').textContent.trim() === removedTitle) {
+                        wBtn.classList.remove('active');
+                    }
+                });
+
+                updateWishlistBadge();
+                renderWishlist();
+            });
+        });
+    }
+
+    function openWishlist(e) {
+        if (e) e.preventDefault();
+        if (wishlistSidebar && wishlistOverlay) {
+            renderWishlist();
+            wishlistSidebar.classList.add('open');
+            wishlistOverlay.classList.add('open');
+        }
+    }
+
+    function closeWishlist() {
+        if (wishlistSidebar && wishlistOverlay) {
+            wishlistSidebar.classList.remove('open');
+            wishlistOverlay.classList.remove('open');
+        }
+    }
+
+    if (wishlistIcon) wishlistIcon.addEventListener('click', openWishlist);
+    if (closeWishlistBtn) closeWishlistBtn.addEventListener('click', closeWishlist);
+    if (wishlistOverlay) wishlistOverlay.addEventListener('click', closeWishlist);
+
+    updateWishlistBadge();
+
+    const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+    wishlistButtons.forEach(btn => {
+        const productCard = btn.closest('.product-card');
+        if (!productCard) return;
+        
+        const titleElement = productCard.querySelector('h3');
+        const priceElement = productCard.querySelector('.price-sale');
+        const imgElement = productCard.querySelector('img');
+        
+        if (!titleElement) return;
+        
+        const productId = titleElement.textContent.trim();
+        const productPrice = priceElement ? priceElement.textContent.trim() : '';
+        const productImage = imgElement ? imgElement.getAttribute('src') : '';
+
+        // Check if already in wishlist
+        const isInWishlist = wishlistItems.some(item => {
+            if (typeof item === 'string') return item === productId;
+            return item.title === productId;
+        });
+
+        if (isInWishlist) {
+            btn.classList.add('active');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent opening product page
+            
+            const itemIndex = wishlistItems.findIndex(item => {
+                if (typeof item === 'string') return item === productId;
+                return item.title === productId;
+            });
+            
+            if (itemIndex > -1) {
+                // Remove
+                wishlistItems.splice(itemIndex, 1);
+                btn.classList.remove('active');
+            } else {
+                // Add
+                wishlistItems.push({
+                    title: productId,
+                    price: productPrice,
+                    image: productImage
+                });
+                btn.classList.add('active');
+            }
+            
+            localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+            updateWishlistBadge();
+            renderWishlist();
+        });
+    });
 });
