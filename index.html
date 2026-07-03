@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=12">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+
+<style>
+@media (min-width: 769px) {
+    .close-menu-btn {
+        display: none !important;
+    }
+}
+</style>
+
 </head>
 <body>
     <!-- Search Modal -->
@@ -19,7 +30,7 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </button>
         </div>
-        <button id="close-search-modal" style="margin-top: 1.5rem; padding: 0.8rem 2rem; background: #333; color: #fff; border: none; cursor: pointer;">Close</button>
+        <button id="close-search-modal" style="margin-top: 1.5rem; padding: 0.8rem 2rem; background: var(--text-color); color: #fff; border: none; cursor: pointer;">Close</button>
     </div>
 
     <!-- Announcement Bar -->
@@ -29,48 +40,14 @@
 
     <!-- Main Navbar -->
     <nav class="navbar-new">
-        <!-- Top Row -->
-        <div class="navbar-top">
-            <div class="logo-new">PUKHRAJ</div>
+        <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
             
-            <div class="search-container-top">
-                <div class="pincode-label">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Enter Pincode</span> <span class="arrow-down">&#9662;</span>
-                </div>
-                <div class="search-input-wrapper">
-                    <input type="text" id="top-search-input" placeholder="Search for Necklaces...|">
-                    <button class="search-btn-icon" id="top-search-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    </button>
-                </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </div>
-
-            <div class="nav-actions-new">
-
-                <a href="#" class="icon-btn-new mobile-search-icon" title="Search" style="display: none;">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </a>
-                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span class="badge-count" id="wishlist-count">0</span>
-                </a>
-                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    <span class="cart-count">0</span>
-                </div>
-                <a href="#" class="icon-btn-new" title="Offers">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                </a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3b0e10" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bottom Row -->
-                        <div class="navbar-bottom">
+            <div class="logo-new">PUKHRAJ</div>
             <ul class="nav-links-new">
+                <button class="close-menu-btn">&times;</button>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="new-arrivals.html">New Arrivals</a></li>
                 <li><a href="best-seller.html">Best Seller</a></li>
@@ -81,8 +58,24 @@
                 <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
+            <div class="nav-actions-new">
+                <a href="#" class="icon-btn-new mobile-search-icon" title="Search" style="display: none;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </a>
+                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span class="badge-count" id="wishlist-count" style="position: absolute; top: -4px; right: -6px;">0</span>
+                </a>
+                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
+                </div>
+                <a href="#" class="icon-btn-new" title="Lightning">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </a>
+            </div>
         </div>
-    </nav>
+</nav>
 
     <main>
         <!-- Hero Slider Section -->
@@ -105,40 +98,25 @@
 
 
         
-        <!-- Everyday Demifine Jewellery (Categories) -->
-        <section class="category-circles-section" style="padding: 4rem 5%; background-color: #fff; text-align: center;">
-            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem;">Everyday Demifine Jewellery</h2>
-            <div class="category-circles">
-                <a href="earrings.html" class="category-circle-item">
-                    <div class="circle-img" style="background-image: url('assets/gold_earrings.png');"></div>
-                    <span>Earrings</span>
-                </a>
-                <a href="necklaces.html" class="category-circle-item">
-                    <div class="circle-img" style="background-image: url('assets/silver_necklace.png');"></div>
-                    <span>Necklaces</span>
-                </a>
-                <a href="bracelets.html" class="category-circle-item">
-                    <div class="circle-img" style="background-image: url('assets/indian_gold_bangles.png');"></div>
-                    <span>Bracelets</span>
-                </a>
-                <a href="rings.html" class="category-circle-item">
-                    <div class="circle-img" style="background-image: url('assets/gold_rings.png');"></div>
-                    <span>Rings</span>
-                </a>
-                <a href="new-arrivals.html" class="category-circle-item">
-                    <div class="circle-img" style="background-image: url('assets/station_mangalsutra.png');"></div>
-                    <span>Mangalsutra</span>
-                </a>
-                <a href="new-arrivals.html" class="category-circle-item">
-                    <div class="circle-img" style="background-image: url('assets/silver_idol.png');"></div>
-                    <span>Men</span>
-                </a>
-            </div>
-        </section>
-
         <!-- Top Styles (Bestsellers with filters) -->
         <section class="top-styles-section" style="padding: 2rem 5% 5rem; background-color: #fff; text-align: center;">
             <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">Pukhraj Top Styles</h2>
+
+            
+
+
+            <div class="filter-menu-container" style="margin-bottom: 3rem !important; margin-top: 1.5rem !important;">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="necklaces">NECKLACES</button>
+                <button class="filter-btn" data-filter="bracelets">BRACELETS</button>
+                <button class="filter-btn" data-filter="earrings">EARRINGS</button>
+                <button class="filter-btn" data-filter="rings">RINGS</button>
+                <button class="filter-btn" data-filter="mens">MENS</button>
+                <button class="filter-btn" data-filter="mangalsutras">MANGALSUTRA</button>
+            </div>
+
+
+
             
             
 
@@ -209,18 +187,21 @@
         <section class="shop-for-someone" style="padding: 5rem 5%; background-color: #fff; text-align: center;">
             <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3rem;">Shop For Someone</h2>
             <div class="shop-recipient-flex" style="display: flex; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
-                <a href="collection.html?filter=her" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
-                    <img src="assets/j5.jpg" alt="Gifts For Her" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
-                        <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Her &rarr;</span>
-                    </div>
+                  <a href="collection.html?filter=her" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
+                      <img src="assets/j5.jpg" alt="Gifts For Her" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                      <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
+                          <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Her &rarr;</span>
+                      </div>
+                  </a>
+                  <a href="collection.html?filter=him" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
+                      <img src="assets/925_sterling_silver_mens_italy_chain_bracelet_vy_jewelry_178f89b5-4d23-422d-b77a-5703fae9439a_580x@2x.webp" alt="Gifts For Him" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                      <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
+                          <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Him &rarr;</span>
+                      </div>
+                  </a>
+              </div>
                 </a>
-                <a href="collection.html?filter=him" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
-                    <img src="assets/925_sterling_silver_mens_italy_chain_bracelet_vy_jewelry_178f89b5-4d23-422d-b77a-5703fae9439a_580x@2x.webp" alt="Gifts For Him" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                    <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
-                        <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Him &rarr;</span>
-                    </div>
-                </a>
+                
             </div>
         </section>
 
@@ -300,17 +281,17 @@
             
             <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; position: relative;">
                 <!-- Left Arrow -->
-                <button style="background: #000; color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; position: absolute; left: 0; z-index: 10;">
+                <button style="background: var(--primary-color); color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; position: absolute; left: 0; z-index: 10;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 </button>
                 
                 <div class="reviews-grid" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; width: 90%; max-width: 1200px; margin: 0 auto; padding-bottom: 1rem; scrollbar-width: none; -ms-overflow-style: none;">
                     <!-- Review 1 -->
                     <div class="review-card" style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 300px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                        <div style="color: #333; margin-bottom: 0.5rem;">
+                        <div style="color: var(--text-color); margin-bottom: 0.5rem;">
                             ★ ★ ★ ★ ★
                         </div>
-                        <h4 style="font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: #333; margin-bottom: 1rem;">Amila M.</h4>
+                        <h4 style="font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--text-color); margin-bottom: 1rem;">Amila M.</h4>
                         <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">They are soooo pretty. I always wished to have such earrings in real gold, but gold is sooo expensive now. So i am glad i stumbled into Palmonas. Thank you and keep up the awesome work. Love and God bless you all.</p>
                         
                         <!-- Product Link Card -->
@@ -318,16 +299,16 @@
                             <div style="width: 50px; height: 50px; background: #fff; border-radius: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                                 <img src="assets/gold_earrings.png" alt="Product" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                             </div>
-                            <a href="#" style="color: #333; text-decoration: underline; font-weight: 500; font-size: 0.9rem;">Golden Heart Love Hoops</a>
+                            <a href="#" style="color: var(--text-color); text-decoration: underline; font-weight: 500; font-size: 0.9rem;">Golden Heart Love Hoops</a>
                         </div>
                     </div>
 
                     <!-- Review 2 -->
                     <div class="review-card" style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 300px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                        <div style="color: #333; margin-bottom: 0.5rem;">
+                        <div style="color: var(--text-color); margin-bottom: 0.5rem;">
                             ★ ★ ★ ★ ★
                         </div>
-                        <h4 style="font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: #333; margin-bottom: 1rem;">Yash K.</h4>
+                        <h4 style="font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--text-color); margin-bottom: 1rem;">Yash K.</h4>
                         <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">My experience was amazing after purchasing this product. I was eagerly waiting to buy this. Price and quality is amazing you can buy it. It's give a tough competition to gold products.</p>
                         
                         <!-- Product Link Card -->
@@ -335,16 +316,16 @@
                             <div style="width: 50px; height: 50px; background: #fff; border-radius: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                                 <img src="assets/gold_rings.png" alt="Product" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                             </div>
-                            <a href="#" style="color: #333; text-decoration: underline; font-weight: 500; font-size: 0.9rem;">Small Heart Hoop Earrings</a>
+                            <a href="#" style="color: var(--text-color); text-decoration: underline; font-weight: 500; font-size: 0.9rem;">Small Heart Hoop Earrings</a>
                         </div>
                     </div>
 
                     <!-- Review 3 -->
                     <div class="review-card" style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 300px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                        <div style="color: #333; margin-bottom: 0.5rem;">
+                        <div style="color: var(--text-color); margin-bottom: 0.5rem;">
                             ★ ★ ★ ★ ★
                         </div>
-                        <h4 style="font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: #333; margin-bottom: 1rem;">Deepali B.</h4>
+                        <h4 style="font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--text-color); margin-bottom: 1rem;">Deepali B.</h4>
                         <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">Its the exact product shown in the image. Great for styling in different occasion and everyday use too.</p>
                         
                         <!-- Product Link Card -->
@@ -352,19 +333,19 @@
                             <div style="width: 50px; height: 50px; background: #fff; border-radius: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                                 <img src="assets/gold_rings.png" alt="Product" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                             </div>
-                            <a href="#" style="color: #333; text-decoration: underline; font-weight: 500; font-size: 0.9rem;">Chevron Ring</a>
+                            <a href="#" style="color: var(--text-color); text-decoration: underline; font-weight: 500; font-size: 0.9rem;">Chevron Ring</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Arrow -->
-                <button style="background: #000; color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; position: absolute; right: 0; z-index: 10;">
+                <button style="background: var(--primary-color); color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; position: absolute; right: 0; z-index: 10;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
             </div>
             
             <div style="margin-top: 3rem;">
-                <a href="contact.html" style="display: inline-block; padding: 1rem 2rem; border: 1px solid #000; color: #000; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; transition: background 0.3s, color 0.3s;" onmouseover="this.style.background='#000'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#000';">View All Reviews</a>
+                <a href="contact.html" style="display: inline-block; padding: 1rem 2rem; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; text-transform: uppercase; font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; transition: background 0.3s, color 0.3s;" onmouseover="this.style.background='var(--primary-color)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--primary-color)';">View All Reviews</a>
             </div>
         </section>
 
@@ -373,23 +354,23 @@
             <div class="features-container">
                 <div class="feature-item">
                     <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 12A4 4 0 0 0 8 12"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--text-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 12A4 4 0 0 0 8 12"></path></svg>
                     </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a;">18k Gold Plated</h3>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color);">18k Gold Plated</h3>
                     <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Thick layer of 18k gold on sterling silver for a premium finish.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--text-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
                     </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a;">Waterproof & Anti-Tarnish</h3>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color);">Waterproof & Anti-Tarnish</h3>
                     <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Wear it in the shower, the pool, or the gym without worrying.</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--text-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                     </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a;">Hypoallergenic</h3>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color);">Hypoallergenic</h3>
                     <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Safe for sensitive skin. No nickel, no lead, no brass.</p>
                 </div>
             </div>
@@ -439,6 +420,6 @@
         </ul>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=8"></script>
 </body>
 </html>
