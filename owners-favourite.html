@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 .product-card .product-img-wrapper { height: auto !important; aspect-ratio: 1/1 !important; }
+
+@media (min-width: 769px) {
+    .close-menu-btn { display: none !important; }
+    .nav-accordion-item { display: none !important; }
+}
 </style>
 </head>
 <body>
@@ -20,8 +25,13 @@
     <!-- Main Navbar -->
     <nav class="navbar-new">
         <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
+            <div class="menu-toggle" id="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
             <div class="logo-new">PUKHRAJ</div>
             <ul class="nav-links-new">
+                <button class="close-menu-btn">&times;</button>
+                
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="new-arrivals.html">New Arrivals</a></li>
                 <li><a href="best-seller.html">Best Seller</a></li>
@@ -44,16 +54,14 @@
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                     <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
                 </div>
-                <a href="#" class="icon-btn-new" title="Lightning">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                </a>
+                
             </div>
         </div>
 </nav>
 
         <main>
                 <!-- Hero Banner Header -->
-        <section class="hero-static" style="background-image: url('assets/image copy 6.png'); background-size: cover; background-position: center 30%; height: 600px; position: relative; margin-bottom: 3rem;">
+        <section class="hero-static" style="background-image: url('assets/image copy 12.png'); background-size: cover; background-position: center; height: 600px; position: relative; margin-bottom: 3rem;">
             <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.8) 100%);"></div>
             <div class="hero-content-right" style="position: absolute; top: 50%; right: 10%; transform: translateY(-50%); text-align: center; color: #fff; z-index: 2; max-width: 500px;">
                 <h1 class="hero-serif-title" style="font-size: 3.5rem; margin-bottom: 1rem; font-family: var(--font-heading); font-style: italic; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Owner's Favourite</h1>
@@ -74,7 +82,7 @@
                         <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
                     </div>
                     <div class="product-info">
-                        <h3>Golden Heart Love Hoops</h3>
+                        <h3>Aurélia Gold Hoops</h3>
                         <p class="price"><span class="price-sale">₹2,500</span> <span class="price-regular">₹3,500</span> <span class="price-discount">(28% off)</span></p>
                     </div>
                 </div>
@@ -82,11 +90,11 @@
                 <div class="product-card" data-category="mangalsutras">
                     <div class="product-img-wrapper">
                         <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 2.png" alt="Product">
+                        <img src="assets/image copy 2.png" alt="Product" style="object-position: center bottom;">
                         <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
                     </div>
                     <div class="product-info">
-                        <h3>Crystal Line CZ Bracelet</h3>
+                        <h3>Emerald CZ Necklace</h3>
                         <p class="price"><span class="price-sale">₹3,200</span> <span class="price-regular">₹4,500</span> <span class="price-discount">(28% off)</span></p>
                     </div>
                 </div>
@@ -94,11 +102,11 @@
                 <div class="product-card" data-category="bracelets">
                     <div class="product-img-wrapper">
                         <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 4.png" alt="Model" style="object-fit: cover;">
+                        <img src="assets/image copy 4.png" alt="Model">
                         <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
                     </div>
                     <div class="product-info">
-                        <h3>Diamond Motif Bracelet</h3>
+                        <h3>Emerald Teardrop Pendant</h3>
                         <p class="price"><span class="price-sale">₹4,500</span> <span class="price-regular">₹6,500</span> <span class="price-discount">(30% off)</span></p>
                     </div>
                 </div>
@@ -106,11 +114,11 @@
                 <div class="product-card" data-category="necklaces">
                     <div class="product-img-wrapper">
                         <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 7.png" alt="Model" style="object-fit: cover;">
+                        <img src="assets/image copy 7.png" alt="Model">
                         <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
                     </div>
                     <div class="product-info">
-                        <h3>Everyday Chain Necklace</h3>
+                        <h3>Rose Gold Diamond Ring</h3>
                         <p class="price"><span class="price-sale">₹2,800</span> <span class="price-regular">₹4,000</span> <span class="price-discount">(30% off)</span></p>
                     </div>
                 </div>

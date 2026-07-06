@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 .product-card .product-img-wrapper { height: auto !important; aspect-ratio: 1/1 !important; }
+
+@media (min-width: 769px) {
+    .close-menu-btn { display: none !important; }
+    .nav-accordion-item { display: none !important; }
+}
 </style>
 </head>
 <body>
@@ -20,8 +25,13 @@
     <!-- Main Navbar -->
     <nav class="navbar-new">
         <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
+            <div class="menu-toggle" id="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
             <div class="logo-new">PUKHRAJ</div>
             <ul class="nav-links-new">
+                <button class="close-menu-btn">&times;</button>
+                
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="new-arrivals.html">New Arrivals</a></li>
                 <li><a href="best-seller.html">Best Seller</a></li>
@@ -44,9 +54,7 @@
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                     <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
                 </div>
-                <a href="#" class="icon-btn-new" title="Lightning">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                </a>
+                
             </div>
         </div>
 </nav>

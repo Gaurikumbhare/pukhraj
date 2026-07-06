@@ -19,11 +19,18 @@ window.toggleAccordion = function(element) {
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu');
-    const navbarBottom = document.querySelector('.navbar-bottom');
+    const navLinksNew = document.querySelector('.nav-links-new');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
 
-    if (mobileMenuBtn && navbarBottom) {
+    if (mobileMenuBtn && navLinksNew) {
         mobileMenuBtn.addEventListener('click', () => {
-            navbarBottom.classList.toggle('active');
+            navLinksNew.classList.add('active');
+        });
+    }
+    
+    if (closeMenuBtn && navLinksNew) {
+        closeMenuBtn.addEventListener('click', () => {
+            navLinksNew.classList.remove('active');
         });
     }
 
