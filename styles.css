@@ -2908,3 +2908,74 @@ h2 {
     display: none !important;
   }
 }
+
+/* Features Section Mobile Responsive (Horizontal Scroll) */
+@media (max-width: 768px) {
+    .features-section {
+        padding: 3rem 0 3rem 5% !important;
+        overflow: hidden !important;
+    }
+    .features-container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 1.2rem !important;
+        padding: 0.5rem 5% 1.5rem 0 !important;
+        margin: 0 !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .features-container::-webkit-scrollbar {
+        display: none !important;
+    }
+    .features-container .feature-item {
+        flex: 0 0 82% !important;
+        width: 82% !important;
+        scroll-snap-align: start !important;
+        padding: 2.2rem 1.5rem !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Product Page & Quick View Modal Typography Mobile Responsive Optimizations */
+@media (max-width: 768px) {
+    .product-page-content {
+        margin: 1.5rem auto !important;
+        gap: 1.5rem !important;
+    }
+    .product-page-right {
+        padding-top: 0.5rem !important;
+    }
+    #page-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.3 !important;
+    }
+    #page-price {
+        font-size: 1.25rem !important;
+    }
+    .page-header-info {
+        margin-bottom: 1.2rem !important;
+    }
+    .modal-actions {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        gap: 0.75rem !important;
+    }
+    .modal-actions .btn {
+        padding: 0.9rem !important;
+        font-size: 0.95rem !important;
+    }
+    /* Quick View Modal Typography */
+    #modal-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.3 !important;
+    }
+    #modal-price {
+        font-size: 1.25rem !important;
+    }
+}
+
+
