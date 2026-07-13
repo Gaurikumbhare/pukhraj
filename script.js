@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openModal(card) {
         const title = card.querySelector('h3') ? card.querySelector('h3').textContent : 'Product';
-        const priceEl = card.querySelector('.price-sale') || card.querySelector('.price') || card.querySelector('p');
+        const priceEl = card.querySelector('.price-sale') || card.querySelector('.price') || card.querySelector('.split-price') || card.querySelector('p');
         const price = priceEl ? priceEl.textContent.trim() : '₹0';
         let bgImg = '';
         if (card.querySelector('.product-img-wrapper img')) {
@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(modalOverlay) modalOverlay.addEventListener('click', closeModalFunc);
 
     // Open modal when clicking anywhere on the product card
-    document.querySelectorAll('.card, .product-card').forEach(card => {
+    document.querySelectorAll('.card, .product-card, .split-product').forEach(card => {
         card.style.cursor = 'pointer';
         card.addEventListener('click', (e) => {
             // Ignore if clicked on a button or link inside the card
