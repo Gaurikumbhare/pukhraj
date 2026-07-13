@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout | PUKHRAJ JEWELLERS</title>
     <link rel="stylesheet" href="styles.css?v=15">
+    <link rel="stylesheet" href="footer.css?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 .product-card .product-img-wrapper { height: auto !important; aspect-ratio: 1/1 !important; }
@@ -116,7 +117,7 @@
                 <div class="summary-totals">
                     <div class="summary-row">
                         <span style="color: #666;">Subtotal</span>
-                        <span id="checkout-subtotal" style="font-weight: 600;">₹0</span>
+                        <span id="checkout-subtotal" style="font-weight: 600;">â‚¹0</span>
                     </div>
                     <div class="summary-row">
                         <span style="color: #666;">Shipping</span>
@@ -125,7 +126,7 @@
                     <hr style="border: none; border-top: 1px solid #ddd; margin: 1.5rem 0;">
                     <div class="summary-row total" style="font-size: 1.3rem; color: var(--primary-color);">
                         <span style="font-weight: bold;">Total</span>
-                        <span id="checkout-final-total" style="font-weight: bold;">₹0</span>
+                        <span id="checkout-final-total" style="font-weight: bold;">â‚¹0</span>
                     </div>
                 </div>
             </div>
@@ -134,7 +135,7 @@
         <!-- Success Modal overlay inside checkout -->
         <div class="order-success-overlay" id="order-success" style="display:none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 3000; align-items: center; justify-content: center;">
             <div class="order-success-modal" style="background: #fff; padding: 4rem; border-radius: 12px; text-align: center; width: 90%; max-width: 500px;">
-                <div style="font-size: 5rem; color: green; margin-bottom: 1rem;">✓</div>
+                <div style="font-size: 5rem; color: green; margin-bottom: 1rem;">âœ“</div>
                 <h1 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-heading);">Order Placed Successfully!</h1>
                 <p style="color: #555; line-height: 1.6;">Thank you for shopping with Pukhraj Jewellers. Your order has been received and is being processed.</p>
                 <a href="index.html" class="btn" style="margin-top: 2rem;">Continue Shopping</a>
@@ -142,11 +143,120 @@
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <div class="footer-logo">PUKHRAJ JEWELLERS</div>
-                <p class="footer-desc">Crafting timeless elegance and preserving Indian heritage.</p>
+    <footer class="footer-new">
+        <div class="footer-new-container">
+            <div class="footer-new-top">
+                <div class="footer-brand">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
+                    </div>
+                    <h2 class="footer-logo-title">PUKHRAJ</h2>
+                    <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
+                    <p class="footer-text">Crafting timeless elegance<br>for every precious moment.</p>
+                    <div class="footer-divider-small"></div>
+                    <div class="footer-socials">
+                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h3>SHOP</h3>
+                    <ul>
+                        <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
+                        <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
+                        <li><a href="fine-silver.html"><span class="arr">&gt;</span> Fine Silver</a></li>
+                        <li><a href="9kt-fine-gold.html"><span class="arr">&gt;</span> 9KT Fine Gold</a></li>
+                        <li><a href="owners-favourite.html"><span class="arr">&gt;</span> Owner's Favourite</a></li>
+                        <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
+                        <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h3>QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html"><span class="arr">&gt;</span> Home</a></li>
+                        <li><a href="collection.html"><span class="arr">&gt;</span> Collection</a></li>
+                        <li><a href="about.html"><span class="arr">&gt;</span> About Us</a></li>
+                        <li><a href="contact.html"><span class="arr">&gt;</span> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>NEWSLETTER</h3>
+                    <p>Get updates about new collections,<br>exclusive launches and offers.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                        </div>
+                        <button type="submit" class="btn-subscribe">SUBSCRIBE &rarr;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-new-divider">
+                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="2"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg></span>
+            </div>
+            
+            <div class="footer-features">
+                <div class="feature">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                    <div class="feature-text">
+                        <h4>SECURE PAYMENT</h4>
+                        <p>100% Secure & Safe</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <div class="feature-text">
+                        <h4>FREE SHIPPING</h4>
+                        <p>On Orders Above â‚¹20,000</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <div class="feature-text">
+                        <h4>CERTIFIED JEWELLERY</h4>
+                        <p>Hallmarked & Certified</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><polyline points="3 3 3 8 8 8"></polyline></svg>
+                    <div class="feature-text">
+                        <h4>EASY RETURNS</h4>
+                        <p>7 Days Return Policy</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-new-divider"></div>
+            
+            <div class="footer-payments">
+                <p>WE ACCEPT</p>
+                <div class="payment-icons">
+                    <span style="font-style: italic; font-weight: bold; font-size: 1.5rem;">VISA</span>
+                    <svg width="40" height="24" viewBox="0 0 24 24"><circle cx="7" cy="12" r="7" fill="#EB001B"/><circle cx="17" cy="12" r="7" fill="#F79E1B" opacity="0.8"/></svg>
+                    <span style="font-style: italic; font-weight: bold; font-size: 1.2rem;">UPI</span>
+                    <span style="font-style: italic; font-weight: bold; font-size: 1.2rem;">RuPay</span>
+                    <span style="font-style: italic; font-weight: bold; font-size: 1.2rem;">PayPal</span>
+                </div>
+            </div>
+            
+            <div class="footer-new-divider"></div>
+            
+            <div class="footer-new-bottom">
+                <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms & Conditions</a>
+                    <span class="separator">|</span>
+                    <a href="#">Disclaimer</a>
+                </div>
+                <p class="crafted-text">âœ¦ Crafted with Passion, Delivered with Trust.</p>
             </div>
         </div>
     </footer>
@@ -169,13 +279,13 @@
                             <h4 style="margin-bottom: 0.3rem; color: var(--text-color);">${item.name}</h4>
                             <p style="color: #777; font-size: 0.9rem;">Qty: ${item.quantity}</p>
                         </div>
-                        <p style="font-weight: 600; color: var(--text-color);">₹${(item.price * item.quantity).toLocaleString('en-IN')}</p>
+                        <p style="font-weight: 600; color: var(--text-color);">â‚¹${(item.price * item.quantity).toLocaleString('en-IN')}</p>
                     </div>
                 `).join('');
                 
                 const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                subtotalEl.textContent = '₹' + total.toLocaleString('en-IN');
-                finalTotalEl.textContent = '₹' + total.toLocaleString('en-IN');
+                subtotalEl.textContent = 'â‚¹' + total.toLocaleString('en-IN');
+                finalTotalEl.textContent = 'â‚¹' + total.toLocaleString('en-IN');
             }
 
             document.getElementById('checkout-form').addEventListener('submit', (e) => {
