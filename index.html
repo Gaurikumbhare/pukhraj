@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=21">
+    <link rel="stylesheet" href="styles.css?v=22">
     <link rel="stylesheet" href="footer.css?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -479,7 +479,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Aurélia Gold Hoops</h3>
-                        <p class="price"><span class="price-sale">₹2,500</span> <span class="price-regular">₹3,500</span> <span class="price-discount">(28% off)</span></p>
+                        <p class="price"><span class="price-sale">₹2,500</span> </p>
                     </div>
                 </div>
                 <!-- Product 2 -->
@@ -492,7 +492,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Emerald CZ Necklace</h3>
-                        <p class="price"><span class="price-sale">₹3,200</span> <span class="price-regular">₹4,500</span> <span class="price-discount">(28% off)</span></p>
+                        <p class="price"><span class="price-sale">₹3,200</span> </p>
                     </div>
                 </div>
                 <!-- Product 3 (Lifestyle) -->
@@ -505,7 +505,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Emerald Teardrop Pendant</h3>
-                        <p class="price"><span class="price-sale">₹4,500</span> <span class="price-regular">₹6,500</span> <span class="price-discount">(30% off)</span></p>
+                        <p class="price"><span class="price-sale">₹4,500</span> </p>
                     </div>
                 </div>
                 <!-- Product 4 (Lifestyle) -->
@@ -518,7 +518,7 @@
                     </div>
                     <div class="product-info">
                         <h3>Rose Gold Diamond Ring</h3>
-                        <p class="price"><span class="price-sale">₹2,800</span> <span class="price-regular">₹4,000</span> <span class="price-discount">(30% off)</span></p>
+                        <p class="price"><span class="price-sale">₹2,800</span> </p>
                     </div>
                 </div>
             </div>
@@ -526,13 +526,50 @@
             <a href="collection.html" class="view-all-link">View all &rarr;</a>
         </section>
 
-        <!-- Gift Combos Banner -->
-        <section class="promo-banner" style="width: 100%; height: 500px; background-image: url('assets/new_arrivals_bg.png'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: flex-end; padding: 0 10%;">
-            <div class="banner-content" style="text-align: right; color: #fff; background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 4px;">
-                <p style="font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 0.5rem; text-transform: uppercase;">Gift Combos</p>
-                <h2 style="font-size: 3rem; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 1px; color: #fff;">FLAT 50% OFF</h2>
-                <a href="new-arrivals.html" style="color: #fff; text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 2px; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">Shop Now</a>
+        <!-- Gift Combos Banner Section Redesign -->
+        <style>
+            @media (max-width: 768px) {
+                .gift-banner-wrapper {
+                    height: auto !important;
+                    min-height: 450px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 2rem 1rem;
+                }
+                .gift-card {
+                    position: relative !important;
+                    right: auto !important;
+                    top: auto !important;
+                    transform: none !important;
+                    width: 90% !important;
+                    padding: 2rem 1.5rem !important;
+                }
+                .gift-card h2 {
+                    font-size: 2.2rem !important;
+                }
+            }
+        </style>
+        <section class="gift-combos-redesign" style="padding: 3rem 5%; background-color: #f7f3ed;">
+            
+            <!-- Banner Image Area -->
+            <div class="gift-banner-wrapper" style="position: relative; width: 100%; height: 500px; border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; background-image: url('assets/new_arrivals_bg.png'); background-size: cover; background-position: center;">
+                
+
+
+                <!-- Right Information Card -->
+                <div class="gift-card" style="position: absolute; top: 50%; right: 40px; transform: translateY(-50%); background: rgba(245, 238, 228, 0.4); backdrop-filter: blur(10px); padding: 3rem 4rem; border-radius: 12px; border: 1px solid rgba(205, 169, 117, 0.4); text-align: center; max-width: 480px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <p style="font-size: 0.85rem; letter-spacing: 3px; color: #a47d46; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span style="color: #cda975;">✦</span> GIFT COMBOS <span style="color: #cda975;">✦</span>
+                    </p>
+                    <h2 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 400; color: #2a2015; margin-bottom: 1.2rem; line-height: 1.2;">THE PERFECT<br>PAIR</h2>
+                    <p style="font-size: 0.95rem; color: #4a3c31; line-height: 1.6; margin-bottom: 2rem;">Celebrate love with handpicked combinations crafted to shine together, always.</p>
+                    <a href="new-arrivals.html" style="display: inline-block; background-color: #b58c57; color: #fff; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; font-weight: 600; transition: background 0.3s; border: none;">Shop Now &rarr;</a>
+                </div>
             </div>
+
+
+            
         </section>
 
         <!-- Shop For Someone -->
@@ -565,7 +602,7 @@
                 
                 <!-- Card 1 -->
                 <div class="staggered-item small" style="flex: 1; min-width: 250px; position: relative; height: 420px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.querySelector('img').style.transform='scale(1.08)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';" onmouseout="this.querySelector('img').style.transform='scale(1)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
-                    <img src="assets/j1.jpg" alt="Office Wear" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <img src="assets/image copy 26.png" alt="Office Wear" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
                     <div class="overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;"></div>
                     <div class="label-wrapper" style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
                         <h3 style="color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">OFFICE WEAR</h3>
@@ -575,7 +612,7 @@
 
                 <!-- Card 2 -->
                 <div class="staggered-item large" style="flex: 1.2; min-width: 300px; position: relative; height: 550px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 15px 40px rgba(0,0,0,0.08); z-index: 2; margin-top: -40px;" onmouseover="this.querySelector('img').style.transform='scale(1.08)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';" onmouseout="this.querySelector('img').style.transform='scale(1)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
-                    <img src="assets/j2.jpg" alt="Daily Wear" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <img src="assets/image copy 27.png" alt="Daily Wear" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
                     <div class="overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;"></div>
                     <div class="label-wrapper" style="position: absolute; bottom: 40px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
                         <h3 style="color: #fff; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">DAILY WEAR</h3>
@@ -584,8 +621,8 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="staggered-item small" style="flex: 1; min-width: 250px; position: relative; height: 420px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.querySelector('img').style.transform='scale(1.08)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';" onmouseout="this.querySelector('img').style.transform='scale(1)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
-                    <img src="assets/j3.jpg" alt="Party Wear" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                <div class="staggered-item small" style="flex: 1; min-width: 250px; position: relative; height: 420px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.querySelector('img').style.transform='scale(1.48)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';" onmouseout="this.querySelector('img').style.transform='scale(1.4)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
+                    <img src="assets/image copy 28.png" alt="Party Wear" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.4); transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
                     <div class="overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;"></div>
                     <div class="label-wrapper" style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
                         <h3 style="color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">PARTY WEAR</h3>
@@ -694,32 +731,7 @@
             </div>
         </section>
 
- <!-- Features Section -->
-        <section class="features-section" style="padding: 4rem 5%; background-color: #fff; border-top: 1px solid #f0f0f0;">
-            <div class="features-container">
-                <div class="feature-item">
-                    <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 12A4 4 0 0 0 8 12"></path></svg>
-                    </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color);">18k Gold Plated</h3>
-                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Thick layer of 18k gold on sterling silver for a premium finish.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
-                    </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color);">Waterproof & Anti-Tarnish</h3>
-                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Wear it in the shower, the pool, or the gym without worrying.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon-wrapper" style="margin-bottom: 1.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    </div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color);">Hypoallergenic</h3>
-                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Safe for sensitive skin. No nickel, no lead, no brass.</p>
-                </div>
-            </div>
-        </section>
+
 
         
         <section class="testimonial-section-new" style="padding: 5rem 5%; background-color: #faf9f6; text-align: center;">
@@ -851,51 +863,9 @@
                 <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="2"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg></span>
             </div>
             
-            <div class="footer-features">
-                <div class="feature">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-                    <div class="feature-text">
-                        <h4>SECURE PAYMENT</h4>
-                        <p>100% Secure & Safe</p>
-                    </div>
-                </div>
-                <div class="feature">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                    <div class="feature-text">
-                        <h4>FREE SHIPPING</h4>
-                        <p>On Orders Above ₹20,000</p>
-                    </div>
-                </div>
-                <div class="feature">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    <div class="feature-text">
-                        <h4>CERTIFIED JEWELLERY</h4>
-                        <p>Hallmarked & Certified</p>
-                    </div>
-                </div>
-                <div class="feature">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><polyline points="3 3 3 8 8 8"></polyline></svg>
-                    <div class="feature-text">
-                        <h4>EASY RETURNS</h4>
-                        <p>7 Days Return Policy</p>
-                    </div>
-                </div>
-            </div>
+
             
-            <div class="footer-new-divider"></div>
-            
-            <div class="footer-payments">
-                <p>WE ACCEPT</p>
-                <div class="payment-icons">
-                    <span style="font-style: italic; font-weight: bold; font-size: 1.5rem;">VISA</span>
-                    <svg width="40" height="24" viewBox="0 0 24 24"><circle cx="7" cy="12" r="7" fill="#EB001B"/><circle cx="17" cy="12" r="7" fill="#F79E1B" opacity="0.8"/></svg>
-                    <span style="font-style: italic; font-weight: bold; font-size: 1.2rem;">UPI</span>
-                    <span style="font-style: italic; font-weight: bold; font-size: 1.2rem;">RuPay</span>
-                    <span style="font-style: italic; font-weight: bold; font-size: 1.2rem;">PayPal</span>
-                </div>
-            </div>
-            
-            <div class="footer-new-divider"></div>
+
             
             <div class="footer-new-bottom">
                 <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
