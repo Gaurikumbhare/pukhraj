@@ -2300,7 +2300,7 @@ h2 {
 
 .accordion-container { margin-top: 2rem; }
 .accordion-item { border-bottom: 1px solid #eee; }
-.accordion-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; cursor: pointer; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
+.accordion-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
 .acc-title { display: flex; align-items: center; gap: 10px; }
 .accordion-content { padding-bottom: 1.5rem; display: none; }
 .accordion-item.active .accordion-content { display: block; }
@@ -2369,7 +2369,7 @@ h2 {
 
 .accordion-container { margin-top: 2rem; }
 .accordion-item { border-bottom: 1px solid #eee; }
-.accordion-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; cursor: pointer; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
+.accordion-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; }
 .acc-title { display: flex; align-items: center; gap: 10px; }
 .accordion-content { padding-bottom: 1.5rem; display: none; }
 .accordion-item.active .accordion-content { display: block; }
