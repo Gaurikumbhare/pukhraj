@@ -1141,3 +1141,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Auto-scroll for reviews grid
+document.addEventListener('DOMContentLoaded', () => {
+    const reviewsGrid = document.getElementById('reviews-grid');
+    if (reviewsGrid) {
+        let scrollAmount = 0;
+        const scrollStep = 350; // Scroll by one card width
+        const scrollInterval = 3000; // 3 seconds
+
+        setInterval(() => {
+            // Check if we reached the end
+            if (reviewsGrid.scrollLeft + reviewsGrid.clientWidth >= reviewsGrid.scrollWidth - 10) {
+                // Scroll back to start
+                reviewsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                reviewsGrid.scrollBy({ left: scrollStep, behavior: 'smooth' });
+            }
+        }, scrollInterval);
+    }
+});

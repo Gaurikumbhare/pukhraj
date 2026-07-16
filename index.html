@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,382 +8,427 @@
     <meta name="description" content="Discover premium, handcrafted jewelry.">
     <link rel="stylesheet" href="styles.css?v=22">
     <link rel="stylesheet" href="footer.css?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
 
 
-<style>
-@media (min-width: 769px) {
-    .close-menu-btn {
-        display: none !important;
-    }
-}
+    <style>
+        @media (min-width: 769px) {
+            .close-menu-btn {
+                display: none !important;
+            }
+        }
 
-@media (min-width: 769px) {
-    .close-menu-btn { display: none !important; }
-    .nav-accordion-item { display: none !important; }
-}
+        @media (min-width: 769px) {
+            .close-menu-btn {
+                display: none !important;
+            }
 
-/* Split Editorial Section (Inlined to bypass cache) */
-.split-editorial-section {
-    position: relative;
-    background-color: #e8e0d5; /* Linen/Canvas beige background */
-    padding: 6rem 0;
-    overflow: hidden;
-}
+            .nav-accordion-item {
+                display: none !important;
+            }
+        }
 
-/* Premium Light Paper Grain Texture */
-.split-editorial-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
-    pointer-events: none;
-    z-index: 0;
-}
+        /* Split Editorial Section (Inlined to bypass cache) */
+        .split-editorial-section {
+            position: relative;
+            background-color: #e8e0d5;
+            /* Linen/Canvas beige background */
+            padding: 6rem 0;
+            overflow: hidden;
+        }
 
-.split-editorial {
-    position: relative;
-    z-index: 1; /* Keep content above background effects */
-    display: grid;
-    grid-template-columns: 1fr 1.15fr; /* Slightly larger right side to balance */
-    gap: 2rem; /* Reduced gap */
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4%;
-}
+        /* Premium Light Paper Grain Texture */
+        .split-editorial-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
+            pointer-events: none;
+            z-index: 0;
+        }
 
-.split-editorial-right {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem; /* Reduced gap */
-}
+        .split-editorial {
+            position: relative;
+            z-index: 1;
+            /* Keep content above background effects */
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            /* Slightly larger right side to balance */
+            gap: 2rem;
+            /* Reduced gap */
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
 
-.split-product {
-    display: flex;
-    flex-direction: column;
-}
+        .split-editorial-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            /* Reduced gap */
+        }
 
-.split-img-wrapper {
-    position: relative;
-    padding: 0;
-    border: none;
-    margin-bottom: 0;
-    cursor: pointer;
-    background: transparent;
-    border-radius: 12px;
-}
+        .split-product {
+            display: flex;
+            flex-direction: column;
+        }
 
-.split-img-wrapper img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    background: #faf9f6;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-radius: 12px;
-}
+        .split-img-wrapper {
+            position: relative;
+            padding: 0;
+            border: none;
+            margin-bottom: 0;
+            cursor: pointer;
+            background: transparent;
+            border-radius: 12px;
+        }
 
-/* Right Card Styles */
-.right-card {
-    background: #eeddcc; /* Matches design subtly */
-    border-radius: 12px;
-    padding: 1rem;
-}
-.right-card .split-product-info {
-    padding-top: 1rem;
-    text-align: left;
-}
-.right-card .split-title {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-}
-.split-desc {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 1.2rem;
-    line-height: 1.4;
-}
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.split-price {
-    font-weight: 600;
-    color: #333;
-}
-.arrow-btn {
-    width: 28px;
-    height: 28px;
-    border: 1px solid #333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: #333;
-    font-family: sans-serif;
-    font-weight: 300;
-}
+        .split-img-wrapper img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            background: #faf9f6;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 12px;
+        }
 
-/* Left Overlay Styles */
-.large-product-overlay {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    color: #fff;
-    z-index: 10;
-    text-align: left;
-}
-.overlay-title {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-.overlay-desc {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
-}
-.overlay-btn {
-    background: #e8cca5;
-    color: #333;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-}
-.overlay-btn:hover {
-    background: #d4b58c;
-    transform: translateY(-2px);
-}
+        /* Right Card Styles */
+        .right-card {
+            background: #eeddcc;
+            /* Matches design subtly */
+            border-radius: 12px;
+            padding: 1rem;
+        }
 
-/* Feature icons row */
-.feature-icons-row {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(0,0,0,0.1);
-}
-.feature-icon {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 0.75rem;
-    color: #444;
-    text-align: left;
-    line-height: 1.3;
-}
-.feature-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: #333;
-}
+        .right-card .split-product-info {
+            padding-top: 1rem;
+            text-align: left;
+        }
 
-/* WOW Element: Glossy Sweep Shine on Hover */
-.gloss-overlay {
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-    transform: skewX(-25deg);
-    transition: left 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* Fast sweep out */
-    z-index: 2;
-    pointer-events: none;
-}
-.split-img-wrapper:hover .gloss-overlay {
-    left: 200%;
-}
+        .right-card .split-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
 
-.split-editorial-left {
-    display: flex;
-    flex-direction: column;
-}
+        .split-desc {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+        }
 
-.split-product.large-product {
-    flex-grow: 1;
-}
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.split-product.large-product .split-img-wrapper {
-    flex-grow: 1;
-}
+        .split-price {
+            font-weight: 600;
+            color: #333;
+        }
 
-.split-product.large-product .split-img-wrapper img {
-    height: 100%;
-}
+        .arrow-btn {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #333;
+            font-family: sans-serif;
+            font-weight: 300;
+        }
 
-.split-img-wrapper:hover img {
-    transform: scale(1.05); /* Slight zoom so it doesn't break rounded corners visually */
-}
+        /* Left Overlay Styles */
+        .large-product-overlay {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            color: #fff;
+            z-index: 10;
+            text-align: left;
+        }
 
-.split-wishlist-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Translucent premium feel */
-    backdrop-filter: blur(5px);
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    color: #333;
-}
+        .overlay-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
 
-.split-img-wrapper:hover .split-wishlist-btn {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .overlay-desc {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
 
-.split-wishlist-btn:hover {
-    color: #cda975;
-}
+        .overlay-btn {
+            background: #e8cca5;
+            color: #333;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
 
-.split-wishlist-btn svg {
-    width: 18px;
-    height: 18px;
-}
+        .overlay-btn:hover {
+            background: #d4b58c;
+            transform: translateY(-2px);
+        }
 
-/* WOW Element: Rotating Luxury Seal */
-.rotating-badge {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    width: 90px;
-    height: 90px;
-    animation: spin-slow 15s linear infinite;
-    z-index: 3;
-    pointer-events: none;
-    background: rgba(255, 255, 255, 0.8); /* Light background */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-@keyframes spin-slow {
-    100% { transform: rotate(360deg); }
-}
+        /* Feature icons row */
+        .feature-icons-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
 
-.split-product-info {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem; 
-    padding: 0 0.5rem;
-}
+        .feature-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.75rem;
+            color: #444;
+            text-align: left;
+            line-height: 1.3;
+        }
 
-.split-subtitle {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #8c7b60;
-    font-weight: 500;
-}
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #333;
+        }
 
-.split-title {
-    font-family: var(--font-heading);
-    font-size: 1.3rem; 
-    font-weight: 400;
-    margin: 0;
-    color: #1a1a1a;
-    letter-spacing: 1px;
-}
+        /* WOW Element: Glossy Sweep Shine on Hover */
+        .gloss-overlay {
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            transition: left 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            /* Fast sweep out */
+            z-index: 2;
+            pointer-events: none;
+        }
 
-.split-price {
-    font-size: 0.85rem;
-    color: #555;
-    letter-spacing: 1.5px;
-    margin-top: 0.2rem;
-}
+        .split-img-wrapper:hover .gloss-overlay {
+            left: 200%;
+        }
 
-.large-product .split-title {
-    font-size: 1.8rem; 
-}
+        .split-editorial-left {
+            display: flex;
+            flex-direction: column;
+        }
 
-.split-link {
-    font-size: 0.7rem;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 0.5rem;
-    padding-bottom: 4px;
-    border-bottom: 1px solid rgba(26,26,26,0.2);
-    transition: all 0.3s ease;
-    display: inline-block;
-}
+        .split-product.large-product {
+            flex-grow: 1;
+        }
 
-.split-link:hover {
-    border-color: #1a1a1a;
-    color: #1a1a1a;
-}
+        .split-product.large-product .split-img-wrapper {
+            flex-grow: 1;
+        }
 
-@media (max-width: 768px) {
-    .split-editorial {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
+        .split-product.large-product .split-img-wrapper img {
+            height: 100%;
+        }
 
-/* Product Card Hover Image Swap */
-.product-img-wrapper .primary-img {
-    transition: opacity 0.4s ease;
-}
-.product-img-wrapper .secondary-img {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-.product-card:hover .product-img-wrapper .primary-img {
-    opacity: 0 !important;
-}
-.product-card:hover .product-img-wrapper .secondary-img {
-    opacity: 1 !important;
-}
-</style>
+        .split-img-wrapper:hover img {
+            transform: scale(1.05);
+            /* Slight zoom so it doesn't break rounded corners visually */
+        }
+
+        .split-wishlist-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            /* Translucent premium feel */
+            backdrop-filter: blur(5px);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        .split-img-wrapper:hover .split-wishlist-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .split-wishlist-btn:hover {
+            color: #cda975;
+        }
+
+        .split-wishlist-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* WOW Element: Rotating Luxury Seal */
+        .rotating-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            width: 90px;
+            height: 90px;
+            animation: spin-slow 15s linear infinite;
+            z-index: 3;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.8);
+            /* Light background */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes spin-slow {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .split-product-info {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0 0.5rem;
+        }
+
+        .split-subtitle {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8c7b60;
+            font-weight: 500;
+        }
+
+        .split-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+        }
+
+        .split-price {
+            font-size: 0.85rem;
+            color: #555;
+            letter-spacing: 1.5px;
+            margin-top: 0.2rem;
+        }
+
+        .large-product .split-title {
+            font-size: 1.8rem;
+        }
+
+        .split-link {
+            font-size: 0.7rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .split-link:hover {
+            border-color: #1a1a1a;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .split-editorial {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Product Card Hover Image Swap */
+        .product-img-wrapper .primary-img {
+            transition: opacity 0.4s ease;
+        }
+
+        .product-img-wrapper .secondary-img {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .product-card:hover .product-img-wrapper .primary-img {
+            opacity: 0 !important;
+        }
+
+        .product-card:hover .product-img-wrapper .secondary-img {
+            opacity: 1 !important;
+        }
+    </style>
 
 </head>
+
 <body>
     <!-- Search Modal -->
     <div class="login-modal-overlay" id="search-modal-overlay"></div>
     <div class="search-modal" id="search-modal" style="width: 90%; max-width: 500px; text-align: center;">
         <h2 style="font-family: var(--font-heading); margin-bottom: 1.5rem;">Search</h2>
         <div class="search-container" style="display: flex; align-items: center; border-bottom: 2px solid #eee;">
-            <input type="text" id="mobile-search-input" placeholder="Search for Necklaces..." style="flex: 1; border: none; outline: none; padding: 1rem; font-size: 1.2rem;">
+            <input type="text" id="mobile-search-input" placeholder="Search for Necklaces..."
+                style="flex: 1; border: none; outline: none; padding: 1rem; font-size: 1.2rem;">
             <button id="mobile-search-btn" style="background: none; border: none; cursor: pointer; padding: 1rem;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
             </button>
         </div>
-        <button id="close-search-modal" style="margin-top: 1.5rem; padding: 0.8rem 2rem; background: var(--text-color); color: #fff; border: none; cursor: pointer;">Close</button>
+        <button id="close-search-modal"
+            style="margin-top: 1.5rem; padding: 0.8rem 2rem; background: var(--text-color); color: #fff; border: none; cursor: pointer;">Close</button>
     </div>
 
     <!-- Announcement Bar -->
@@ -392,20 +438,26 @@
 
     <!-- Main Navbar -->
     <nav class="navbar-new">
-        <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
-            
+        <div class="navbar-desktop-row"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
+
             <div class="menu-toggle" id="mobile-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
             </div>
             <div class="logo-new">PUKHRAJ</div>
             <ul class="nav-links-new">
                 <button class="close-menu-btn">&times;</button>
-                
+
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="new-arrivals.html">New Arrivals</a></li>
                 <li><a href="best-seller.html">Best Seller</a></li>
-                <li><a href="fine-silver.html">Fine Silver</a></li>
-                <li class="nav-has-badge"><span class="nav-badge gold-badge">Luxe</span><a href="9kt-fine-gold.html">9KT Fine Gold</a></li>
+                <li><a href="9kt-fine-silver.html">Fine Silver</a></li>
+
                 <li><a href="owners-favourite.html">Owner's Favourite</a></li>
                 <li><a href="gifting.html">Gifting</a></li>
                 <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
@@ -413,44 +465,75 @@
             </ul>
             <div class="nav-actions-new">
                 <a href="#" class="icon-btn-new mobile-search-icon" title="Search" style="display: none;">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
                 </a>
                 <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span class="badge-count" id="wishlist-count" style="position: absolute; top: -4px; right: -6px;">0</span>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>
+                    <span class="badge-count" id="wishlist-count"
+                        style="position: absolute; top: -4px; right: -6px;">0</span>
                 </a>
                 <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
                     <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
                 </div>
-                
+
             </div>
         </div>
-</nav>
+    </nav>
 
     <main>
         <!-- Hero Slider Section -->
         <!-- Hero Static Banner -->
-        <section id="home" class="hero-static" style="background-image: url('assets/image.png'); background-size: cover; background-position: 30% 90%; height: 100vh; position: relative;">
-            <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);"></div>
-            
-            <div class="hero-content-left" style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); text-align: left; color: #fff; z-index: 2; max-width: 500px;">
-                <h1 class="hero-serif-title" style="font-size: 3.5rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Free 9KT Gold Pendant</h1>
-                <p class="hero-small-text" style="font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; text-shadow: 0 1px 5px rgba(0,0,0,0.3);">on order above ₹20,000</p>
+        <section id="home" class="hero-static"
+            style="background-image: url('assets/image.png'); background-size: cover; background-position: 30% 90%; height: 100vh; position: relative;">
+            <div class="hero-overlay"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);">
+            </div>
+
+            <div class="hero-content-left"
+                style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); text-align: left; color: #fff; z-index: 2; max-width: 500px;">
+                <h1 class="hero-serif-title"
+                    style="font-size: 3.5rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                    Free 9KT Gold Pendant</h1>
+                <p class="hero-small-text"
+                    style="font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; text-shadow: 0 1px 5px rgba(0,0,0,0.3);">
+                    on order above ₹20,000</p>
                 <div class="mobile-hide" style="height: 20px;"></div>
-                <h1 class="hero-serif-title mobile-hide" style="font-size: 3.5rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Flat 15% OFF</h1>
-                <p class="hero-small-text mobile-hide" style="font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2.5rem; text-shadow: 0 1px 5px rgba(0,0,0,0.3);">on gold worth ₹20,000 or below</p>
-                <a href="new-arrivals.html" class="btn" style="background-color: var(--primary-color); color: #fff; padding: 1rem 3rem; text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; border: 1px solid var(--primary-color); transition: 0.3s; display: inline-block;">SHOP NOW</a>
+                <h1 class="hero-serif-title mobile-hide"
+                    style="font-size: 3.5rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                    Flat 15% OFF</h1>
+                <p class="hero-small-text mobile-hide"
+                    style="font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2.5rem; text-shadow: 0 1px 5px rgba(0,0,0,0.3);">
+                    on silver worth ₹20,000 or below</p>
+                <a href="new-arrivals.html" class="btn"
+                    style="background-color: var(--primary-color); color: #fff; padding: 1rem 3rem; text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; border: 1px solid var(--primary-color); transition: 0.3s; display: inline-block;">SHOP
+                    NOW</a>
             </div>
         </section>
 
 
-        
+
         <!-- Top Styles (Bestsellers with filters) -->
         <section class="top-styles-section" style="padding: 2rem 5% 5rem; background-color: #fff; text-align: center;">
-            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">Pukhraj Top Styles</h2>
+            <h2
+                style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">
+                Pukhraj Top Styles</h2>
 
-            
+
 
 
             <div class="filter-menu-container" style="margin-bottom: 3rem !important; margin-top: 1.5rem !important;">
@@ -465,8 +548,8 @@
 
 
 
-            
-            
+
+
 
             <div class="product-grid-4">
                 <!-- Product 1 -->
@@ -475,7 +558,12 @@
                         <span class="badge best-seller">Best Seller</span>
                         <img src="assets/image copy 24.png" class="primary-img" alt="Product">
                         <img src="assets/image copy 23.png" class="secondary-img" alt="Product Hover">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                            </svg></button>
                     </div>
                     <div class="product-info">
                         <h3>Aurélia Gold Hoops</h3>
@@ -486,9 +574,16 @@
                 <div class="product-card" data-category="mangalsutras">
                     <div class="product-img-wrapper">
                         <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 25.png" class="primary-img" alt="Product" style="object-position: center bottom;">
-                        <img src="assets/image copy 3.png" class="secondary-img" alt="Product Hover" style="object-position: center bottom;">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="assets/image copy 25.png" class="primary-img" alt="Product"
+                            style="object-position: center bottom;">
+                        <img src="assets/image copy 3.png" class="secondary-img" alt="Product Hover"
+                            style="object-position: center bottom;">
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                            </svg></button>
                     </div>
                     <div class="product-info">
                         <h3>Emerald CZ Necklace</h3>
@@ -501,7 +596,12 @@
                         <span class="badge best-seller">Best Seller</span>
                         <img src="assets/image copy 4.png" class="primary-img" alt="Model">
                         <img src="assets/image copy 5.png" class="secondary-img" alt="Model Hover">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                            </svg></button>
                     </div>
                     <div class="product-info">
                         <h3>Emerald Teardrop Pendant</h3>
@@ -514,15 +614,20 @@
                         <span class="badge best-seller">Best Seller</span>
                         <img src="assets/image copy 7.png" class="primary-img" alt="Model">
                         <img src="assets/image copy 22.png" class="secondary-img" alt="Model Hover">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                            </svg></button>
                     </div>
                     <div class="product-info">
-                        <h3>Rose Gold Diamond Ring</h3>
+                        <h3>Silver Ring</h3>
                         <p class="price"><span class="price-sale">₹2,800</span> </p>
                     </div>
                 </div>
             </div>
-            
+
             <a href="collection.html" class="view-all-link">View all &rarr;</a>
         </section>
 
@@ -537,96 +642,155 @@
                     justify-content: center;
                     padding: 2rem 1rem;
                 }
+
                 .gift-card {
                     position: relative !important;
+                    left: auto !important;
                     right: auto !important;
                     top: auto !important;
+                    margin: 0 auto !important;
                     transform: none !important;
                     width: 90% !important;
                     padding: 2rem 1.5rem !important;
                 }
+
                 .gift-card h2 {
                     font-size: 2.2rem !important;
                 }
             }
         </style>
         <section class="gift-combos-redesign" style="padding: 3rem 5%; background-color: #f7f3ed;">
-            
+
             <!-- Banner Image Area -->
-            <div class="gift-banner-wrapper" style="position: relative; width: 100%; height: 500px; border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; background-image: url('assets/new_arrivals_bg.png'); background-size: cover; background-position: center;">
-                
+            <div class="gift-banner-wrapper"
+                style="position: relative; width: 100%; height: 500px; border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; background-image: url('assets/image copy 32.png'); background-size: cover; background-position: center;">
+
 
 
                 <!-- Right Information Card -->
-                <div class="gift-card" style="position: absolute; top: 50%; right: 40px; transform: translateY(-50%); background: rgba(245, 238, 228, 0.4); backdrop-filter: blur(10px); padding: 3rem 4rem; border-radius: 12px; border: 1px solid rgba(205, 169, 117, 0.4); text-align: center; max-width: 480px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                    <p style="font-size: 0.85rem; letter-spacing: 3px; color: #a47d46; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <div class="gift-card"
+                    style="position: absolute; top: 50%; left: 40px; transform: translateY(-50%); background: rgba(245, 238, 228, 0.4); backdrop-filter: blur(10px); padding: 3rem 4rem; border-radius: 12px; border: 1px solid rgba(205, 169, 117, 0.4); text-align: center; max-width: 480px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <p
+                        style="font-size: 0.85rem; letter-spacing: 3px; color: #a47d46; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
                         <span style="color: #cda975;">✦</span> GIFT COMBOS <span style="color: #cda975;">✦</span>
                     </p>
-                    <h2 style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 400; color: #2a2015; margin-bottom: 1.2rem; line-height: 1.2;">THE PERFECT<br>PAIR</h2>
-                    <p style="font-size: 0.95rem; color: #4a3c31; line-height: 1.6; margin-bottom: 2rem;">Celebrate love with handpicked combinations crafted to shine together, always.</p>
-                    <a href="new-arrivals.html" style="display: inline-block; background-color: #b58c57; color: #fff; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; font-weight: 600; transition: background 0.3s; border: none;">Shop Now &rarr;</a>
+                    <h2
+                        style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 400; color: #2a2015; margin-bottom: 1.2rem; line-height: 1.2;">
+                        THE PERFECT<br>PAIR</h2>
+                    <p style="font-size: 0.95rem; color: #4a3c31; line-height: 1.6; margin-bottom: 2rem;">Celebrate love
+                        with handpicked combinations crafted to shine together, always.</p>
+                    <a href="new-arrivals.html"
+                        style="display: inline-block; background-color: #b58c57; color: #fff; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; font-weight: 600; transition: background 0.3s; border: none;">Shop
+                        Now &rarr;</a>
                 </div>
             </div>
 
 
-            
+
         </section>
 
         <!-- Shop For Someone -->
         <section class="shop-for-someone" style="padding: 5rem 5%; background-color: #fff; text-align: center;">
-            <h2 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3rem;">Shop For Someone</h2>
-            <div class="shop-recipient-flex" style="display: flex; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
-                  <a href="collection.html?filter=her" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
-                      <img src="assets/j5.jpg" alt="Gifts For Her" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                      <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
-                          <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Her &rarr;</span>
-                      </div>
-                  </a>
-                  <a href="collection.html?filter=him" class="recipient-large-card" style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
-                      <img src="assets/image copy 18.png" alt="Gifts For Him" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
-                      <div class="recipient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
-                          <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Him &rarr;</span>
-                      </div>
-                  </a>
-              </div>
+            <h2
+                style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3rem;">
+                Shop For Someone</h2>
+            <div class="shop-recipient-flex"
+                style="display: flex; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
+                <a href="collection.html?filter=her" class="recipient-large-card"
+                    style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
+                    <img src="assets/j5.jpg" alt="Gifts For Her"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <div class="recipient-overlay"
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
+                        <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Her
+                            &rarr;</span>
+                    </div>
                 </a>
-                
+                <a href="collection.html?filter=him" class="recipient-large-card"
+                    style="flex: 1; min-width: 300px; position: relative; height: 500px; overflow: hidden; border-radius: 4px; display: block;">
+                    <img src="assets/image copy 18.png" alt="Gifts For Him"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                    <div class="recipient-overlay"
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; text-align: center;">
+                        <span style="font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">Gifts For Him
+                            &rarr;</span>
+                    </div>
+                </a>
+            </div>
+            </a>
+
             </div>
         </section>
 
         <!-- For Every You (Staggered Lifestyle) -->
         <section class="for-every-you" style="padding: 2rem 5% 5rem; background-color: #fff; text-align: center;">
 
-            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 400; color: #1a1a1a; margin-bottom: 4rem;">For Every You</h2>
-            <div class="staggered-grid" style="display: flex; gap: 2rem; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
-                
+            <h2
+                style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 400; color: #1a1a1a; margin-bottom: 4rem;">
+                For Every You</h2>
+            <div class="staggered-grid"
+                style="display: flex; gap: 2rem; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
+
                 <!-- Card 1 -->
-                <div class="staggered-item small" style="flex: 1; min-width: 250px; position: relative; height: 420px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.querySelector('img').style.transform='scale(1.08)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';" onmouseout="this.querySelector('img').style.transform='scale(1)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
-                    <img src="assets/image copy 26.png" alt="Office Wear" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
-                    <div class="overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;"></div>
-                    <div class="label-wrapper" style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
-                        <h3 style="color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">OFFICE WEAR</h3>
-                        <span style="color: #cda975; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Explore &rarr;</span>
+                <div class="staggered-item small"
+                    style="flex: 1; min-width: 250px; position: relative; height: 420px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05);"
+                    onmouseover="this.querySelector('img').style.transform='scale(1.08)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';"
+                    onmouseout="this.querySelector('img').style.transform='scale(1)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
+                    <img src="assets/image copy 26.png" alt="Office Wear"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <div class="overlay"
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;">
+                    </div>
+                    <div class="label-wrapper"
+                        style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
+                        <h3
+                            style="color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                            OFFICE WEAR</h3>
+                        <span
+                            style="color: #cda975; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Explore
+                            &rarr;</span>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="staggered-item large" style="flex: 1.2; min-width: 300px; position: relative; height: 550px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 15px 40px rgba(0,0,0,0.08); z-index: 2; margin-top: -40px;" onmouseover="this.querySelector('img').style.transform='scale(1.08)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';" onmouseout="this.querySelector('img').style.transform='scale(1)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
-                    <img src="assets/image copy 27.png" alt="Daily Wear" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
-                    <div class="overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;"></div>
-                    <div class="label-wrapper" style="position: absolute; bottom: 40px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
-                        <h3 style="color: #fff; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">DAILY WEAR</h3>
-                        <span style="color: #cda975; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Explore &rarr;</span>
+                <div class="staggered-item large"
+                    style="flex: 1.2; min-width: 300px; position: relative; height: 550px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 15px 40px rgba(0,0,0,0.08); z-index: 2; margin-top: -40px;"
+                    onmouseover="this.querySelector('img').style.transform='scale(1.08)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';"
+                    onmouseout="this.querySelector('img').style.transform='scale(1)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
+                    <img src="assets/image copy 27.png" alt="Daily Wear"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <div class="overlay"
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;">
+                    </div>
+                    <div class="label-wrapper"
+                        style="position: absolute; bottom: 40px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
+                        <h3
+                            style="color: #fff; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                            DAILY WEAR</h3>
+                        <span
+                            style="color: #cda975; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Explore
+                            &rarr;</span>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="staggered-item small" style="flex: 1; min-width: 250px; position: relative; height: 420px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.querySelector('img').style.transform='scale(1.48)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';" onmouseout="this.querySelector('img').style.transform='scale(1.4)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
-                    <img src="assets/image copy 28.png" alt="Party Wear" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.4); transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
-                    <div class="overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;"></div>
-                    <div class="label-wrapper" style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
-                        <h3 style="color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">PARTY WEAR</h3>
-                        <span style="color: #cda975; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Explore &rarr;</span>
+                <div class="staggered-item small"
+                    style="flex: 1; min-width: 250px; position: relative; height: 420px; overflow: hidden; border-radius: 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05);"
+                    onmouseover="this.querySelector('img').style.transform='scale(1.48)'; this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.label-wrapper').style.transform='translateY(-10px)';"
+                    onmouseout="this.querySelector('img').style.transform='scale(1.4)'; this.querySelector('.overlay').style.background='linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)'; this.querySelector('.label-wrapper').style.transform='translateY(0)';">
+                    <img src="assets/image copy 28.png" alt="Party Wear"
+                        style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.4); transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <div class="overlay"
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); transition: background 0.6s ease;">
+                    </div>
+                    <div class="label-wrapper"
+                        style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; transition: transform 0.4s ease;">
+                        <h3
+                            style="color: #fff; font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                            PARTY WEAR</h3>
+                        <span
+                            style="color: #cda975; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Explore
+                            &rarr;</span>
                     </div>
                 </div>
 
@@ -637,10 +801,12 @@
         <section class="split-editorial-section">
             <div class="split-editorial">
                 <div class="split-editorial-left">
-                    <div class="split-product large-product" style="position: relative; border-radius: 12px; overflow: hidden;">
+                    <div class="split-product large-product"
+                        style="position: relative; border-radius: 12px; overflow: hidden;">
                         <div class="split-img-wrapper" style="height: 100%; border-radius: 12px; overflow: hidden;">
                             <div class="gloss-overlay"></div>
-                            <img src="assets/image copy 19.png" alt="Solid Gold Minimal Ring" style="border-radius: 12px;">
+                            <img src="assets/image copy 19.png" alt="Solid Silver Minimal Ring"
+                                style="border-radius: 12px;">
 
                             <!-- Overlay Content -->
                             <div class="large-product-overlay">
@@ -653,19 +819,32 @@
                     <!-- Feature Icons Row -->
                     <div class="feature-icons-row">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
+                            </svg>
                             <span>Premium<br>Craftsmanship</span>
                         </div>
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-                            <span>Ethically<br>Sourced Gold</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                            </svg>
+                            <span>Ethically<br>Sourced Silver</span>
                         </div>
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
                             <span>Lifetime<br>Assurance</span>
                         </div>
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
                             <span>Timeless<br>Designs</span>
                         </div>
                     </div>
@@ -674,7 +853,7 @@
                     <div class="split-product right-card">
                         <div class="split-img-wrapper" style="overflow: hidden; border-radius: 12px;">
                             <div class="gloss-overlay"></div>
-                            <img src="assets/image copy 13.png" alt="Solaris Hoops" style="border-radius: 12px;">
+                            <img src="assets/image copy 34.png" alt="Solaris Hoops" style="border-radius: 12px;">
                         </div>
                         <div class="split-product-info">
                             <h3 class="split-title">Solaris Hoops</h3>
@@ -688,7 +867,7 @@
                     <div class="split-product right-card">
                         <div class="split-img-wrapper" style="overflow: hidden; border-radius: 12px;">
                             <div class="gloss-overlay"></div>
-                            <img src="assets/image copy 14.png" alt="Lunar Pendant" style="border-radius: 12px;">
+                            <img src="assets/image copy 36.png" alt="Lunar Pendant" style="border-radius: 12px;">
                         </div>
                         <div class="split-product-info">
                             <h3 class="split-title">Lunar Pendant</h3>
@@ -702,7 +881,7 @@
                     <div class="split-product right-card">
                         <div class="split-img-wrapper" style="overflow: hidden; border-radius: 12px;">
                             <div class="gloss-overlay"></div>
-                            <img src="assets/image copy 20.png" alt="Vestige Ring" style="border-radius: 12px;">
+                            <img src="assets/image copy 37.png" alt="Vestige Ring" style="border-radius: 12px;">
                         </div>
                         <div class="split-product-info">
                             <h3 class="split-title">Vestige Ring</h3>
@@ -716,7 +895,7 @@
                     <div class="split-product right-card">
                         <div class="split-img-wrapper" style="overflow: hidden; border-radius: 12px;">
                             <div class="gloss-overlay"></div>
-                            <img src="assets/image copy 16.png" alt="Unity Cuff" style="border-radius: 12px;">
+                            <img src="assets/image copy 35.png" alt="Unity Cuff" style="border-radius: 12px;">
                         </div>
                         <div class="split-product-info">
                             <h3 class="split-title">Unity Cuff</h3>
@@ -733,76 +912,238 @@
 
 
 
-        
-        <section class="testimonial-section-new" style="padding: 5rem 5%; background-color: #faf9f6; text-align: center;">
-           
-            <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #1a1a1a; font-weight: 400; margin-bottom: 3.5rem;">Trusted by our community</h2>
-            
+
+        <section class="testimonial-section-new"
+            style="padding: 5rem 5%; background-color: #faf9f6; text-align: center;">
+
+            <h2
+                style="font-size: 2.5rem; font-family: var(--font-heading); color: #1a1a1a; font-weight: 400; margin-bottom: 3.5rem;">
+                Trusted by our community</h2>
+
             <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; position: relative;">
 
-                
-                <div class="reviews-grid" style="display: flex; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 2rem; width: 90%; max-width: 1200px; margin: 0 auto; padding: 1rem 0 2rem; scrollbar-width: none; -ms-overflow-style: none;">
+                <!-- Left Arrow -->
+                <button onclick="document.getElementById('reviews-grid').scrollBy({left: -350, behavior: 'smooth'})" style="position: absolute; left: 0; z-index: 10; background: #fff; border: 1px solid rgba(205, 169, 117, 0.4); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #1a1a1a; transition: background 0.3s;" onmouseover="this.style.background='#faf9f6'" onmouseout="this.style.background='#fff'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+
+                <div class="reviews-grid" id="reviews-grid"
+                    style="display: flex; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; gap: 2rem; width: 85%; max-width: 1200px; margin: 0 auto; padding: 1rem 0 2rem; scrollbar-width: none; -ms-overflow-style: none;">
                     <!-- Review 1 -->
-                    <div class="review-card" style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="color: #cda975; font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 1.5rem;">
-                            ★ ★ ★ ★ ★
-                        </div>
-                        <h4 style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">Amila M.</h4>
-                        <p style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">"They are soooo pretty. I always wished to have such earrings in real gold, but gold is sooo expensive now. So I am glad I stumbled into Pukhraj. Thank you and keep up the awesome work."</p>
+                    <div class="review-card"
+                        style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-5px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <h4
+                            style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">
+                            Amila M.</h4>
+                        <p
+                            style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">
+                            "They are soooo pretty. I always wished to have such earrings in real silver, but silver is sooo
+                            expensive now. So I am glad I stumbled into Pukhraj. Thank you and keep up the awesome
+                            work."</p>
+
                         
-                        <!-- Product Link Card -->
-                        <div style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
-                            <div style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
-                                <img src="assets/gold_earrings.png" alt="Product" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem;">
+                            <div style="color: #fbbc05; font-size: 1.2rem; letter-spacing: 4px;">
+                                ★ ★ ★ ★ ★
                             </div>
-                            <a href="#" style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;" onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Golden Heart Love Hoops</a>
+                            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2px;">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                        </div>
+                        <!-- Product Link Card -->
+                        <div
+                            style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <div
+                                style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
+                                <img src="assets/gold_earrings.png" alt="Product"
+                                    style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                            </div>
+                            <a href="#"
+                                style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Golden
+                                Heart Love Hoops</a>
                         </div>
                     </div>
 
                     <!-- Review 2 -->
-                    <div class="review-card" style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="color: #cda975; font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 1.5rem;">
-                            ★ ★ ★ ★ ★
-                        </div>
-                        <h4 style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">Yash K.</h4>
-                        <p style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">"My experience was amazing after purchasing this product. I was eagerly waiting to buy this. Price and quality is amazing you can buy it. It gives a tough competition to gold products."</p>
+                    <div class="review-card"
+                        style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-5px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <h4
+                            style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">
+                            Yash K.</h4>
+                        <p
+                            style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">
+                            "My experience was amazing after purchasing this product. I was eagerly waiting to buy this.
+                            Price and quality is amazing you can buy it. It gives a tough competition to silver products."
+                        </p>
+
                         
-                        <!-- Product Link Card -->
-                        <div style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
-                            <div style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
-                                <img src="assets/gold_rings.png" alt="Product" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem;">
+                            <div style="color: #fbbc05; font-size: 1.2rem; letter-spacing: 4px;">
+                                ★ ★ ★ ★ ★
                             </div>
-                            <a href="#" style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;" onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Small Heart Hoop</a>
+                            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2px;">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                        </div>
+                        <!-- Product Link Card -->
+                        <div
+                            style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <div
+                                style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
+                                <img src="assets/gold_rings.png" alt="Product"
+                                    style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                            </div>
+                            <a href="#"
+                                style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Small
+                                Heart Hoop</a>
                         </div>
                     </div>
 
                     <!-- Review 3 -->
-                    <div class="review-card" style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="color: #cda975; font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 1.5rem;">
-                            ★ ★ ★ ★ ★
-                        </div>
-                        <h4 style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">Deepali B.</h4>
-                        <p style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">"Its the exact product shown in the image. Great for styling in different occasions and everyday use too. Highly recommend Pukhraj to everyone."</p>
+                    <div class="review-card"
+                        style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-5px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <h4
+                            style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">
+                            Deepali B.</h4>
+                        <p
+                            style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">
+                            "Its the exact product shown in the image. Great for styling in different occasions and
+                            everyday use too. Highly recommend Pukhraj to everyone."</p>
+
                         
-                        <!-- Product Link Card -->
-                        <div style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
-                            <div style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
-                                <img src="assets/gold_rings.png" alt="Product" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem;">
+                            <div style="color: #fbbc05; font-size: 1.2rem; letter-spacing: 4px;">
+                                ★ ★ ★ ★ ★
                             </div>
-                            <a href="#" style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;" onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Chevron Ring</a>
+                            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2px;">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                        </div>
+                        <!-- Product Link Card -->
+                        <div
+                            style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <div
+                                style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
+                                <img src="assets/gold_rings.png" alt="Product"
+                                    style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                            </div>
+                            <a href="#"
+                                style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Chevron
+                                Ring</a>
                         </div>
                     </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card"
+                        style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-5px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <h4
+                            style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">
+                            Priya S.</h4>
+                        <p
+                            style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">
+                            "The craftsmanship is absolutely stunning. I bought a necklace for my mother's birthday and she hasn't taken it off since. Truly timeless pieces."</p>
+
+                        
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem;">
+                            <div style="color: #fbbc05; font-size: 1.2rem; letter-spacing: 4px;">
+                                ★ ★ ★ ★ ★
+                            </div>
+                            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2px;">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                        </div>
+                        <!-- Product Link Card -->
+                        <div
+                            style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <div
+                                style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
+                                <img src="assets/image copy 4.png" alt="Product"
+                                    style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                            </div>
+                            <a href="#"
+                                style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Emerald Teardrop Pendant</a>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="review-card"
+                        style="flex: 0 0 auto; width: calc(33.333% - 1.34rem); min-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; padding: 2.5rem 2rem; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid rgba(205, 169, 117, 0.15); transition: transform 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-5px)'"
+                        onmouseout="this.style.transform='translateY(0)'">
+                        <h4
+                            style="font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; color: #1a1a1a; margin-bottom: 1rem;">
+                            Anjali D.</h4>
+                        <p
+                            style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 2rem; flex-grow: 1; font-style: italic;">
+                            "I am beyond impressed with the quality and customer service. The packaging was beautiful and the jewelry feels very premium. Will definitely shop again!"</p>
+
+                        
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1.5rem;">
+                            <div style="color: #fbbc05; font-size: 1.2rem; letter-spacing: 4px;">
+                                ★ ★ ★ ★ ★
+                            </div>
+                            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2px;">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                        </div>
+                        <!-- Product Link Card -->
+                        <div
+                            style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <div
+                                style="width: 45px; height: 45px; background: #faf9f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(205, 169, 117, 0.3); padding: 5px;">
+                                <img src="assets/image copy 24.png" alt="Product"
+                                    style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                            </div>
+                            <a href="#"
+                                style="color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                                onmouseover="this.style.color='#cda975'" onmouseout="this.style.color='#1a1a1a'">Aurélia Gold Hoops</a>
+                        </div>
+                    </div>
+
                 </div>
 
-
+                <!-- Right Arrow -->
+                <button onclick="document.getElementById('reviews-grid').scrollBy({left: 350, behavior: 'smooth'})" style="position: absolute; right: 0; z-index: 10; background: #fff; border: 1px solid rgba(205, 169, 117, 0.4); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #1a1a1a; transition: background 0.3s;" onmouseover="this.style.background='#faf9f6'" onmouseout="this.style.background='#fff'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
             </div>
-            
+
             <div style="margin-top: 3rem;">
-                <a href="contact.html" style="display: inline-block; padding: 1rem 2.5rem; background: transparent; border: 1px solid #1a1a1a; color: #1a1a1a; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; transition: all 0.3s ease;" onmouseover="this.style.background='#1a1a1a'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#1a1a1a';">View All Reviews</a>
+                <a href="contact.html"
+                    style="display: inline-block; padding: 1rem 2.5rem; background: transparent; border: 1px solid #1a1a1a; color: #1a1a1a; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; transition: all 0.3s ease;"
+                    onmouseover="this.style.background='#1a1a1a'; this.style.color='#fff';"
+                    onmouseout="this.style.background='transparent'; this.style.color='#1a1a1a';">View All Reviews</a>
             </div>
         </section>
 
-       
+
     </main>
 
     <footer class="footer-new">
@@ -810,32 +1151,45 @@
             <div class="footer-new-top">
                 <div class="footer-brand">
                     <div style="text-align: center; margin-bottom: 1rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5">
+                            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
+                        </svg>
                     </div>
                     <h2 class="footer-logo-title">PUKHRAJ</h2>
                     <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
                     <p class="footer-text">Crafting timeless elegance<br>for every precious moment.</p>
                     <div class="footer-divider-small"></div>
                     <div class="footer-socials">
-                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links-col">
                     <h3>SHOP</h3>
                     <ul>
                         <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
                         <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
-                        <li><a href="fine-silver.html"><span class="arr">&gt;</span> Fine Silver</a></li>
-                        <li><a href="9kt-fine-gold.html"><span class="arr">&gt;</span> 9KT Fine Gold</a></li>
+                        <li><a href="9kt-fine-silver.html"><span class="arr">&gt;</span> Fine Silver</a></li>
+
                         <li><a href="owners-favourite.html"><span class="arr">&gt;</span> Owner's Favourite</a></li>
                         <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
                         <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-links-col">
                     <h3>QUICK LINKS</h3>
                     <ul>
@@ -845,28 +1199,37 @@
                         <li><a href="contact.html"><span class="arr">&gt;</span> Contact Us</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-newsletter">
                     <h3>NEWSLETTER</h3>
                     <p>Get updates about new collections,<br>exclusive launches and offers.</p>
                     <form class="newsletter-form">
                         <div class="input-group">
                             <input type="email" placeholder="Enter your email address" required>
-                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg></button>
                         </div>
                         <button type="submit" class="btn-subscribe">SUBSCRIBE &rarr;</button>
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-new-divider">
-                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="2"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg></span>
+                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975"
+                        stroke-width="2">
+                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
+                    </svg></span>
             </div>
-            
 
-            
 
-            
+
+
+
             <div class="footer-new-bottom">
                 <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
                 <div class="footer-legal">
@@ -888,15 +1251,21 @@
             <h3>Filter</h3>
             <button id="close-filter-sidebar" class="close-filter-btn">&times;</button>
         </div>
-                <ul class="filter-list" style="list-style: none; padding: 0; margin: 0;">
-            <li><a href="index.html" class="filter-list-item active" style="display:block; text-decoration:none; color:inherit;">All</a></li>
-            <li><a href="necklaces.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Necklace</a></li>
-            <li><a href="bracelets.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Bracelets</a></li>
-            <li><a href="rings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Rings</a></li>
-            <li><a href="earrings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Earrings</a></li>
+        <ul class="filter-list" style="list-style: none; padding: 0; margin: 0;">
+            <li><a href="index.html" class="filter-list-item active"
+                    style="display:block; text-decoration:none; color:inherit;">All</a></li>
+            <li><a href="necklaces.html" class="filter-list-item "
+                    style="display:block; text-decoration:none; color:inherit;">Necklace</a></li>
+            <li><a href="bracelets.html" class="filter-list-item "
+                    style="display:block; text-decoration:none; color:inherit;">Bracelets</a></li>
+            <li><a href="rings.html" class="filter-list-item "
+                    style="display:block; text-decoration:none; color:inherit;">Rings</a></li>
+            <li><a href="earrings.html" class="filter-list-item "
+                    style="display:block; text-decoration:none; color:inherit;">Earrings</a></li>
         </ul>
     </div>
 
     <script src="script.js?v=8"></script>
 </body>
+
 </html>
