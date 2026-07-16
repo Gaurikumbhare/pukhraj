@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=22">
+    <link rel="stylesheet" href="styles.css?v=17">
     <link rel="stylesheet" href="footer.css?v=1">
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
@@ -453,18 +453,18 @@
             <ul class="nav-links-new">
                 <button class="close-menu-btn">&times;</button>
 
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="new-arrivals.html">New Arrivals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="collection.html">Collection</a></li>
                 <li><a href="best-seller.html">Best Seller</a></li>
-                <li><a href="9kt-fine-silver.html">Fine Silver</a></li>
-
-                <li><a href="owners-favourite.html">Owner's Favourite</a></li>
+                <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
                 <li><a href="gifting.html">Gifting</a></li>
                 <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <div class="nav-actions-new">
-                <a href="#" class="icon-btn-new mobile-search-icon" title="Search" style="display: none;">
+                <a href="#" class="icon-btn-new search-icon" title="Search">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="1.5">
                         <circle cx="11" cy="11" r="8"></circle>
@@ -536,15 +536,7 @@
 
 
 
-            <div class="filter-menu-container" style="margin-bottom: 3rem !important; margin-top: 1.5rem !important;">
-                <button class="filter-btn active" data-filter="all">ALL</button>
-                <button class="filter-btn" data-filter="necklaces">NECKLACES</button>
-                <button class="filter-btn" data-filter="bracelets">BRACELETS</button>
-                <button class="filter-btn" data-filter="earrings">EARRINGS</button>
-                <button class="filter-btn" data-filter="rings">RINGS</button>
-                <button class="filter-btn" data-filter="mens">MENS</button>
-                <button class="filter-btn" data-filter="mangalsutras">MANGALSUTRA</button>
-            </div>
+
 
 
 
@@ -553,77 +545,43 @@
 
             <div class="product-grid-4">
                 <!-- Product 1 -->
-                <div class="product-card" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 24.png" class="primary-img" alt="Product">
-                        <img src="assets/image copy 23.png" class="secondary-img" alt="Product Hover">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg></button>
+                <div class="product-card" style="background-color: #FAF9F6; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; height: 100%; position: relative;">
+                    <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem;">
+                        <button class="wishlist-btn" style="position: absolute; top: 1rem; right: 1rem; background: #fff; border: 1px solid #eaeaea; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); cursor: pointer; z-index: 10; color: #333;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="assets/image copy 21.png" alt="Imperial Gold Necklace" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                     </div>
-                    <div class="product-info">
-                        <h3>Aurélia Gold Hoops</h3>
-                        <p class="price"><span class="price-sale">₹2,500</span> </p>
+                    <div style="padding: 0 1.5rem 1.5rem; text-align: left; margin-top: auto;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #1a1a1a; font-weight: 500; margin: 0; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Imperial Gold Necklace</h3>
                     </div>
                 </div>
                 <!-- Product 2 -->
-                <div class="product-card" data-category="mangalsutras">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 25.png" class="primary-img" alt="Product"
-                            style="object-position: center bottom;">
-                        <img src="assets/image copy 3.png" class="secondary-img" alt="Product Hover"
-                            style="object-position: center bottom;">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg></button>
+                <div class="product-card" style="background-color: #FAF9F6; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; height: 100%; position: relative;">
+                    <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem;">
+                        <button class="wishlist-btn" style="position: absolute; top: 1rem; right: 1rem; background: #fff; border: 1px solid #eaeaea; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); cursor: pointer; z-index: 10; color: #333;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="assets/image copy 23.png" alt="Heritage Gold Earrings" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                     </div>
-                    <div class="product-info">
-                        <h3>Emerald CZ Necklace</h3>
-                        <p class="price"><span class="price-sale">₹3,200</span> </p>
+                    <div style="padding: 0 1.5rem 1.5rem; text-align: left; margin-top: auto;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #1a1a1a; font-weight: 500; margin: 0; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Heritage Gold Earrings</h3>
                     </div>
                 </div>
-                <!-- Product 3 (Lifestyle) -->
-                <div class="product-card" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 4.png" class="primary-img" alt="Model">
-                        <img src="assets/image copy 5.png" class="secondary-img" alt="Model Hover">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg></button>
+                <!-- Product 3 -->
+                <div class="product-card" style="background-color: #FAF9F6; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; height: 100%; position: relative;">
+                    <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem;">
+                        <button class="wishlist-btn" style="position: absolute; top: 1rem; right: 1rem; background: #fff; border: 1px solid #eaeaea; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); cursor: pointer; z-index: 10; color: #333;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="assets/image copy 24.png" alt="Diamond Statement Ring" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                     </div>
-                    <div class="product-info">
-                        <h3>Emerald Teardrop Pendant</h3>
-                        <p class="price"><span class="price-sale">₹4,500</span> </p>
+                    <div style="padding: 0 1.5rem 1.5rem; text-align: left; margin-top: auto;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #1a1a1a; font-weight: 500; margin: 0; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Diamond Statement Ring</h3>
                     </div>
                 </div>
-                <!-- Product 4 (Lifestyle) -->
-                <div class="product-card" data-category="necklaces">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 7.png" class="primary-img" alt="Model">
-                        <img src="assets/image copy 22.png" class="secondary-img" alt="Model Hover">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                            </svg></button>
+                <!-- Product 4 -->
+                <div class="product-card" style="background-color: #FAF9F6; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; height: 100%; position: relative;">
+                    <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem;">
+                        <button class="wishlist-btn" style="position: absolute; top: 1rem; right: 1rem; background: #fff; border: 1px solid #eaeaea; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); cursor: pointer; z-index: 10; color: #333;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <img src="assets/image copy 4.png" alt="Solid Gold Kada" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                     </div>
-                    <div class="product-info">
-                        <h3>Silver Ring</h3>
-                        <p class="price"><span class="price-sale">₹2,800</span> </p>
+                    <div style="padding: 0 1.5rem 1.5rem; text-align: left; margin-top: auto;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #1a1a1a; font-weight: 500; margin: 0; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Solid Gold Kada</h3>
                     </div>
                 </div>
             </div>
@@ -1182,9 +1140,7 @@
                     <ul>
                         <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
                         <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
-                        <li><a href="9kt-fine-silver.html"><span class="arr">&gt;</span> Fine Silver</a></li>
-
-                        <li><a href="owners-favourite.html"><span class="arr">&gt;</span> Owner's Favourite</a></li>
+                        <li><a href="silver-artifacts.html"><span class="arr">&gt;</span> Silver Artifacts</a></li>
                         <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
                         <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
                     </ul>

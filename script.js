@@ -1148,7 +1148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reviewsGrid) {
         let scrollAmount = 0;
         const scrollStep = 350; // Scroll by one card width
-        const scrollInterval = 3000; // 3 seconds
+        const scrollInterval = 1500; // 1.5 seconds
 
         setInterval(() => {
             // Check if we reached the end

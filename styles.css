@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    overscroll-behavior-y: none;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    overscroll-behavior-y: none;
 }
 
 /* Navbar */
@@ -2607,10 +2609,24 @@ h2 {
     aspect-ratio: 1 / 1 !important;
 }
 .filter-btn {
-    border-radius: 2px !important;
+    border-radius: 50px !important;
     padding: 10px 24px !important;
+    border: 1px solid #ccc !important;
+    background: transparent !important;
     font-size: 0.85rem !important;
     margin: 0 4px !important;
+    color: #333 !important;
+    transition: all 0.3s ease !important;
+}
+.filter-btn:hover {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border-color: #1a1a1a !important;
+}
+.filter-btn.active, .filter-btn.active:hover {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border-color: #1a1a1a !important;
 }
 
 .add-to-bag-btn {
