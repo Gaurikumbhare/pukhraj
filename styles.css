@@ -4,7 +4,7 @@
     --tertiary-color: #d89f66; /* Warm Rose Gold / Copper */
     --bg-color: #ffffff; /* Pure White */
     --text-color: #111111; /* Almost Black for text */
-    --font-heading: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
     --transition: all 0.3s ease;
 }
