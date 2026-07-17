@@ -1161,3 +1161,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }, scrollInterval);
     }
 });
+// Step-by-step auto-carousel for reviews grid
+document.addEventListener('DOMContentLoaded', function() {
+    const reviewsGrid = document.getElementById('reviews-grid');
+    if (reviewsGrid) {
+        // Clone for infinite effect
+        const cards = Array.from(reviewsGrid.querySelectorAll('.review-card'));
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            reviewsGrid.appendChild(clone);
+        });
+
+        let isHovered = false;
+        let autoPlayInterval;
+
+        reviewsGrid.addEventListener('mouseenter', () => isHovered = true);
+        reviewsGrid.addEventListener('mouseleave', () => isHovered = false);
+        reviewsGrid.addEventListener('touchstart', () => isHovered = true);
+        reviewsGrid.addEventListener('touchend', () => {
+            setTimeout(() => isHovered = false, 1000);
+        });
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                if (!isHovered) {
+                    const cardWidth = reviewsGrid.querySelector('.review-card').offsetWidth + 32;
+                    
+                    // The exact middle point (end of original content)
+                    const midpoint = reviewsGrid.scrollWidth / 2;
+                    
+                    // If we are at or past the midpoint, jump instantly to the equivalent start position
+                    if (reviewsGrid.scrollLeft >= midpoint - 10) {
+                        // Temporarily disable scroll-snap to prevent it from fighting the jump
+                        const originalSnap = reviewsGrid.style.scrollSnapType;
+                        reviewsGrid.style.scrollSnapType = 'none';
+                        
+                        // Silent jump
+                        reviewsGrid.scrollLeft = reviewsGrid.scrollLeft - midpoint;
+                        
+                        // Restore snap
+                        reviewsGrid.style.scrollSnapType = originalSnap;
+                    }
+                    
+                    // Then smoothly scroll one card forward
+                    setTimeout(() => {
+                        reviewsGrid.scrollBy({left: cardWidth, behavior: 'smooth'});
+                    }, 50);
+                }
+            }, 3000);
+        }
+
+        startAutoPlay();
+    }
+});
