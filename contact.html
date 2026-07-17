@@ -1,243 +1,683 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - PUKHRAJ JEWELLERS</title>
-    <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=17">
-    <link rel="stylesheet" href="footer.css?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-.product-card .product-img-wrapper { height: auto !important; aspect-ratio: 1/1 !important; }
+    <meta name="description" content="Discover premium, handcrafted jewelry." />
+    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="footer.css?v=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .product-card .product-img-wrapper {
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+      }
 
-@media (min-width: 769px) {
-    .close-menu-btn { display: none !important; }
-    .nav-accordion-item { display: none !important; }
-}
-</style>
-</head>
-<body>
+      @media (min-width: 769px) {
+        .close-menu-btn {
+          display: none !important;
+        }
+        .nav-accordion-item {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <span>PUKHRAJ: Plan Of Purchase</span>
+      <span>PUKHRAJ: Plan Of Purchase</span>
     </div>
 
     <!-- Main Navbar -->
     <nav class="navbar-new">
-        <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
-            <div class="menu-toggle" id="mobile-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </div>
-            <div class="logo-new">PUKHRAJ</div>
-            <ul class="nav-links-new">
-                <button class="close-menu-btn">&times;</button>
-
-                <li><a href="index.html">Home</a></li>
-                <li><a href="new-arrivals.html">New Arrivals</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="best-seller.html">Best Seller</a></li>
-                <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
-                <li><a href="gifting.html">Gifting</a></li>
-                <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions-new">
-                <a href="#" class="icon-btn-new search-icon" title="Search">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </a>
-                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span class="badge-count" id="wishlist-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </a>
-                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </div>
-                
-            </div>
+      <div
+        class="navbar-desktop-row"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 5%;
+          width: 100%;
+          box-sizing: border-box;
+        "
+      >
+        <div class="menu-toggle" id="mobile-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </div>
-</nav>
+        <div class="logo-new">PUKHRAJ</div>
+        <ul class="nav-links-new">
+          <button class="close-menu-btn">&times;</button>
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="new-arrivals.html">New Arrivals</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="best-seller.html">Best Seller</a></li>
+          <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
+          <li><a href="gifting.html">Gifting</a></li>
+          <li class="nav-has-badge">
+            <span class="nav-badge red-badge">New</span
+            ><a href="pop.html">POP</a>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions-new">
+          <a href="#" class="icon-btn-new search-icon" title="Search">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="icon-btn-new cart-icon-new"
+            id="wishlist-icon"
+            title="Wishlist"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+            <span
+              class="badge-count"
+              id="wishlist-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </a>
+          <div
+            class="icon-btn-new cart-icon-new"
+            id="cart-icon"
+            title="View Cart"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span
+              class="cart-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main>
-        <section id="contact" class="contact" style="padding: 6rem 0; min-height: 80vh; background-color: #faf9f6;">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <p class="testimonial-subtitle">WE'D LOVE TO HEAR FROM YOU</p>
-                <h2 style="font-size: 2.5rem; color: var(--primary-color);">Get in Touch</h2>
-            </div>
-            
-            <div class="contact-page-container" style="display: flex; flex-wrap: wrap; gap: 4rem; max-width: 1200px; margin: 0 auto; padding: 0 5%;">
-                
-                <!-- Contact Info Column -->
-                <div class="contact-details-col" style="flex: 1; min-width: 300px;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-family: var(--font-heading); font-size: 1.8rem;">Visit Our Showroom</h3>
-                    <p style="color: #555; margin-bottom: 2.5rem; line-height: 1.6;">Whether you have a question about our collections, need help with a custom design, or want to book an appointment, our team is here to assist you.</p>
-                    
-                    <div class="contact-card" style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div style="font-size: 2rem;">📍</div>
-                        <div>
-                            <h4 style="margin-bottom: 0.5rem; color: var(--text-color);">Address</h4>
-                            <p style="color: #666; line-height: 1.5; font-size: 0.95rem;">HOUSE NO.5281, OPP. SIDDHESHWAR MANGAL KARYALAYA,<br>JAWAHAR NAGAR, MANEWADA ROAD,<br>NAGPUR, Maharashtra, 440024</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card" style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div style="font-size: 2rem;">📞</div>
-                        <div>
-                            <h4 style="margin-bottom: 0.5rem; color: var(--text-color);">Phone</h4>
-                            <p><a href="tel:+918600871333" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='#666'">+91 8600871333</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card" style="display: flex; gap: 1.5rem; margin-bottom: 2rem; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                        <div style="font-size: 2rem;">✉️</div>
-                        <div>
-                            <h4 style="margin-bottom: 0.5rem; color: var(--text-color);">Email</h4>
-                            <p><a href="mailto:info@pukhrajjewellers.co.in" style="color: #666; text-decoration: none; font-size: 0.95rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-color)'" onmouseout="this.style.color='#666'">info@pukhrajjewellers.co.in</a></p>
-                        </div>
-                    </div>
-                    
-                    <!-- Google Maps Embed -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.2536968799484!2d79.103986!3d21.102434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf782c53a663%3A0xc6eb994dc506048d!2sManewada%20Rd%2C%20Nagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1716301384025!5m2!1sen!2sin" width="100%" height="250" style="border:0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+      <section
+        id="contact"
+        class="contact"
+        style="padding: 6rem 0; min-height: 80vh; background-color: #faf9f6"
+      >
+        <div style="text-align: center; margin-bottom: 4rem">
+          <p class="testimonial-subtitle">WE'D LOVE TO HEAR FROM YOU</p>
+          <h2 style="font-size: 2.5rem; color: var(--primary-color)">
+            Get in Touch
+          </h2>
+        </div>
 
-                <!-- Contact Form Column -->
-                <div class="contact-form-col" style="flex: 1; min-width: 300px; background: #fff; padding: 3.5rem 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: fit-content;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-family: var(--font-heading); font-size: 1.8rem;">Send Us a Message</h3>
-                    <form class="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;" onsubmit="event.preventDefault(); alert('Thank you for your message. Our team will get back to you shortly.'); this.reset();">
-                        <div>
-                            <label style="display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500;">Your Name</label>
-                            <input type="text" placeholder="John Doe" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; outline: none;" onfocus="this.style.borderColor='var(--primary-color)'" onblur="this.style.borderColor='#ddd'">
-                        </div>
-                        <div>
-                            <label style="display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500;">Your Email</label>
-                            <input type="email" placeholder="john@example.com" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; outline: none;" onfocus="this.style.borderColor='var(--primary-color)'" onblur="this.style.borderColor='#ddd'">
-                        </div>
-                        <div>
-                            <label style="display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500;">Phone Number (Optional)</label>
-                            <input type="tel" placeholder="+91 xxxxx xxxxx" style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; outline: none;" onfocus="this.style.borderColor='var(--primary-color)'" onblur="this.style.borderColor='#ddd'">
-                        </div>
-                        <div>
-                            <label style="display: block; margin-bottom: 0.5rem; color: #555; font-weight: 500;">Message</label>
-                            <textarea placeholder="How can we help you?" rows="5" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; resize: vertical; outline: none;" onfocus="this.style.borderColor='var(--primary-color)'" onblur="this.style.borderColor='#ddd'"></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="padding: 1rem 2rem; font-size: 1.1rem; width: 100%; margin-top: 1rem;">Send Message</button>
-                    </form>
-                </div>
+        <div
+          class="contact-page-container"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+          "
+        >
+          <!-- Contact Info Column -->
+          <div class="contact-details-col" style="flex: 1; min-width: 300px">
+            <h3
+              style="
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+              "
+            >
+              Visit Our Showroom
+            </h3>
+            <p style="color: #555; margin-bottom: 2.5rem; line-height: 1.6">
+              Whether you have a question about our collections, need help with
+              a custom design, or want to book an appointment, our team is here
+              to assist you.
+            </p>
+
+            <div
+              class="contact-card"
+              style="
+                display: flex;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+                background: #fff;
+                padding: 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+              "
+            >
+              <div style="font-size: 2rem">📍</div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem; color: var(--text-color)">
+                  Address
+                </h4>
+                <p style="color: #666; line-height: 1.5; font-size: 0.95rem">
+                  HOUSE NO.5281, OPP. SIDDHESHWAR MANGAL KARYALAYA,<br />JAWAHAR
+                  NAGAR, MANEWADA ROAD,<br />NAGPUR, Maharashtra, 440024
+                </p>
+              </div>
             </div>
-        </section>
+
+            <div
+              class="contact-card"
+              style="
+                display: flex;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+                background: #fff;
+                padding: 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+              "
+            >
+              <div style="font-size: 2rem">📞</div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem; color: var(--text-color)">
+                  Phone
+                </h4>
+                <p>
+                  <a
+                    href="tel:+918600871333"
+                    style="
+                      color: #666;
+                      text-decoration: none;
+                      font-size: 0.95rem;
+                      transition: color 0.3s;
+                    "
+                    onmouseover="this.style.color = 'var(--primary-color)'"
+                    onmouseout="this.style.color = '#666'"
+                    >+91 8600871333</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="contact-card"
+              style="
+                display: flex;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+                background: #fff;
+                padding: 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+              "
+            >
+              <div style="font-size: 2rem">✉️</div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem; color: var(--text-color)">
+                  Email
+                </h4>
+                <p>
+                  <a
+                    href="mailto:info@pukhrajjewellers.co.in"
+                    style="
+                      color: #666;
+                      text-decoration: none;
+                      font-size: 0.95rem;
+                      transition: color 0.3s;
+                    "
+                    onmouseover="this.style.color = 'var(--primary-color)'"
+                    onmouseout="this.style.color = '#666'"
+                    >info@pukhrajjewellers.co.in</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.2536968799484!2d79.103986!3d21.102434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf782c53a663%3A0xc6eb994dc506048d!2sManewada%20Rd%2C%20Nagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1716301384025!5m2!1sen!2sin"
+              width="100%"
+              height="250"
+              style="
+                border: 0;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+              "
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div
+            class="contact-form-col"
+            style="
+              flex: 1;
+              min-width: 300px;
+              background: #fff;
+              padding: 3.5rem 3rem;
+              border-radius: 12px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+              height: fit-content;
+            "
+          >
+            <h3
+              style="
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+              "
+            >
+              Send Us a Message
+            </h3>
+            <form
+              class="contact-form"
+              style="display: flex; flex-direction: column; gap: 1.5rem"
+              onsubmit="
+                event.preventDefault();
+                alert(
+                  'Thank you for your message. Our team will get back to you shortly.',
+                );
+                this.reset();
+              "
+            >
+              <div>
+                <label
+                  style="
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    color: #555;
+                    font-weight: 500;
+                  "
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                  style="
+                    width: 100%;
+                    padding: 1rem;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-family: var(--font-body);
+                    font-size: 1rem;
+                    outline: none;
+                  "
+                  onfocus="this.style.borderColor = 'var(--primary-color)'"
+                  onblur="this.style.borderColor = '#ddd'"
+                />
+              </div>
+              <div>
+                <label
+                  style="
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    color: #555;
+                    font-weight: 500;
+                  "
+                  >Your Email</label
+                >
+                <input
+                  type="email"
+                  placeholder="john@example.com"
+                  required
+                  style="
+                    width: 100%;
+                    padding: 1rem;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-family: var(--font-body);
+                    font-size: 1rem;
+                    outline: none;
+                  "
+                  onfocus="this.style.borderColor = 'var(--primary-color)'"
+                  onblur="this.style.borderColor = '#ddd'"
+                />
+              </div>
+              <div>
+                <label
+                  style="
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    color: #555;
+                    font-weight: 500;
+                  "
+                  >Phone Number (Optional)</label
+                >
+                <input
+                  type="tel"
+                  placeholder="+91 xxxxx xxxxx"
+                  style="
+                    width: 100%;
+                    padding: 1rem;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-family: var(--font-body);
+                    font-size: 1rem;
+                    outline: none;
+                  "
+                  onfocus="this.style.borderColor = 'var(--primary-color)'"
+                  onblur="this.style.borderColor = '#ddd'"
+                />
+              </div>
+              <div>
+                <label
+                  style="
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    color: #555;
+                    font-weight: 500;
+                  "
+                  >Message</label
+                >
+                <textarea
+                  placeholder="How can we help you?"
+                  rows="5"
+                  required
+                  style="
+                    width: 100%;
+                    padding: 1rem;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-family: var(--font-body);
+                    font-size: 1rem;
+                    resize: vertical;
+                    outline: none;
+                  "
+                  onfocus="this.style.borderColor = 'var(--primary-color)'"
+                  onblur="this.style.borderColor = '#ddd'"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn"
+                style="
+                  padding: 1rem 2rem;
+                  font-size: 1.1rem;
+                  width: 100%;
+                  margin-top: 1rem;
+                "
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer-new">
-        <div class="footer-new-container">
-            <div class="footer-new-top">
-                <div class="footer-brand">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5">
-                            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                        </svg>
-                    </div>
-                    <h2 class="footer-logo-title">PUKHRAJ</h2>
-                    <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
-                    <p class="footer-text">Crafting timeless elegance<br>for every precious moment.</p>
-                    <div class="footer-divider-small"></div>
-                    <div class="footer-socials">
-                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg></a>
-                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg></a>
-
-                    </div>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>SHOP</h3>
-                    <ul>
-                        <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
-                        <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
-                        <li><a href="silver-artifacts.html"><span class="arr">&gt;</span> Silver Artifacts</a></li>
-                        <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
-                        <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="index.html"><span class="arr">&gt;</span> Home</a></li>
-                        <li><a href="collection.html"><span class="arr">&gt;</span> Collection</a></li>
-                        <li><a href="about.html"><span class="arr">&gt;</span> About Us</a></li>
-                        <li><a href="contact.html"><span class="arr">&gt;</span> Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h3>NEWSLETTER</h3>
-                    <p>Get updates about new collections,<br>exclusive launches and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" placeholder="Enter your email address" required>
-                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.5">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                    </path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg></button>
-                        </div>
-                        <button type="submit" class="btn-subscribe">SUBSCRIBE &rarr;</button>
-                    </form>
-                </div>
+      <div class="footer-new-container">
+        <div class="footer-new-top">
+          <div class="footer-brand">
+            <div style="text-align: center; margin-bottom: 1rem">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#cda975"
+                stroke-width="1.5"
+              >
+                <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
+              </svg>
             </div>
-
-            <div class="footer-new-divider">
-                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975"
-                        stroke-width="2">
-                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                    </svg></span>
+            <h2 class="footer-logo-title">PUKHRAJ</h2>
+            <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
+            <p class="footer-text">
+              Crafting timeless elegance<br />for every precious moment.
+            </p>
+            <div class="footer-divider-small"></div>
+            <div class="footer-socials">
+              <a href="#here" id="instagram-link"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+              ></a>
+              <a href="#"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path></svg
+              ></a>
             </div>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>SHOP</h3>
+            <ul>
+              <li>
+                <a href="new-arrivals.html"
+                  ><span class="arr">&gt;</span> New Arrivals</a
+                >
+              </li>
+              <li>
+                <a href="best-seller.html"
+                  ><span class="arr">&gt;</span> Best Seller</a
+                >
+              </li>
+              <li>
+                <a href="silver-artifacts.html"
+                  ><span class="arr">&gt;</span> Silver Artifacts</a
+                >
+              </li>
+              <li>
+                <a href="gifting.html"><span class="arr">&gt;</span> Gifting</a>
+              </li>
+              <li>
+                <a href="pop.html"><span class="arr">&gt;</span> POP</a>
+              </li>
+            </ul>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>QUICK LINKS</h3>
+            <ul>
+              <li>
+                <a href="index.html"><span class="arr">&gt;</span> Home</a>
+              </li>
+              <li>
+                <a href="collection.html"
+                  ><span class="arr">&gt;</span> Collection</a
+                >
+              </li>
+              <li>
+                <a href="about.html"><span class="arr">&gt;</span> About Us</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="arr">&gt;</span> Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
 
-
-
-            <div class="footer-new-bottom">
-                <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms & Conditions</a>
-                    <span class="separator">|</span>
-                    <a href="#">Disclaimer</a>
-                </div>
-                <p class="crafted-text">✦ Crafted with Passion, Delivered with Trust.</p>
-            </div>
+          <div class="footer-newsletter">
+            <h3>NEWSLETTER</h3>
+            <p>
+              Get updates about new collections,<br />exclusive launches and
+              offers.
+            </p>
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button type="submit">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <button type="submit" class="btn-subscribe">
+                SUBSCRIBE &rarr;
+              </button>
+            </form>
+          </div>
         </div>
+
+        <div class="footer-new-divider">
+          <span class="diamond-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#cda975"
+              stroke-width="2"
+            >
+              <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" /></svg
+          ></span>
+        </div>
+
+        <div class="footer-new-bottom">
+          <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="#">Terms & Conditions</a>
+            <span class="separator">|</span>
+            <a href="#">Disclaimer</a>
+          </div>
+          <p class="crafted-text">
+            ✦ Crafted with Passion, Delivered with Trust.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Filter Sidebar -->
     <div class="filter-sidebar-overlay" id="filter-sidebar-overlay"></div>
     <div class="filter-sidebar" id="filter-sidebar">
-        <div class="filter-sidebar-header">
-            <h3>Filter</h3>
-            <button id="close-filter-sidebar" class="close-filter-btn">&times;</button>
-        </div>
-                <ul class="filter-list" style="list-style: none; padding: 0; margin: 0;">
-            <li><a href="index.html" class="filter-list-item active" style="display:block; text-decoration:none; color:inherit;">All</a></li>
-            <li><a href="necklaces.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Necklace</a></li>
-            <li><a href="bracelets.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Bracelets</a></li>
-            <li><a href="rings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Rings</a></li>
-            <li><a href="earrings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Earrings</a></li>
-        </ul>
+      <div class="filter-sidebar-header">
+        <h3>Filter</h3>
+        <button id="close-filter-sidebar" class="close-filter-btn">
+          &times;
+        </button>
+      </div>
+      <ul class="filter-list" style="list-style: none; padding: 0; margin: 0">
+        <li>
+          <a
+            href="index.html"
+            class="filter-list-item active"
+            style="display: block; text-decoration: none; color: inherit"
+            >All</a
+          >
+        </li>
+        <li>
+          <a
+            href="necklaces.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Necklace</a
+          >
+        </li>
+        <li>
+          <a
+            href="bracelets.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Bracelets</a
+          >
+        </li>
+        <li>
+          <a
+            href="rings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Rings</a
+          >
+        </li>
+        <li>
+          <a
+            href="earrings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Earrings</a
+          >
+        </li>
+      </ul>
     </div>
 
     <script src="script.js?v=8"></script>
-</body>
+  </body>
 </html>

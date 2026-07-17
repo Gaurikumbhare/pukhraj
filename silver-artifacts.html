@@ -1,345 +1,640 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PUKHRAJ JEWELLERS</title>
-    <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=17">
-    <link rel="stylesheet" href="footer.css?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-.product-card .product-img-wrapper { height: auto !important; aspect-ratio: 1/1 !important; }
+    <meta name="description" content="Discover premium, handcrafted jewelry." />
+    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="footer.css?v=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .product-card .product-img-wrapper {
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+      }
 
-@media (min-width: 769px) {
-    .close-menu-btn { display: none !important; }
-    .nav-accordion-item { display: none !important; }
-}
+      @media (min-width: 769px) {
+        .close-menu-btn {
+          display: none !important;
+        }
+        .nav-accordion-item {
+          display: none !important;
+        }
+      }
 
-@media (max-width: 768px) {
-    .hero-static { background-position: 15% center !important; }
-}
-</style>
-</head>
-<body>
+      @media (max-width: 768px) {
+        .hero-static {
+          background-position: 15% center !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <span>PUKHRAJ: Plan Of Purchase</span>
+      <span>PUKHRAJ: Plan Of Purchase</span>
     </div>
 
     <!-- Main Navbar -->
     <nav class="navbar-new">
-        <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
-            <div class="menu-toggle" id="mobile-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </div>
-            <div class="logo-new">PUKHRAJ</div>
-            <ul class="nav-links-new">
-                <button class="close-menu-btn">&times;</button>
-
-                <li><a href="index.html">Home</a></li>
-                <li><a href="new-arrivals.html">New Arrivals</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="best-seller.html">Best Seller</a></li>
-                <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
-                <li><a href="gifting.html">Gifting</a></li>
-                <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions-new">
-                <a href="#" class="icon-btn-new search-icon" title="Search">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </a>
-                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span class="badge-count" id="wishlist-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </a>
-                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </div>
-                
-            </div>
+      <div
+        class="navbar-desktop-row"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 5%;
+          width: 100%;
+          box-sizing: border-box;
+        "
+      >
+        <div class="menu-toggle" id="mobile-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </div>
-</nav>
+        <div class="logo-new">PUKHRAJ</div>
+        <ul class="nav-links-new">
+          <button class="close-menu-btn">&times;</button>
 
-        <main>
-                <!-- Hero Banner Header -->
-        <section class="hero-static" style="background-image: url('assets/image copy 39.png'); background-size: cover; background-position: 25% center; height: 600px; position: relative; margin-bottom: 0;">
-            <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.8) 100%);"></div>
-            <div class="hero-content-right" style="position: absolute; top: 50%; right: 10%; transform: translateY(-50%); text-align: center; color: #fff; z-index: 2; max-width: 500px;">
-                <h1 class="hero-serif-title" style="font-size: 3.5rem; margin-bottom: 1rem; font-family: var(--font-heading); font-style: italic; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Silver Artifacts</h1>
-                <p class="hero-small-text" style="font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2rem;">Handpicked masterpieces</p>
-                
-            </div>
-        </section>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="new-arrivals.html">New Arrivals</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="best-seller.html">Best Seller</a></li>
+          <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
+          <li><a href="gifting.html">Gifting</a></li>
+          <li class="nav-has-badge">
+            <span class="nav-badge red-badge">New</span
+            ><a href="pop.html">POP</a>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions-new">
+          <a href="#" class="icon-btn-new search-icon" title="Search">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="icon-btn-new cart-icon-new"
+            id="wishlist-icon"
+            title="Wishlist"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+            <span
+              class="badge-count"
+              id="wishlist-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </a>
+          <div
+            class="icon-btn-new cart-icon-new"
+            id="cart-icon"
+            title="View Cart"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span
+              class="cart-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
 
-        
-        
+    <main>
+      <!-- Hero Banner Header -->
+      <section
+        class="hero-static"
+        style="
+          background-image: url(&quot;assets/image copy 39.png&quot;);
+          background-size: cover;
+          background-position: 25% center;
+          height: 600px;
+          position: relative;
+          margin-bottom: 0;
+        "
+      >
+        <div
+          class="hero-overlay"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0.1) 40%,
+              rgba(0, 0, 0, 0.8) 100%
+            );
+          "
+        ></div>
+        <div
+          class="hero-content-right"
+          style="
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: #fff;
+            z-index: 2;
+            max-width: 500px;
+          "
+        >
+          <h1
+            class="hero-serif-title"
+            style="
+              font-size: 3.5rem;
+              margin-bottom: 1rem;
+              font-family: var(--font-heading);
+              font-style: italic;
+              font-weight: 400;
+              text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            "
+          >
+            Silver Artifacts
+          </h1>
+          <p
+            class="hero-small-text"
+            style="
+              font-size: 1.1rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              margin-bottom: 2rem;
+            "
+          >
+            Handpicked masterpieces
+          </p>
+        </div>
+      </section>
 
-        <section class="artifact-showcase-light" style="padding: 5rem 10%; background-color: #fdfaf5; color: #1a1a1a;">
-            <style>
-                .artifact-row {
-                    display: flex;
-                    align-items: center;
-                    gap: 6rem;
-                    margin-bottom: 8rem;
-                }
-                .artifact-row.reverse {
-                    flex-direction: row-reverse;
-                }
-                .artifact-img-wrap {
-                    flex: 1;
-                    position: relative;
-                }
-                .artifact-img-wrap img {
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-                }
-                .artifact-img-badge {
-                    position: absolute;
-                    top: 20px;
-                    left: 20px;
-                    background: rgba(0,0,0,0.65);
-                    padding: 8px 12px;
-                    color: #fff;
-                    font-size: 0.6rem;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    font-family: monospace;
-                    line-height: 1.4;
-                }
-                .artifact-img-badge span {
-                    color: #cda975;
-                }
-                .artifact-img-badge-right {
-                    position: absolute;
-                    bottom: 20px;
-                    right: 20px;
-                    background: rgba(0,0,0,0.65);
-                    padding: 8px 12px;
-                    color: #fff;
-                    font-size: 0.6rem;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    font-family: monospace;
-                    line-height: 1.4;
-                    text-align: right;
-                }
-                .artifact-img-badge-right span {
-                    color: #cda975;
-                }
-                .artifact-text-wrap {
-                    flex: 1;
-                    padding: 0 2rem;
-                }
-                .artifact-overline {
-                    font-size: 0.75rem;
-                    color: #cda975;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    margin-bottom: 1rem;
-                    font-weight: 600;
-                }
-                .artifact-title-light {
-                    font-family: var(--font-heading);
-                    font-size: 2.5rem;
-                    font-weight: 700;
-                    color: #333;
-                    margin-bottom: 1.5rem;
-                    text-align: left;
-                }
-                .artifact-desc-light {
-                    font-size: 0.95rem;
-                    line-height: 1.8;
-                    color: #666;
-                    margin-bottom: 2.5rem;
-                    text-align: justify;
-                }
-                .artifact-link-1 {
-                    display: inline-block;
-                    font-size: 0.75rem;
-                    font-weight: 700;
-                    color: #555;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    text-decoration: none;
-                    border-bottom: 2px solid #ddd;
-                    padding-bottom: 4px;
-                    margin-bottom: 1.5rem;
-                    transition: border-color 0.3s;
-                }
-                .artifact-link-1:hover {
-                    border-color: #555;
-                }
-                .artifact-link-2 {
-                    display: block;
-                    font-size: 0.75rem;
-                    font-weight: 700;
-                    color: #cda975;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    text-decoration: none;
-                }
-                
-                @media (max-width: 900px) {
-                    .artifact-row { flex-direction: column !important; gap: 3rem; margin-bottom: 5rem; }
-                }
-            </style>
-            
-            <!-- Row 1 -->
-            <div class="artifact-row">
-                <div class="artifact-img-wrap">
-                    <img src="assets/silver_idol_new.png" alt="Divine Silver Idols">
-                    
-                </div>
-                <div class="artifact-text-wrap">
-                    <h2 class="artifact-title-light">Divine Silver Idols</h2>
-                    <p class="artifact-desc-light">Pure silver idols crafted with divine precision, perfect for your home temple or as auspicious gifts. Each piece is hand-burnished to achieve a lunar glow that transcends generations. Our master artisans devote countless hours to ensuring every intricate detail and serene expression reflects the highest devotion, creating a spiritual centerpiece that radiates peace and prosperity in your sacred space.</p>
-                    <a href="contact.html" class="artifact-link-1">INQUIRE FOR CUSTOMIZATION</a>
-                </div>
-            </div>
+      <section
+        class="artifact-showcase-light"
+        style="padding: 5rem 10%; background-color: #fdfaf5; color: #1a1a1a"
+      >
+        <style>
+          .artifact-row {
+            display: flex;
+            align-items: center;
+            gap: 6rem;
+            margin-bottom: 8rem;
+          }
+          .artifact-row.reverse {
+            flex-direction: row-reverse;
+          }
+          .artifact-img-wrap {
+            flex: 1;
+            position: relative;
+          }
+          .artifact-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+          }
+          .artifact-img-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 8px 12px;
+            color: #fff;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: monospace;
+            line-height: 1.4;
+          }
+          .artifact-img-badge span {
+            color: #cda975;
+          }
+          .artifact-img-badge-right {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.65);
+            padding: 8px 12px;
+            color: #fff;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: monospace;
+            line-height: 1.4;
+            text-align: right;
+          }
+          .artifact-img-badge-right span {
+            color: #cda975;
+          }
+          .artifact-text-wrap {
+            flex: 1;
+            padding: 0 2rem;
+          }
+          .artifact-overline {
+            font-size: 0.75rem;
+            color: #cda975;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+          }
+          .artifact-title-light {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: left;
+          }
+          .artifact-desc-light {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 2.5rem;
+            text-align: justify;
+          }
+          .artifact-link-1 {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 4px;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s;
+          }
+          .artifact-link-1:hover {
+            border-color: #555;
+          }
+          .artifact-link-2 {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #cda975;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+          }
 
-            <!-- Row 2 -->
-            <div class="artifact-row reverse">
-                <div class="artifact-img-wrap">
-                    <img src="assets/silver_utensils_new.png" alt="Heritage Silver Utensils">
-                    
-                </div>
-                <div class="artifact-text-wrap">
-                    <h2 class="artifact-title-light">Heritage Silver Utensils</h2>
-                    <p class="artifact-desc-light">Traditional silver dinnerware and utensils, combining health benefits with timeless luxury. Designed for those who treat dining as a sacred ritual of gathering and legacy. Crafted from pure, high-grade silver, these magnificent thalis, bowls, and cutlery pieces naturally purify food and elevate your dining experience to royal standards. A perfect heirloom to pass down through your family's history.</p>
-                    <a href="contact.html" class="artifact-link-1">INQUIRE FOR CUSTOMIZATION</a>
-                </div>
-            </div>
+          @media (max-width: 900px) {
+            .artifact-row {
+              flex-direction: column !important;
+              gap: 3rem;
+              margin-bottom: 5rem;
+            }
+          }
+        </style>
 
-            <!-- Row 3 -->
-            <div class="artifact-row">
-                <div class="artifact-img-wrap">
-                    <img src="assets/silver_decor_new.png" alt="Exclusive Silver Decor">
-                </div>
-                <div class="artifact-text-wrap">
-                    <h2 class="artifact-title-light">Exclusive Silver Decor</h2>
-                    <p class="artifact-desc-light">Modern and traditional silver decorative pieces to add a touch of regality to your living space. Each object is a statement of permanence in an era of transience. From intricately carved diyas that cast a warm, inviting glow, to spectacular silver centerpieces that demand attention, our decor collection bridges the gap between ancient Indian heritage and contemporary luxury interiors.</p>
-                    <a href="contact.html" class="artifact-link-1">INQUIRE FOR CUSTOMIZATION</a>
-                </div>
-            </div>
-        </section>
+        <!-- Row 1 -->
+        <div class="artifact-row">
+          <div class="artifact-img-wrap">
+            <img src="assets/silver_idol_new.png" alt="Divine Silver Idols" />
+          </div>
+          <div class="artifact-text-wrap">
+            <h2 class="artifact-title-light">Divine Silver Idols</h2>
+            <p class="artifact-desc-light">
+              Pure silver idols crafted with divine precision, perfect for your
+              home temple or as auspicious gifts. Each piece is hand-burnished
+              to achieve a lunar glow that transcends generations. Our master
+              artisans devote countless hours to ensuring every intricate detail
+              and serene expression reflects the highest devotion, creating a
+              spiritual centerpiece that radiates peace and prosperity in your
+              sacred space.
+            </p>
+            <a href="contact.html" class="artifact-link-1"
+              >INQUIRE FOR CUSTOMIZATION</a
+            >
+          </div>
+        </div>
 
+        <!-- Row 2 -->
+        <div class="artifact-row reverse">
+          <div class="artifact-img-wrap">
+            <img
+              src="assets/silver_utensils_new.png"
+              alt="Heritage Silver Utensils"
+            />
+          </div>
+          <div class="artifact-text-wrap">
+            <h2 class="artifact-title-light">Heritage Silver Utensils</h2>
+            <p class="artifact-desc-light">
+              Traditional silver dinnerware and utensils, combining health
+              benefits with timeless luxury. Designed for those who treat dining
+              as a sacred ritual of gathering and legacy. Crafted from pure,
+              high-grade silver, these magnificent thalis, bowls, and cutlery
+              pieces naturally purify food and elevate your dining experience to
+              royal standards. A perfect heirloom to pass down through your
+              family's history.
+            </p>
+            <a href="contact.html" class="artifact-link-1"
+              >INQUIRE FOR CUSTOMIZATION</a
+            >
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="artifact-row">
+          <div class="artifact-img-wrap">
+            <img
+              src="assets/silver_decor_new.png"
+              alt="Exclusive Silver Decor"
+            />
+          </div>
+          <div class="artifact-text-wrap">
+            <h2 class="artifact-title-light">Exclusive Silver Decor</h2>
+            <p class="artifact-desc-light">
+              Modern and traditional silver decorative pieces to add a touch of
+              regality to your living space. Each object is a statement of
+              permanence in an era of transience. From intricately carved diyas
+              that cast a warm, inviting glow, to spectacular silver
+              centerpieces that demand attention, our decor collection bridges
+              the gap between ancient Indian heritage and contemporary luxury
+              interiors.
+            </p>
+            <a href="contact.html" class="artifact-link-1"
+              >INQUIRE FOR CUSTOMIZATION</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer-new">
-        <div class="footer-new-container">
-            <div class="footer-new-top">
-                <div class="footer-brand">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5">
-                            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                        </svg>
-                    </div>
-                    <h2 class="footer-logo-title">PUKHRAJ</h2>
-                    <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
-                    <p class="footer-text">Crafting timeless elegance<br>for every precious moment.</p>
-                    <div class="footer-divider-small"></div>
-                    <div class="footer-socials">
-                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg></a>
-                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg></a>
-
-                    </div>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>SHOP</h3>
-                    <ul>
-                        <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
-                        <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
-                        <li><a href="silver-artifacts.html"><span class="arr">&gt;</span> Silver Artifacts</a></li>
-                        <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
-                        <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="index.html"><span class="arr">&gt;</span> Home</a></li>
-                        <li><a href="collection.html"><span class="arr">&gt;</span> Collection</a></li>
-                        <li><a href="about.html"><span class="arr">&gt;</span> About Us</a></li>
-                        <li><a href="contact.html"><span class="arr">&gt;</span> Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h3>NEWSLETTER</h3>
-                    <p>Get updates about new collections,<br>exclusive launches and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" placeholder="Enter your email address" required>
-                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.5">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                    </path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg></button>
-                        </div>
-                        <button type="submit" class="btn-subscribe">SUBSCRIBE &rarr;</button>
-                    </form>
-                </div>
+      <div class="footer-new-container">
+        <div class="footer-new-top">
+          <div class="footer-brand">
+            <div style="text-align: center; margin-bottom: 1rem">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#cda975"
+                stroke-width="1.5"
+              >
+                <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
+              </svg>
             </div>
-
-            <div class="footer-new-divider">
-                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975"
-                        stroke-width="2">
-                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                    </svg></span>
+            <h2 class="footer-logo-title">PUKHRAJ</h2>
+            <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
+            <p class="footer-text">
+              Crafting timeless elegance<br />for every precious moment.
+            </p>
+            <div class="footer-divider-small"></div>
+            <div class="footer-socials">
+              <a href="#here" id="instagram-link"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+              ></a>
+              <a href="#"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path></svg
+              ></a>
             </div>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>SHOP</h3>
+            <ul>
+              <li>
+                <a href="new-arrivals.html"
+                  ><span class="arr">&gt;</span> New Arrivals</a
+                >
+              </li>
+              <li>
+                <a href="best-seller.html"
+                  ><span class="arr">&gt;</span> Best Seller</a
+                >
+              </li>
+              <li>
+                <a href="silver-artifacts.html"
+                  ><span class="arr">&gt;</span> Silver Artifacts</a
+                >
+              </li>
+              <li>
+                <a href="gifting.html"><span class="arr">&gt;</span> Gifting</a>
+              </li>
+              <li>
+                <a href="pop.html"><span class="arr">&gt;</span> POP</a>
+              </li>
+            </ul>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>QUICK LINKS</h3>
+            <ul>
+              <li>
+                <a href="index.html"><span class="arr">&gt;</span> Home</a>
+              </li>
+              <li>
+                <a href="collection.html"
+                  ><span class="arr">&gt;</span> Collection</a
+                >
+              </li>
+              <li>
+                <a href="about.html"><span class="arr">&gt;</span> About Us</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="arr">&gt;</span> Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
 
-
-
-            <div class="footer-new-bottom">
-                <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms & Conditions</a>
-                    <span class="separator">|</span>
-                    <a href="#">Disclaimer</a>
-                </div>
-                <p class="crafted-text">✦ Crafted with Passion, Delivered with Trust.</p>
-            </div>
+          <div class="footer-newsletter">
+            <h3>NEWSLETTER</h3>
+            <p>
+              Get updates about new collections,<br />exclusive launches and
+              offers.
+            </p>
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button type="submit">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <button type="submit" class="btn-subscribe">
+                SUBSCRIBE &rarr;
+              </button>
+            </form>
+          </div>
         </div>
+
+        <div class="footer-new-divider">
+          <span class="diamond-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#cda975"
+              stroke-width="2"
+            >
+              <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" /></svg
+          ></span>
+        </div>
+
+        <div class="footer-new-bottom">
+          <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="#">Terms & Conditions</a>
+            <span class="separator">|</span>
+            <a href="#">Disclaimer</a>
+          </div>
+          <p class="crafted-text">
+            ✦ Crafted with Passion, Delivered with Trust.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Filter Sidebar -->
     <div class="filter-sidebar-overlay" id="filter-sidebar-overlay"></div>
     <div class="filter-sidebar" id="filter-sidebar">
-        <div class="filter-sidebar-header">
-            <h3>Filter</h3>
-            <button id="close-filter-sidebar" class="close-filter-btn">&times;</button>
-        </div>
-                <ul class="filter-list" style="list-style: none; padding: 0; margin: 0;">
-            <li><a href="index.html" class="filter-list-item active" style="display:block; text-decoration:none; color:inherit;">All</a></li>
-            <li><a href="necklaces.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Necklace</a></li>
-            <li><a href="bracelets.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Bracelets</a></li>
-            <li><a href="rings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Rings</a></li>
-            <li><a href="earrings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Earrings</a></li>
-        </ul>
+      <div class="filter-sidebar-header">
+        <h3>Filter</h3>
+        <button id="close-filter-sidebar" class="close-filter-btn">
+          &times;
+        </button>
+      </div>
+      <ul class="filter-list" style="list-style: none; padding: 0; margin: 0">
+        <li>
+          <a
+            href="index.html"
+            class="filter-list-item active"
+            style="display: block; text-decoration: none; color: inherit"
+            >All</a
+          >
+        </li>
+        <li>
+          <a
+            href="necklaces.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Necklace</a
+          >
+        </li>
+        <li>
+          <a
+            href="bracelets.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Bracelets</a
+          >
+        </li>
+        <li>
+          <a
+            href="rings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Rings</a
+          >
+        </li>
+        <li>
+          <a
+            href="earrings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Earrings</a
+          >
+        </li>
+      </ul>
     </div>
 
     <script src="script.js?v=8"></script>
-</body>
+  </body>
 </html>

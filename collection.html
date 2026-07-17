@@ -1,529 +1,1077 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PUKHRAJ JEWELLERS</title>
-    <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=17">
-    <link rel="stylesheet" href="footer.css?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-.product-card .product-img-wrapper { height: auto !important; aspect-ratio: 1/1 !important; }
+    <meta name="description" content="Discover premium, handcrafted jewelry." />
+    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="footer.css?v=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .product-card .product-img-wrapper {
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+      }
 
-@media (min-width: 769px) {
-    .close-menu-btn { display: none !important; }
-    .nav-accordion-item { display: none !important; }
-}
+      @media (min-width: 769px) {
+        .close-menu-btn {
+          display: none !important;
+        }
+        .nav-accordion-item {
+          display: none !important;
+        }
+      }
 
-.filter-btn {
-    border-radius: 50px !important;
-    padding: 10px 24px !important;
-    border: 1px solid #ccc !important;
-    background: transparent !important;
-    font-size: 0.85rem !important;
-    margin: 0 4px !important;
-    color: #333 !important;
-    transition: all 0.3s ease !important;
-}
-.filter-btn:hover {
-    background: #1a1a1a !important;
-    color: #fff !important;
-    border-color: #1a1a1a !important;
-}
-.filter-btn.active, .filter-btn.active:hover {
-    background: #1a1a1a !important;
-    color: #fff !important;
-    border-color: #1a1a1a !important;
-}
-</style>
-</head>
-<body>
+      .filter-btn {
+        border-radius: 50px !important;
+        padding: 10px 24px !important;
+        border: 1px solid #ccc !important;
+        background: transparent !important;
+        font-size: 0.85rem !important;
+        margin: 0 4px !important;
+        color: #333 !important;
+        transition: all 0.3s ease !important;
+      }
+      .filter-btn:hover {
+        background: #1a1a1a !important;
+        color: #fff !important;
+        border-color: #1a1a1a !important;
+      }
+      .filter-btn.active,
+      .filter-btn.active:hover {
+        background: #1a1a1a !important;
+        color: #fff !important;
+        border-color: #1a1a1a !important;
+      }
+    </style>
+  </head>
+  <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <span>PUKHRAJ: Plan Of Purchase</span>
+      <span>PUKHRAJ: Plan Of Purchase</span>
     </div>
 
     <!-- Main Navbar -->
     <nav class="navbar-new">
-        <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
-            <div class="menu-toggle" id="mobile-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </div>
-            <div class="logo-new">PUKHRAJ</div>
-            <ul class="nav-links-new">
-                <button class="close-menu-btn">&times;</button>
-
-                <li><a href="index.html">Home</a></li>
-                <li><a href="new-arrivals.html">New Arrivals</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="best-seller.html">Best Seller</a></li>
-                <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
-                <li><a href="gifting.html">Gifting</a></li>
-                <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions-new">
-                <a href="#" class="icon-btn-new search-icon" title="Search">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </a>
-                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span class="badge-count" id="wishlist-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </a>
-                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </div>
-                
-            </div>
+      <div
+        class="navbar-desktop-row"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 5%;
+          width: 100%;
+          box-sizing: border-box;
+        "
+      >
+        <div class="menu-toggle" id="mobile-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </div>
-</nav>
+        <div class="logo-new">PUKHRAJ</div>
+        <ul class="nav-links-new">
+          <button class="close-menu-btn">&times;</button>
 
-        <main>
-                <!-- Hero Banner Header -->
-                <div class="page-header-simple" style="text-align: center; padding: 4rem 5% 2rem; background-color: #faf9f6; margin-bottom: 2rem;">
-            <h1 class="hero-serif-title" style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: 400;">Collection</h1>
-            <p class="hero-small-text" style="font-size: 1.1rem; color: #666; letter-spacing: 1px; margin-bottom: 0;">Discover our exquisite jewelry</p>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="new-arrivals.html">New Arrivals</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="best-seller.html">Best Seller</a></li>
+          <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
+          <li><a href="gifting.html">Gifting</a></li>
+          <li class="nav-has-badge">
+            <span class="nav-badge red-badge">New</span
+            ><a href="pop.html">POP</a>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions-new">
+          <a href="#" class="icon-btn-new search-icon" title="Search">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="icon-btn-new cart-icon-new"
+            id="wishlist-icon"
+            title="Wishlist"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+            <span
+              class="badge-count"
+              id="wishlist-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </a>
+          <div
+            class="icon-btn-new cart-icon-new"
+            id="cart-icon"
+            title="View Cart"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span
+              class="cart-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </div>
         </div>
-    <section class="top-styles-section" style="padding: 2rem 5% 5rem; background-color: #fff; text-align: center;">
-            
+      </div>
+    </nav>
 
-            
-            <div class="filter-menu-container" style="margin-bottom: 3rem !important; margin-top: 1.5rem !important;">
-                <button class="filter-btn active" data-filter="all">ALL</button>
-                <button class="filter-btn" data-filter="necklaces">NECKLACES</button>
-                <button class="filter-btn" data-filter="bracelets">BRACELETS</button>
-                <button class="filter-btn" data-filter="earrings">EARRINGS</button>
-                <button class="filter-btn" data-filter="rings">RINGS</button>
-                <button class="filter-btn" data-filter="mens">MENS</button>
-                <button class="filter-btn" data-filter="mangalsutras">MANGALSUTRA</button>
+    <main>
+      <!-- Hero Banner Header -->
+      <div
+        class="page-header-simple"
+        style="
+          text-align: center;
+          padding: 4rem 5% 2rem;
+          background-color: #faf9f6;
+          margin-bottom: 2rem;
+        "
+      >
+        <h1
+          class="hero-serif-title"
+          style="
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+          "
+        >
+          Collection
+        </h1>
+        <p
+          class="hero-small-text"
+          style="
+            font-size: 1.1rem;
+            color: #666;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+          "
+        >
+          Discover our exquisite jewelry
+        </p>
+      </div>
+      <section
+        class="top-styles-section"
+        style="
+          padding: 2rem 5% 5rem;
+          background-color: #fff;
+          text-align: center;
+        "
+      >
+        <div
+          class="filter-menu-container"
+          style="margin-bottom: 3rem !important; margin-top: 1.5rem !important"
+        >
+          <button class="filter-btn active" data-filter="all">ALL</button>
+          <button class="filter-btn" data-filter="necklaces">NECKLACES</button>
+          <button class="filter-btn" data-filter="bracelets">BRACELETS</button>
+          <button class="filter-btn" data-filter="earrings">EARRINGS</button>
+          <button class="filter-btn" data-filter="rings">RINGS</button>
+          <button class="filter-btn" data-filter="mens">MENS</button>
+          <button class="filter-btn" data-filter="mangalsutras">
+            MANGALSUTRA
+          </button>
+        </div>
+
+        <div class="product-grid-4">
+          <div class="product-card" data-gender="him" data-category="bracelets">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/gold_rings.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
             </div>
-
-            <div class="product-grid-4">
-
-                <div class="product-card" data-gender="him" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/gold_rings.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Titanium Cuff Bracelet</h3>
-                        <p class="price"><span class="price-sale">₹13,400</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 3.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Crystal Line CZ Bracelet</h3>
-                        <p class="price"><span class="price-sale">₹5,600</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Golden Heart Love Hoops</h3>
-                        <p class="price"><span class="price-sale">₹9,400</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 6.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Silver Charm Anklet</h3>
-                        <p class="price"><span class="price-sale">₹14,000</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 4.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pearl Drop Earrings</h3>
-                        <p class="price"><span class="price-sale">₹14,300</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/indian_gold_necklace.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Diamond Solitaire Ring</h3>
-                        <p class="price"><span class="price-sale">₹10,000</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j5.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Diamond Solitaire Ring</h3>
-                        <p class="price"><span class="price-sale">₹13,100</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="him" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j6.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Men's Engraved Bracelet</h3>
-                        <p class="price"><span class="price-sale">₹14,400</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/indian_silver_anklets.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pearl Drop Earrings</h3>
-                        <p class="price"><span class="price-sale">₹15,000</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j7.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Diamond Motif Bracelet</h3>
-                        <p class="price"><span class="price-sale">₹4,100</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 2.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Diamond Motif Bracelet</h3>
-                        <p class="price"><span class="price-sale">₹10,500</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j4.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Crystal Line CZ Bracelet</h3>
-                        <p class="price"><span class="price-sale">₹13,600</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/silver_idol.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pearl Drop Earrings</h3>
-                        <p class="price"><span class="price-sale">₹2,400</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="him" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/925_sterling_silver_mens_italy_chain_bracelet_vy_jewelry_178f89b5-4d23-422d-b77a-5703fae9439a_580x@2x.webp" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Silver Signet Ring</h3>
-                        <p class="price"><span class="price-sale">₹4,200</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j8.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pearl Drop Earrings</h3>
-                        <p class="price"><span class="price-sale">₹7,800</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j1.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Golden Heart Love Hoops</h3>
-                        <p class="price"><span class="price-sale">₹9,300</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="necklaces">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 7.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Everyday Chain Necklace</h3>
-                        <p class="price"><span class="price-sale">₹14,300</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="him" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j3.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Silver Signet Ring</h3>
-                        <p class="price"><span class="price-sale">₹13,300</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="him" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j2.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Black Onyx Ring</h3>
-                        <p class="price"><span class="price-sale">₹13,800</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="him" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Classic Men's Ring</h3>
-                        <p class="price"><span class="price-sale">₹6,900</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/station_mangalsutra.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Silver Charm Anklet</h3>
-                        <p class="price"><span class="price-sale">₹11,000</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="necklaces">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/gold_earrings.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Ruby Heritage Necklace</h3>
-                        <p class="price"><span class="price-sale">₹12,700</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="bracelets">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/silver_necklace.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Crystal Line CZ Bracelet</h3>
-                        <p class="price"><span class="price-sale">₹3,600</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="earrings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/indian_gold_bangles.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pearl Drop Earrings</h3>
-                        <p class="price"><span class="price-sale">₹4,200</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="necklaces">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/j9.jpg" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Ruby Heritage Necklace</h3>
-                        <p class="price"><span class="price-sale">₹2,200</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="necklaces">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/everyday.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Ruby Heritage Necklace</h3>
-                        <p class="price"><span class="price-sale">₹3,800</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="necklaces">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/image copy 5.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Ruby Heritage Necklace</h3>
-                        <p class="price"><span class="price-sale">₹2,700</span> </p>
-                    </div>
-                </div>
-                <div class="product-card" data-gender="her" data-category="rings">
-                    <div class="product-img-wrapper">
-                        <span class="badge best-seller">Best Seller</span>
-                        <img src="assets/diamond.png" alt="Product">
-                        <button class="wishlist-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Silver Charm Anklet</h3>
-                        <p class="price"><span class="price-sale">₹14,000</span> </p>
-                    </div>
-                </div>
+            <div class="product-info">
+              <h3>Titanium Cuff Bracelet</h3>
+              <p class="price"><span class="price-sale">₹13,400</span></p>
             </div>
-        </section>
+          </div>
+          <div class="product-card" data-gender="her" data-category="bracelets">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image copy 3.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Crystal Line CZ Bracelet</h3>
+              <p class="price"><span class="price-sale">₹5,600</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="earrings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image copy.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Golden Heart Love Hoops</h3>
+              <p class="price"><span class="price-sale">₹9,400</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image copy 6.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Silver Charm Anklet</h3>
+              <p class="price"><span class="price-sale">₹14,000</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="earrings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image copy 4.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Pearl Drop Earrings</h3>
+              <p class="price"><span class="price-sale">₹14,300</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/indian_gold_necklace.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Diamond Solitaire Ring</h3>
+              <p class="price"><span class="price-sale">₹10,000</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j5.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Diamond Solitaire Ring</h3>
+              <p class="price"><span class="price-sale">₹13,100</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="him" data-category="bracelets">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j6.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Men's Engraved Bracelet</h3>
+              <p class="price"><span class="price-sale">₹14,400</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="earrings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/indian_silver_anklets.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Pearl Drop Earrings</h3>
+              <p class="price"><span class="price-sale">₹15,000</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="bracelets">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j7.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Diamond Motif Bracelet</h3>
+              <p class="price"><span class="price-sale">₹4,100</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="bracelets">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image copy 2.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Diamond Motif Bracelet</h3>
+              <p class="price"><span class="price-sale">₹10,500</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="bracelets">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j4.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Crystal Line CZ Bracelet</h3>
+              <p class="price"><span class="price-sale">₹13,600</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="earrings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/silver_idol.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Pearl Drop Earrings</h3>
+              <p class="price"><span class="price-sale">₹2,400</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="him" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img
+                src="assets/925_sterling_silver_mens_italy_chain_bracelet_vy_jewelry_178f89b5-4d23-422d-b77a-5703fae9439a_580x@2x.webp"
+                alt="Product"
+              />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Silver Signet Ring</h3>
+              <p class="price"><span class="price-sale">₹4,200</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="earrings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j8.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Pearl Drop Earrings</h3>
+              <p class="price"><span class="price-sale">₹7,800</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="earrings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j1.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Golden Heart Love Hoops</h3>
+              <p class="price"><span class="price-sale">₹9,300</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="necklaces">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image copy 7.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Everyday Chain Necklace</h3>
+              <p class="price"><span class="price-sale">₹14,300</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="him" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j3.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Silver Signet Ring</h3>
+              <p class="price"><span class="price-sale">₹13,300</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="him" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j2.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Black Onyx Ring</h3>
+              <p class="price"><span class="price-sale">₹13,800</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="him" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Classic Men's Ring</h3>
+              <p class="price"><span class="price-sale">₹6,900</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/station_mangalsutra.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Silver Charm Anklet</h3>
+              <p class="price"><span class="price-sale">₹11,000</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="necklaces">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/gold_earrings.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Ruby Heritage Necklace</h3>
+              <p class="price"><span class="price-sale">₹12,700</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="bracelets">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/silver_necklace.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Crystal Line CZ Bracelet</h3>
+              <p class="price"><span class="price-sale">₹3,600</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="earrings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/indian_gold_bangles.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Pearl Drop Earrings</h3>
+              <p class="price"><span class="price-sale">₹4,200</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="necklaces">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/j9.jpg" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Ruby Heritage Necklace</h3>
+              <p class="price"><span class="price-sale">₹2,200</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="necklaces">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/everyday.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Ruby Heritage Necklace</h3>
+              <p class="price"><span class="price-sale">₹3,800</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="necklaces">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/image copy 5.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Ruby Heritage Necklace</h3>
+              <p class="price"><span class="price-sale">₹2,700</span></p>
+            </div>
+          </div>
+          <div class="product-card" data-gender="her" data-category="rings">
+            <div class="product-img-wrapper">
+              <span class="badge best-seller">Best Seller</span>
+              <img src="assets/diamond.png" alt="Product" />
+              <button class="wishlist-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3>Silver Charm Anklet</h3>
+              <p class="price"><span class="price-sale">₹14,000</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer-new">
-        <div class="footer-new-container">
-            <div class="footer-new-top">
-                <div class="footer-brand">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5">
-                            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                        </svg>
-                    </div>
-                    <h2 class="footer-logo-title">PUKHRAJ</h2>
-                    <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
-                    <p class="footer-text">Crafting timeless elegance<br>for every precious moment.</p>
-                    <div class="footer-divider-small"></div>
-                    <div class="footer-socials">
-                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg></a>
-                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg></a>
-
-                    </div>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>SHOP</h3>
-                    <ul>
-                        <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
-                        <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
-                        <li><a href="silver-artifacts.html"><span class="arr">&gt;</span> Silver Artifacts</a></li>
-                        <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
-                        <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="index.html"><span class="arr">&gt;</span> Home</a></li>
-                        <li><a href="collection.html"><span class="arr">&gt;</span> Collection</a></li>
-                        <li><a href="about.html"><span class="arr">&gt;</span> About Us</a></li>
-                        <li><a href="contact.html"><span class="arr">&gt;</span> Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h3>NEWSLETTER</h3>
-                    <p>Get updates about new collections,<br>exclusive launches and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" placeholder="Enter your email address" required>
-                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.5">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                    </path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg></button>
-                        </div>
-                        <button type="submit" class="btn-subscribe">SUBSCRIBE &rarr;</button>
-                    </form>
-                </div>
+      <div class="footer-new-container">
+        <div class="footer-new-top">
+          <div class="footer-brand">
+            <div style="text-align: center; margin-bottom: 1rem">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#cda975"
+                stroke-width="1.5"
+              >
+                <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
+              </svg>
             </div>
-
-            <div class="footer-new-divider">
-                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975"
-                        stroke-width="2">
-                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                    </svg></span>
+            <h2 class="footer-logo-title">PUKHRAJ</h2>
+            <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
+            <p class="footer-text">
+              Crafting timeless elegance<br />for every precious moment.
+            </p>
+            <div class="footer-divider-small"></div>
+            <div class="footer-socials">
+              <a href="#here" id="instagram-link"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+              ></a>
+              <a href="#"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path></svg
+              ></a>
             </div>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>SHOP</h3>
+            <ul>
+              <li>
+                <a href="new-arrivals.html"
+                  ><span class="arr">&gt;</span> New Arrivals</a
+                >
+              </li>
+              <li>
+                <a href="best-seller.html"
+                  ><span class="arr">&gt;</span> Best Seller</a
+                >
+              </li>
+              <li>
+                <a href="silver-artifacts.html"
+                  ><span class="arr">&gt;</span> Silver Artifacts</a
+                >
+              </li>
+              <li>
+                <a href="gifting.html"><span class="arr">&gt;</span> Gifting</a>
+              </li>
+              <li>
+                <a href="pop.html"><span class="arr">&gt;</span> POP</a>
+              </li>
+            </ul>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>QUICK LINKS</h3>
+            <ul>
+              <li>
+                <a href="index.html"><span class="arr">&gt;</span> Home</a>
+              </li>
+              <li>
+                <a href="collection.html"
+                  ><span class="arr">&gt;</span> Collection</a
+                >
+              </li>
+              <li>
+                <a href="about.html"><span class="arr">&gt;</span> About Us</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="arr">&gt;</span> Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
 
-
-
-            <div class="footer-new-bottom">
-                <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms & Conditions</a>
-                    <span class="separator">|</span>
-                    <a href="#">Disclaimer</a>
-                </div>
-                <p class="crafted-text">✦ Crafted with Passion, Delivered with Trust.</p>
-            </div>
+          <div class="footer-newsletter">
+            <h3>NEWSLETTER</h3>
+            <p>
+              Get updates about new collections,<br />exclusive launches and
+              offers.
+            </p>
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button type="submit">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <button type="submit" class="btn-subscribe">
+                SUBSCRIBE &rarr;
+              </button>
+            </form>
+          </div>
         </div>
+
+        <div class="footer-new-divider">
+          <span class="diamond-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#cda975"
+              stroke-width="2"
+            >
+              <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" /></svg
+          ></span>
+        </div>
+
+        <div class="footer-new-bottom">
+          <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="#">Terms & Conditions</a>
+            <span class="separator">|</span>
+            <a href="#">Disclaimer</a>
+          </div>
+          <p class="crafted-text">
+            ✦ Crafted with Passion, Delivered with Trust.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Filter Sidebar -->
     <div class="filter-sidebar-overlay" id="filter-sidebar-overlay"></div>
     <div class="filter-sidebar" id="filter-sidebar">
-        <div class="filter-sidebar-header">
-            <h3>Filter</h3>
-            <button id="close-filter-sidebar" class="close-filter-btn">&times;</button>
-        </div>
-                <ul class="filter-list" style="list-style: none; padding: 0; margin: 0;">
-            <li><a href="index.html" class="filter-list-item active" style="display:block; text-decoration:none; color:inherit;">All</a></li>
-            <li><a href="necklaces.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Necklace</a></li>
-            <li><a href="bracelets.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Bracelets</a></li>
-            <li><a href="rings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Rings</a></li>
-            <li><a href="earrings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Earrings</a></li>
-        </ul>
+      <div class="filter-sidebar-header">
+        <h3>Filter</h3>
+        <button id="close-filter-sidebar" class="close-filter-btn">
+          &times;
+        </button>
+      </div>
+      <ul class="filter-list" style="list-style: none; padding: 0; margin: 0">
+        <li>
+          <a
+            href="index.html"
+            class="filter-list-item active"
+            style="display: block; text-decoration: none; color: inherit"
+            >All</a
+          >
+        </li>
+        <li>
+          <a
+            href="necklaces.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Necklace</a
+          >
+        </li>
+        <li>
+          <a
+            href="bracelets.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Bracelets</a
+          >
+        </li>
+        <li>
+          <a
+            href="rings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Rings</a
+          >
+        </li>
+        <li>
+          <a
+            href="earrings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Earrings</a
+          >
+        </li>
+      </ul>
     </div>
 
     <script src="script.js?v=849"></script>
-</body>
+  </body>
 </html>

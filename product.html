@@ -1,360 +1,707 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PUKHRAJ JEWELLERS</title>
-    <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=17">
-    <link rel="stylesheet" href="footer.css?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-.product-card .product-img-wrapper { height: auto !important; aspect-ratio: 1/1 !important; }
+    <meta name="description" content="Discover premium, handcrafted jewelry." />
+    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="footer.css?v=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .product-card .product-img-wrapper {
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+      }
 
-@media (min-width: 769px) {
-    .close-menu-btn { display: none !important; }
-    .nav-accordion-item { display: none !important; }
-}
-</style>
-</head>
-<body>
+      @media (min-width: 769px) {
+        .close-menu-btn {
+          display: none !important;
+        }
+        .nav-accordion-item {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
-        <span>PUKHRAJ: Plan Of Purchase</span>
+      <span>PUKHRAJ: Plan Of Purchase</span>
     </div>
 
     <!-- Main Navbar -->
     <nav class="navbar-new">
-        <div class="navbar-desktop-row" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
-            <div class="menu-toggle" id="mobile-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </div>
-            <div class="logo-new">PUKHRAJ</div>
-            <ul class="nav-links-new">
-                <button class="close-menu-btn">&times;</button>
-
-                <li><a href="index.html">Home</a></li>
-                <li><a href="new-arrivals.html">New Arrivals</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="best-seller.html">Best Seller</a></li>
-                <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
-                <li><a href="gifting.html">Gifting</a></li>
-                <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions-new">
-                <a href="#" class="icon-btn-new search-icon" title="Search">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </a>
-                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span class="badge-count" id="wishlist-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </a>
-                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
-                </div>
-                
-            </div>
+      <div
+        class="navbar-desktop-row"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 5%;
+          width: 100%;
+          box-sizing: border-box;
+        "
+      >
+        <div class="menu-toggle" id="mobile-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </div>
-</nav>
+        <div class="logo-new">PUKHRAJ</div>
+        <ul class="nav-links-new">
+          <button class="close-menu-btn">&times;</button>
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="new-arrivals.html">New Arrivals</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="best-seller.html">Best Seller</a></li>
+          <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
+          <li><a href="gifting.html">Gifting</a></li>
+          <li class="nav-has-badge">
+            <span class="nav-badge red-badge">New</span
+            ><a href="pop.html">POP</a>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions-new">
+          <a href="#" class="icon-btn-new search-icon" title="Search">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="icon-btn-new cart-icon-new"
+            id="wishlist-icon"
+            title="Wishlist"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+            <span
+              class="badge-count"
+              id="wishlist-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </a>
+          <div
+            class="icon-btn-new cart-icon-new"
+            id="cart-icon"
+            title="View Cart"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span
+              class="cart-count"
+              style="position: absolute; top: -4px; right: -6px"
+              >0</span
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main>
-        <div class="product-page-content split-layout" style="max-width: 1200px; margin: 4rem auto; padding: 0 5%; display: flex; flex-wrap: wrap; gap: 4rem; min-height: 60vh;">
-            <!-- Left Side: Large Image Display -->
-            <div class="product-page-left" style="flex: 1; min-width: 300px;">
-                <div class="sku-header" style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">SKU ID : <span id="page-item-id"></span></div>
-                <div class="product-page-image-container" style="background: #f9f9f9; padding: 2rem; border-radius: 8px;">
-                    <div class="product-page-image" id="page-image" style="width: 100%; padding-top: 100%; background-size: cover; background-position: center; border-radius: 4px;"></div>
-                </div>
+      <div
+        class="product-page-content split-layout"
+        style="
+          max-width: 1200px;
+          margin: 4rem auto;
+          padding: 0 5%;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4rem;
+          min-height: 60vh;
+        "
+      >
+        <!-- Left Side: Large Image Display -->
+        <div class="product-page-left" style="flex: 1; min-width: 300px">
+          <div
+            class="sku-header"
+            style="color: #888; font-size: 0.9rem; margin-bottom: 1rem"
+          >
+            SKU ID : <span id="page-item-id"></span>
+          </div>
+          <div
+            class="product-page-image-container"
+            style="background: #f9f9f9; padding: 2rem; border-radius: 8px"
+          >
+            <div
+              class="product-page-image"
+              id="page-image"
+              style="
+                width: 100%;
+                padding-top: 100%;
+                background-size: cover;
+                background-position: center;
+                border-radius: 4px;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Right Side: Details -->
+        <div
+          class="product-page-right"
+          style="flex: 1; min-width: 300px; padding-top: 2rem"
+        >
+          <div class="page-header-info">
+            <h1
+              id="page-title"
+              style="
+                font-family: var(--font-heading);
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                color: var(--primary-color);
+              "
+            ></h1>
+            <div style="margin-bottom: 2rem">
+              <span
+                class="page-price"
+                id="page-price"
+                style="
+                  font-size: 1.6rem;
+                  font-weight: 600;
+                  color: var(--primary-color);
+                "
+              ></span>
             </div>
-            
-            <!-- Right Side: Details -->
-            <div class="product-page-right" style="flex: 1; min-width: 300px; padding-top: 2rem;">
-                <div class="page-header-info">
-                    <h1 id="page-title" style="font-family: var(--font-heading); margin-bottom: 1rem; font-size: 2rem; color: var(--primary-color);"></h1>
-                    <div style="margin-bottom: 2rem;">
-                        <span class="page-price" id="page-price" style="font-size: 1.6rem; font-weight: 600; color: var(--primary-color);"></span>
-                    </div>
-                <div class="accordion-container">
-                    <!-- Metal Details Accordion -->
-                    <div class="accordion-item active">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <div class="acc-title">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                                <span>METAL DETAILS</span>
-                            </div>
-                            <span class="acc-icon">&#10095;</span>
-                        </div>
-                        <div class="accordion-content" style="display: block;">
-                            <div class="acc-grid">
-                                <div class="acc-stat">
-                                    <strong><span id="page-metal-karat">22K</span></strong>
-                                    <span>Karatage</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong><span id="page-metal-color">Yellow</span></strong>
-                                    <span>Material Colour</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong><span id="page-metal-weight">15 gm</span></strong>
-                                    <span>Gross Weight</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong><span id="page-metal-type">Silver</span></strong>
-                                    <span>Metal</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong><span id="page-metal-height">2 cm</span></strong>
-                                    <span>Pendant Height</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong><span id="page-metal-width">1 cm</span></strong>
-                                    <span>Pendant Width</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- General Details Accordion -->
-                    <div class="accordion-item">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <div class="acc-title">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
-                                <span>GENERAL DETAILS</span>
-                            </div>
-                            <span class="acc-icon">&#10095;</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="acc-grid">
-                                <div class="acc-stat">
-                                    <strong>Silver Jewellery</strong>
-                                    <span>Jewellery Type</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong>Pukhraj</strong>
-                                    <span>Brand</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong>Bestsellers</strong>
-                                    <span>Collection</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong>Women</strong>
-                                    <span>Gender</span>
-                                </div>
-                                <div class="acc-stat">
-                                    <strong>Modern Wear</strong>
-                                    <span>Occasion</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Description Accordion -->
-                    <div class="accordion-item">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <div class="acc-title">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-                                <span>DESCRIPTION</span>
-                            </div>
-                            <span class="acc-icon">&#10095;</span>
-                        </div>
-                        <div class="accordion-content">
-                            <p id="page-desc" style="color: #666; line-height: 1.6;">Product description goes here.</p>
-                        </div>
-                    </div>
+            <div class="accordion-container">
+              <!-- Metal Details Accordion -->
+              <div class="accordion-item active">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                  <div class="acc-title">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span>METAL DETAILS</span>
+                  </div>
+                  <span class="acc-icon">&#10095;</span>
                 </div>
-
-                <div class="modal-actions" style="display: flex; gap: 1rem; margin-top: 2.5rem; margin-bottom: 3rem;">
-                    <button class="btn" id="page-add-to-cart" style="flex: 1; padding: 1.2rem; background: #fff; color: var(--text-color); border: 1px solid var(--text-color); font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: 0.3s;" onmouseover="this.style.background='var(--text-color)'; this.style.color='#fff';" onmouseout="this.style.background='#fff'; this.style.color='var(--text-color)';">Add to Cart</button>
-                    <button class="btn checkout-btn-direct" onclick="window.location.href='checkout.html'" style="flex: 1; padding: 1.2rem; background: var(--text-color); color: #fff; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: 0.3s;" onmouseover="this.style.background='var(--primary-color)';" onmouseout="this.style.background='var(--text-color)';">Buy Now</button>
+                <div class="accordion-content" style="display: block">
+                  <div class="acc-grid">
+                    <div class="acc-stat">
+                      <strong><span id="page-metal-karat">22K</span></strong>
+                      <span>Karatage</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong><span id="page-metal-color">Yellow</span></strong>
+                      <span>Material Colour</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong><span id="page-metal-weight">15 gm</span></strong>
+                      <span>Gross Weight</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong><span id="page-metal-type">Silver</span></strong>
+                      <span>Metal</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong><span id="page-metal-height">2 cm</span></strong>
+                      <span>Pendant Height</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong><span id="page-metal-width">1 cm</span></strong>
+                      <span>Pendant Width</span>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              <!-- General Details Accordion -->
+              <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                  <div class="acc-title">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                      <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                      <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                    </svg>
+                    <span>GENERAL DETAILS</span>
+                  </div>
+                  <span class="acc-icon">&#10095;</span>
+                </div>
+                <div class="accordion-content">
+                  <div class="acc-grid">
+                    <div class="acc-stat">
+                      <strong>Silver Jewellery</strong>
+                      <span>Jewellery Type</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong>Pukhraj</strong>
+                      <span>Brand</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong>Bestsellers</strong>
+                      <span>Collection</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong>Women</strong>
+                      <span>Gender</span>
+                    </div>
+                    <div class="acc-stat">
+                      <strong>Modern Wear</strong>
+                      <span>Occasion</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description Accordion -->
+              <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                  <div class="acc-title">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <line x1="8" y1="6" x2="21" y2="6"></line>
+                      <line x1="8" y1="12" x2="21" y2="12"></line>
+                      <line x1="8" y1="18" x2="21" y2="18"></line>
+                      <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                      <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                      <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    <span>DESCRIPTION</span>
+                  </div>
+                  <span class="acc-icon">&#10095;</span>
+                </div>
+                <div class="accordion-content">
+                  <p id="page-desc" style="color: #666; line-height: 1.6">
+                    Product description goes here.
+                  </p>
+                </div>
+              </div>
             </div>
+
+            <div
+              class="modal-actions"
+              style="
+                display: flex;
+                gap: 1rem;
+                margin-top: 2.5rem;
+                margin-bottom: 3rem;
+              "
+            >
+              <button
+                class="btn"
+                id="page-add-to-cart"
+                style="
+                  flex: 1;
+                  padding: 1.2rem;
+                  background: #fff;
+                  color: var(--text-color);
+                  border: 1px solid var(--text-color);
+                  font-weight: 600;
+                  font-size: 1.1rem;
+                  cursor: pointer;
+                  transition: 0.3s;
+                "
+                onmouseover="
+                  this.style.background = 'var(--text-color)';
+                  this.style.color = '#fff';
+                "
+                onmouseout="
+                  this.style.background = '#fff';
+                  this.style.color = 'var(--text-color)';
+                "
+              >
+                Add to Cart
+              </button>
+              <button
+                class="btn checkout-btn-direct"
+                onclick="window.location.href = 'checkout.html'"
+                style="
+                  flex: 1;
+                  padding: 1.2rem;
+                  background: var(--text-color);
+                  color: #fff;
+                  font-weight: 600;
+                  font-size: 1.1rem;
+                  cursor: pointer;
+                  transition: 0.3s;
+                "
+                onmouseover="this.style.background = 'var(--primary-color)'"
+                onmouseout="this.style.background = 'var(--text-color)'"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
         </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const params = new URLSearchParams(window.location.search);
-                const title = params.get('title') || 'Beautiful Jewelry Piece';
-                const price = params.get('price') || '₹0';
-                const imgUrl = params.get('img') || '';
-                const desc = params.get('desc') || 'Indulge in our artisanal jewelry piece. Handcrafted with the finest materials and a perfect balance of elegance and tradition.';
-                const itemId = params.get('id') || 'JW-000';
-                const metalStr = params.get('metal') || '22K Silver';
-                const weight = params.get('weight') || '1.867g';
+          document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get("title") || "Beautiful Jewelry Piece";
+            const price = params.get("price") || "₹0";
+            const imgUrl = params.get("img") || "";
+            const desc =
+              params.get("desc") ||
+              "Indulge in our artisanal jewelry piece. Handcrafted with the finest materials and a perfect balance of elegance and tradition.";
+            const itemId = params.get("id") || "JW-000";
+            const metalStr = params.get("metal") || "22K Silver";
+            const weight = params.get("weight") || "1.867g";
 
-                document.getElementById('page-title').textContent = title;
-                document.getElementById('page-price').textContent = price;
-                document.getElementById('page-desc').textContent = desc;
-                
-                const pageImage = document.getElementById('page-image');
-                if(imgUrl.startsWith('url')) {
-                    pageImage.style.backgroundImage = imgUrl;
-                } else if (imgUrl) {
-                    pageImage.style.backgroundImage = `url("${imgUrl}")`;
+            document.getElementById("page-title").textContent = title;
+            document.getElementById("page-price").textContent = price;
+            document.getElementById("page-desc").textContent = desc;
+
+            const pageImage = document.getElementById("page-image");
+            if (imgUrl.startsWith("url")) {
+              pageImage.style.backgroundImage = imgUrl;
+            } else if (imgUrl) {
+              pageImage.style.backgroundImage = `url("${imgUrl}")`;
+            } else {
+              pageImage.style.backgroundColor = "#ccc";
+            }
+
+            document.getElementById("page-item-id").textContent = itemId;
+            document.getElementById("page-metal-karat").textContent =
+              metalStr.split(" ")[0] || "22K";
+            document.getElementById("page-metal-type").textContent =
+              metalStr.split(" ")[1] || "Silver";
+            document.getElementById("page-metal-weight").textContent = weight;
+
+            const pageAddToCartBtn =
+              document.getElementById("page-add-to-cart");
+            pageAddToCartBtn.addEventListener("click", () => {
+              const rawPrice = price.replace(/[^0-9]/g, "");
+              const id = title.toLowerCase().replace(/[^a-z0-9]/g, "-");
+
+              if (typeof addToCart === "function") {
+                addToCart(id, title, rawPrice);
+              } else {
+                // Fallback logic
+                let cart =
+                  JSON.parse(localStorage.getItem("pukhraj_cart")) || [];
+                const existingItem = cart.find((item) => item.id === id);
+                if (existingItem) {
+                  existingItem.quantity += 1;
                 } else {
-                    pageImage.style.backgroundColor = '#ccc';
+                  cart.push({
+                    id,
+                    name: title,
+                    price: parseInt(rawPrice),
+                    quantity: 1,
+                  });
                 }
+                localStorage.setItem("pukhraj_cart", JSON.stringify(cart));
 
-                document.getElementById('page-item-id').textContent = itemId;
-                document.getElementById('page-metal-karat').textContent = metalStr.split(' ')[0] || '22K';
-                document.getElementById('page-metal-type').textContent = metalStr.split(' ')[1] || 'Silver';
-                document.getElementById('page-metal-weight').textContent = weight;
+                const cartSidebar = document.getElementById("cart-sidebar");
+                const cartOverlay = document.getElementById("cart-overlay");
+                if (cartSidebar && cartOverlay) {
+                  cartSidebar.classList.add("open");
+                  cartOverlay.classList.add("open");
+                }
+              }
 
-                const pageAddToCartBtn = document.getElementById('page-add-to-cart');
-                pageAddToCartBtn.addEventListener('click', () => {
-                    const rawPrice = price.replace(/[^0-9]/g, '');
-                    const id = title.toLowerCase().replace(/[^a-z0-9]/g, '-');
-                    
-                    if(typeof addToCart === 'function') {
-                        addToCart(id, title, rawPrice);
-                    } else {
-                        // Fallback logic
-                        let cart = JSON.parse(localStorage.getItem('pukhraj_cart')) || [];
-                        const existingItem = cart.find(item => item.id === id);
-                        if (existingItem) {
-                            existingItem.quantity += 1;
-                        } else {
-                            cart.push({ id, name: title, price: parseInt(rawPrice), quantity: 1 });
-                        }
-                        localStorage.setItem('pukhraj_cart', JSON.stringify(cart));
-                        
-                        const cartSidebar = document.getElementById('cart-sidebar');
-                        const cartOverlay = document.getElementById('cart-overlay');
-                        if (cartSidebar && cartOverlay) {
-                            cartSidebar.classList.add('open');
-                            cartOverlay.classList.add('open');
-                        }
-                    }
-                    
-                    // Button feedback
-                    const oldBg = pageAddToCartBtn.style.background;
-                    const oldColor = pageAddToCartBtn.style.color;
-                    pageAddToCartBtn.textContent = "Added to Cart âœ“";
-                    pageAddToCartBtn.style.background = "green";
-                    pageAddToCartBtn.style.color = "white";
-                    
-                    setTimeout(() => {
-                        pageAddToCartBtn.textContent = "Add to Cart";
-                        pageAddToCartBtn.style.background = oldBg;
-                        pageAddToCartBtn.style.color = oldColor;
-                    }, 2000);
-                });
+              // Button feedback
+              const oldBg = pageAddToCartBtn.style.background;
+              const oldColor = pageAddToCartBtn.style.color;
+              pageAddToCartBtn.textContent = "Added to Cart âœ“";
+              pageAddToCartBtn.style.background = "green";
+              pageAddToCartBtn.style.color = "white";
+
+              setTimeout(() => {
+                pageAddToCartBtn.textContent = "Add to Cart";
+                pageAddToCartBtn.style.background = oldBg;
+                pageAddToCartBtn.style.color = oldColor;
+              }, 2000);
             });
+          });
         </script>
+      </div>
     </main>
 
     <footer class="footer-new">
-        <div class="footer-new-container">
-            <div class="footer-new-top">
-                <div class="footer-brand">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5">
-                            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                        </svg>
-                    </div>
-                    <h2 class="footer-logo-title">PUKHRAJ</h2>
-                    <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
-                    <p class="footer-text">Crafting timeless elegance<br>for every precious moment.</p>
-                    <div class="footer-divider-small"></div>
-                    <div class="footer-socials">
-                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg></a>
-                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg></a>
-
-                    </div>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>SHOP</h3>
-                    <ul>
-                        <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
-                        <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
-                        <li><a href="silver-artifacts.html"><span class="arr">&gt;</span> Silver Artifacts</a></li>
-                        <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
-                        <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links-col">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="index.html"><span class="arr">&gt;</span> Home</a></li>
-                        <li><a href="collection.html"><span class="arr">&gt;</span> Collection</a></li>
-                        <li><a href="about.html"><span class="arr">&gt;</span> About Us</a></li>
-                        <li><a href="contact.html"><span class="arr">&gt;</span> Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h3>NEWSLETTER</h3>
-                    <p>Get updates about new collections,<br>exclusive launches and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" placeholder="Enter your email address" required>
-                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.5">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                    </path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg></button>
-                        </div>
-                        <button type="submit" class="btn-subscribe">SUBSCRIBE &rarr;</button>
-                    </form>
-                </div>
+      <div class="footer-new-container">
+        <div class="footer-new-top">
+          <div class="footer-brand">
+            <div style="text-align: center; margin-bottom: 1rem">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#cda975"
+                stroke-width="1.5"
+              >
+                <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
+              </svg>
             </div>
-
-            <div class="footer-new-divider">
-                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975"
-                        stroke-width="2">
-                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                    </svg></span>
+            <h2 class="footer-logo-title">PUKHRAJ</h2>
+            <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
+            <p class="footer-text">
+              Crafting timeless elegance<br />for every precious moment.
+            </p>
+            <div class="footer-divider-small"></div>
+            <div class="footer-socials">
+              <a href="#here" id="instagram-link"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+              ></a>
+              <a href="#"
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path></svg
+              ></a>
             </div>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>SHOP</h3>
+            <ul>
+              <li>
+                <a href="new-arrivals.html"
+                  ><span class="arr">&gt;</span> New Arrivals</a
+                >
+              </li>
+              <li>
+                <a href="best-seller.html"
+                  ><span class="arr">&gt;</span> Best Seller</a
+                >
+              </li>
+              <li>
+                <a href="silver-artifacts.html"
+                  ><span class="arr">&gt;</span> Silver Artifacts</a
+                >
+              </li>
+              <li>
+                <a href="gifting.html"><span class="arr">&gt;</span> Gifting</a>
+              </li>
+              <li>
+                <a href="pop.html"><span class="arr">&gt;</span> POP</a>
+              </li>
+            </ul>
+          </div>
 
+          <div class="footer-links-col">
+            <h3>QUICK LINKS</h3>
+            <ul>
+              <li>
+                <a href="index.html"><span class="arr">&gt;</span> Home</a>
+              </li>
+              <li>
+                <a href="collection.html"
+                  ><span class="arr">&gt;</span> Collection</a
+                >
+              </li>
+              <li>
+                <a href="about.html"><span class="arr">&gt;</span> About Us</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="arr">&gt;</span> Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
 
-
-
-            <div class="footer-new-bottom">
-                <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms & Conditions</a>
-                    <span class="separator">|</span>
-                    <a href="#">Disclaimer</a>
-                </div>
-                <p class="crafted-text">✦ Crafted with Passion, Delivered with Trust.</p>
-            </div>
+          <div class="footer-newsletter">
+            <h3>NEWSLETTER</h3>
+            <p>
+              Get updates about new collections,<br />exclusive launches and
+              offers.
+            </p>
+            <form class="newsletter-form">
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button type="submit">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <button type="submit" class="btn-subscribe">
+                SUBSCRIBE &rarr;
+              </button>
+            </form>
+          </div>
         </div>
+
+        <div class="footer-new-divider">
+          <span class="diamond-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#cda975"
+              stroke-width="2"
+            >
+              <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" /></svg
+          ></span>
+        </div>
+
+        <div class="footer-new-bottom">
+          <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="#">Terms & Conditions</a>
+            <span class="separator">|</span>
+            <a href="#">Disclaimer</a>
+          </div>
+          <p class="crafted-text">
+            ✦ Crafted with Passion, Delivered with Trust.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Filter Sidebar -->
     <div class="filter-sidebar-overlay" id="filter-sidebar-overlay"></div>
     <div class="filter-sidebar" id="filter-sidebar">
-        <div class="filter-sidebar-header">
-            <h3>Filter</h3>
-            <button id="close-filter-sidebar" class="close-filter-btn">&times;</button>
-        </div>
-                <ul class="filter-list" style="list-style: none; padding: 0; margin: 0;">
-            <li><a href="index.html" class="filter-list-item active" style="display:block; text-decoration:none; color:inherit;">All</a></li>
-            <li><a href="necklaces.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Necklace</a></li>
-            <li><a href="bracelets.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Bracelets</a></li>
-            <li><a href="rings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Rings</a></li>
-            <li><a href="earrings.html" class="filter-list-item " style="display:block; text-decoration:none; color:inherit;">Earrings</a></li>
-        </ul>
+      <div class="filter-sidebar-header">
+        <h3>Filter</h3>
+        <button id="close-filter-sidebar" class="close-filter-btn">
+          &times;
+        </button>
+      </div>
+      <ul class="filter-list" style="list-style: none; padding: 0; margin: 0">
+        <li>
+          <a
+            href="index.html"
+            class="filter-list-item active"
+            style="display: block; text-decoration: none; color: inherit"
+            >All</a
+          >
+        </li>
+        <li>
+          <a
+            href="necklaces.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Necklace</a
+          >
+        </li>
+        <li>
+          <a
+            href="bracelets.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Bracelets</a
+          >
+        </li>
+        <li>
+          <a
+            href="rings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Rings</a
+          >
+        </li>
+        <li>
+          <a
+            href="earrings.html"
+            class="filter-list-item"
+            style="display: block; text-decoration: none; color: inherit"
+            >Earrings</a
+          >
+        </li>
+      </ul>
     </div>
 
     <script src="script.js?v=8"></script>
-</body>
+  </body>
 </html>
