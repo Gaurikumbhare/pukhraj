@@ -486,8 +486,17 @@
     box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
 }
 
-.login-modal-overlay.show, #search-modal-overlay.show, .search-modal.show, .login-modal.show {
+.search-modal .search-container {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.login-modal-overlay.show, #search-modal-overlay.show, .login-modal.show {
     display: block !important;
+}
+.search-modal.show {
+    display: flex !important;
 }
 .login-modal-overlay.open, #search-modal-overlay.open, .search-modal.open, .login-modal.open {
     opacity: 1 !important;
@@ -497,6 +506,14 @@
 }
 .search-modal.open {
     transform: translate(-50%, 0) !important;
+}
+</style>
+
+<style>
+@media (max-width: 768px) {
+    .testimonial-arrow {
+        display: none !important;
+    }
 }
 </style>
 </head>
@@ -958,7 +975,7 @@
             <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; position: relative;">
 
                 <!-- Left Arrow -->
-                <button onclick="document.getElementById('reviews-grid').scrollBy({left: -350, behavior: 'smooth'})" style="position: absolute; left: 0; z-index: 10; background: #fff; border: 1px solid rgba(205, 169, 117, 0.4); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #1a1a1a; transition: background 0.3s;" onmouseover="this.style.background='#faf9f6'" onmouseout="this.style.background='#fff'">
+                <button onclick="document.getElementById('reviews-grid').scrollBy({left: -350, behavior: 'smooth'})" class="testimonial-arrow" style="position: absolute; left: -15px; z-index: 10; background: #fff; border: 1px solid rgba(205, 169, 117, 0.4); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #1a1a1a; transition: background 0.3s;" onmouseover="this.style.background='#faf9f6'" onmouseout="this.style.background='#fff'">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
                 </button>
 
@@ -1165,7 +1182,7 @@
                 </div>
 
                 <!-- Right Arrow -->
-                <button onclick="document.getElementById('reviews-grid').scrollBy({left: 350, behavior: 'smooth'})" style="position: absolute; right: 0; z-index: 10; background: #fff; border: 1px solid rgba(205, 169, 117, 0.4); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #1a1a1a; transition: background 0.3s;" onmouseover="this.style.background='#faf9f6'" onmouseout="this.style.background='#fff'">
+                <button onclick="document.getElementById('reviews-grid').scrollBy({left: 350, behavior: 'smooth'})" class="testimonial-arrow" style="position: absolute; right: -15px; z-index: 10; background: #fff; border: 1px solid rgba(205, 169, 117, 0.4); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #1a1a1a; transition: background 0.3s;" onmouseover="this.style.background='#faf9f6'" onmouseout="this.style.background='#fff'">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
             </div>

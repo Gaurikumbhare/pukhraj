@@ -100,8 +100,17 @@
     box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
 }
 
-.login-modal-overlay.show, #search-modal-overlay.show, .search-modal.show, .login-modal.show {
+.search-modal .search-container {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.login-modal-overlay.show, #search-modal-overlay.show, .login-modal.show {
     display: block !important;
+}
+.search-modal.show {
+    display: flex !important;
 }
 .login-modal-overlay.open, #search-modal-overlay.open, .search-modal.open, .login-modal.open {
     opacity: 1 !important;
