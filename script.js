@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="cart-items" id="wishlist-items-container">
             <p style="padding: 1rem; color: #777;">Your wishlist is empty.</p>
         </div>
+        <div class="cart-footer">
+            <button class="btn checkout-btn" onclick="window.location.href='checkout.html'" style="width: 100%; margin-top: 1rem;">Checkout</button>
+        </div>
     </div>
     <div class="cart-overlay" id="wishlist-overlay"></div>
 
