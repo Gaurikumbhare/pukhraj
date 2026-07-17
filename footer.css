@@ -236,11 +236,24 @@
 }
 @media (max-width: 576px) {
     .footer-new-top {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         text-align: center;
     }
+    .footer-brand, .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+    .footer-links-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-links-col ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .footer-links-col ul li a {
-        justify-content: center;
+        justify-content: flex-start;
     }
     .footer-features {
         grid-template-columns: 1fr;

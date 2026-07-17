@@ -102,7 +102,7 @@
                                     <span>Gross Weight</span>
                                 </div>
                                 <div class="acc-stat">
-                                    <strong><span id="page-metal-type">Gold</span></strong>
+                                    <strong><span id="page-metal-type">Silver</span></strong>
                                     <span>Metal</span>
                                 </div>
                                 <div class="acc-stat">
@@ -129,7 +129,7 @@
                         <div class="accordion-content">
                             <div class="acc-grid">
                                 <div class="acc-stat">
-                                    <strong>Gold Jewellery</strong>
+                                    <strong>Silver Jewellery</strong>
                                     <span>Jewellery Type</span>
                                 </div>
                                 <div class="acc-stat">
@@ -182,7 +182,7 @@
                 const imgUrl = params.get('img') || '';
                 const desc = params.get('desc') || 'Indulge in our artisanal jewelry piece. Handcrafted with the finest materials and a perfect balance of elegance and tradition.';
                 const itemId = params.get('id') || 'JW-000';
-                const metalStr = params.get('metal') || '22K Gold';
+                const metalStr = params.get('metal') || '22K Silver';
                 const weight = params.get('weight') || '1.867g';
 
                 document.getElementById('page-title').textContent = title;
@@ -200,7 +200,7 @@
 
                 document.getElementById('page-item-id').textContent = itemId;
                 document.getElementById('page-metal-karat').textContent = metalStr.split(' ')[0] || '22K';
-                document.getElementById('page-metal-type').textContent = metalStr.split(' ')[1] || 'Gold';
+                document.getElementById('page-metal-type').textContent = metalStr.split(' ')[1] || 'Silver';
                 document.getElementById('page-metal-weight').textContent = weight;
 
                 const pageAddToCartBtn = document.getElementById('page-add-to-cart');
