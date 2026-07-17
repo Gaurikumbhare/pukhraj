@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry." />
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=1784290368" />
     <link rel="stylesheet" href="footer.css?v=1" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
@@ -26,7 +26,97 @@
         }
       }
     </style>
-  </head>
+  
+<style>
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    will-change: transform, box-shadow;
+}
+.product-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    z-index: 10;
+}
+.product-card img {
+    transition: transform 0.5s ease !important;
+}
+.product-card:hover img {
+    transform: scale(1.08) !important;
+}
+</style>
+
+<style>
+/* Guaranteed Modal Styles */
+.login-modal-overlay, #search-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6) !important;
+    backdrop-filter: blur(5px);
+    z-index: 3000 !important;
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Login Modal */
+.login-modal {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.95) !important;
+    background: #fff !important;
+    padding: 3rem !important;
+    border-radius: 12px !important;
+    z-index: 3001 !important;
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease !important;
+    width: 90% !important;
+    max-width: 450px !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important;
+}
+
+/* Premium Search Modal */
+.search-modal {
+    position: fixed !important;
+    top: 20% !important;
+    left: 50% !important;
+    transform: translate(-50%, -20px) !important;
+    background: #fff !important;
+    padding: 0 !important;
+    border-radius: 50px !important;
+    z-index: 3001 !important;
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    width: 90% !important;
+    max-width: 350px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    overflow: hidden !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
+}
+
+.login-modal-overlay.show, #search-modal-overlay.show, .search-modal.show, .login-modal.show {
+    display: block !important;
+}
+.login-modal-overlay.open, #search-modal-overlay.open, .search-modal.open, .login-modal.open {
+    opacity: 1 !important;
+}
+.login-modal.open {
+    transform: translate(-50%, -50%) scale(1) !important;
+}
+.search-modal.open {
+    transform: translate(-50%, 0) !important;
+}
+</style>
+</head>
+
+
   <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -35,105 +125,61 @@
 
     <!-- Main Navbar -->
     <nav class="navbar-new">
-      <div class="navbar-desktop-row">
-        <div class="menu-toggle" id="mobile-menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </div>
-        <div class="logo-new">PUKHRAJ</div>
-        <ul class="nav-links-new">
-          <button class="close-menu-btn">&times;</button>
+        <div class="navbar-desktop-row"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;">
 
-          <li><a href="index.html">Home</a></li>
-          <li><a href="new-arrivals.html">New Arrivals</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="collection.html">Collection</a></li>
-          <li><a href="best-seller.html">Best Seller</a></li>
-          <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
-          <li><a href="gifting.html">Gifting</a></li>
-          <li class="nav-has-badge">
-            <span class="nav-badge red-badge">New</span
-            ><a href="pop.html">POP</a>
-          </li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-        <div class="nav-actions-new">
-          <a href="#" class="icon-btn-new search-icon" title="Search">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </a>
-          <a
-            href="#"
-            class="icon-btn-new cart-icon-new"
-            id="wishlist-icon"
-            title="Wishlist"
-          >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-              ></path>
-            </svg>
-            <span
-              class="badge-count"
-              id="wishlist-count"
-              style="position: absolute; top: -4px; right: -6px"
-              >0</span
-            >
-          </a>
-          <div
-            class="icon-btn-new cart-icon-new"
-            id="cart-icon"
-            title="View Cart"
-          >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-              ></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            <span
-              class="cart-count"
-              style="position: absolute; top: -4px; right: -6px"
-              >0</span
-            >
-          </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+            <div class="logo-new">PUKHRAJ</div>
+            <ul class="nav-links-new">
+                <button class="close-menu-btn">&times;</button>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="new-arrivals.html">New Arrivals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="best-seller.html">Best Seller</a></li>
+                <li><a href="silver-artifacts.html">Silver Artifacts</a></li>
+                <li><a href="gifting.html">Gifting</a></li>
+                <li class="nav-has-badge"><span class="nav-badge red-badge">New</span><a href="pop.html">POP</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions-new">
+                <a href="#" class="icon-btn-new search-icon" title="Search">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+                <a href="#" class="icon-btn-new cart-icon-new" id="wishlist-icon" title="Wishlist">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>
+                    <span class="badge-count" id="wishlist-count"
+                        style="position: absolute; top: -4px; right: -6px;">0</span>
+                </a>
+                <div class="icon-btn-new cart-icon-new" id="cart-icon" title="View Cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" style="position: absolute; top: -4px; right: -6px;">0</span>
+                </div>
+
+            </div>
         </div>
-      </div>
     </nav>
 
     <main>
@@ -291,172 +337,95 @@
     </main>
 
     <footer class="footer-new">
-      <div class="footer-new-container">
-        <div class="footer-new-top">
-          <div class="footer-brand">
-            <div style="text-align: center; margin-bottom: 1rem">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#cda975"
-                stroke-width="1.5"
-              >
-                <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-              </svg>
+        <div class="footer-new-container">
+            <div class="footer-new-top">
+                <div class="footer-brand">
+                    
+                    <div style="text-align: center; margin-bottom: -0.5rem; margin-top: -1.5rem;">
+                        <img src="assets/image copy 40.png" alt="Pukhraj Logo" style="width: 90px; height: auto; object-fit: contain; mix-blend-mode: screen;">
+                    </div>
+                    <h2 class="footer-logo-title">PUKHRAJ</h2>
+                    <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
+                    <p class="footer-text">Crafting timeless elegance<br>for every precious moment.</p>
+                    <div class="footer-divider-small"></div>
+                    <div class="footer-socials">
+                        <a href="#here" id="instagram-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h3>SHOP</h3>
+                    <ul>
+                        <li><a href="new-arrivals.html"><span class="arr">&gt;</span> New Arrivals</a></li>
+                        <li><a href="best-seller.html"><span class="arr">&gt;</span> Best Seller</a></li>
+                        <li><a href="silver-artifacts.html"><span class="arr">&gt;</span> Silver Artifacts</a></li>
+                        <li><a href="gifting.html"><span class="arr">&gt;</span> Gifting</a></li>
+                        <li><a href="pop.html"><span class="arr">&gt;</span> POP</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h3>QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="index.html"><span class="arr">&gt;</span> Home</a></li>
+                        <li><a href="collection.html"><span class="arr">&gt;</span> Collection</a></li>
+                        <li><a href="about.html"><span class="arr">&gt;</span> About Us</a></li>
+                        <li><a href="contact.html"><span class="arr">&gt;</span> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3>NEWSLETTER</h3>
+                    <p>Get updates about new collections,<br>exclusive launches and offers.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg></button>
+                        </div>
+                        <button type="submit" class="btn-subscribe">SUBSCRIBE &rarr;</button>
+                    </form>
+                </div>
             </div>
-            <h2 class="footer-logo-title">PUKHRAJ</h2>
-            <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
-            <p class="footer-text">
-              Crafting timeless elegance<br />for every precious moment.
-            </p>
-            <div class="footer-divider-small"></div>
-            <div class="footer-socials">
-              <a href="#here" id="instagram-link"
-                ><svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path
-                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                  ></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
-              ></a>
-              <a href="#"
-                ><svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                >
-                  <path
-                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                  ></path></svg
-              ></a>
+
+            <div class="footer-new-divider">
+                <span class="diamond-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cda975"
+                        stroke-width="2">
+                        <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
+                    </svg></span>
             </div>
-          </div>
 
-          <div class="footer-links-col">
-            <h3>SHOP</h3>
-            <ul>
-              <li>
-                <a href="new-arrivals.html"
-                  ><span class="arr">&gt;</span> New Arrivals</a
-                >
-              </li>
-              <li>
-                <a href="best-seller.html"
-                  ><span class="arr">&gt;</span> Best Seller</a
-                >
-              </li>
-              <li>
-                <a href="silver-artifacts.html"
-                  ><span class="arr">&gt;</span> Silver Artifacts</a
-                >
-              </li>
-              <li>
-                <a href="gifting.html"><span class="arr">&gt;</span> Gifting</a>
-              </li>
-              <li>
-                <a href="pop.html"><span class="arr">&gt;</span> POP</a>
-              </li>
-            </ul>
-          </div>
 
-          <div class="footer-links-col">
-            <h3>QUICK LINKS</h3>
-            <ul>
-              <li>
-                <a href="index.html"><span class="arr">&gt;</span> Home</a>
-              </li>
-              <li>
-                <a href="collection.html"
-                  ><span class="arr">&gt;</span> Collection</a
-                >
-              </li>
-              <li>
-                <a href="about.html"><span class="arr">&gt;</span> About Us</a>
-              </li>
-              <li>
-                <a href="contact.html"
-                  ><span class="arr">&gt;</span> Contact Us</a
-                >
-              </li>
-            </ul>
-          </div>
 
-          <div class="footer-newsletter">
-            <h3>NEWSLETTER</h3>
-            <p>
-              Get updates about new collections,<br />exclusive launches and
-              offers.
-            </p>
-            <form class="newsletter-form">
-              <div class="input-group">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  required
-                />
-                <button type="submit">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  >
-                    <path
-                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                    ></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                </button>
-              </div>
-              <button type="submit" class="btn-subscribe">
-                SUBSCRIBE &rarr;
-              </button>
-            </form>
-          </div>
+
+
+            <div class="footer-new-bottom">
+                <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms & Conditions</a>
+                    <span class="separator">|</span>
+                    <a href="#">Disclaimer</a>
+                </div>
+                <p class="crafted-text">✦ Crafted with Passion, Delivered with Trust.</p>
+            </div>
         </div>
-
-        <div class="footer-new-divider">
-          <span class="diamond-icon"
-            ><svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#cda975"
-              stroke-width="2"
-            >
-              <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" /></svg
-          ></span>
-        </div>
-
-        <div class="footer-new-bottom">
-          <p>&copy; 2026 PUKHRAJ JEWELLERS. All Rights Reserved.</p>
-          <div class="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <span class="separator">|</span>
-            <a href="#">Terms & Conditions</a>
-            <span class="separator">|</span>
-            <a href="#">Disclaimer</a>
-          </div>
-          <p class="crafted-text">
-            ✦ Crafted with Passion, Delivered with Trust.
-          </p>
-        </div>
-      </div>
     </footer>
 
     <!-- Filter Sidebar -->
@@ -512,6 +481,27 @@
       </ul>
     </div>
 
-    <script src="script.js?v=8"></script>
-  </body>
+    <script src="script.js?v=1784290368"></script>
+  
+    <!-- Guaranteed Premium Search Modal -->
+    <div class="login-modal-overlay" id="search-modal-overlay"></div>
+    <div class="search-modal" id="search-modal" style="width: 90%; max-width: 350px; padding: 0.2rem 0.5rem; background: #fff; border-radius: 30px; display: flex; align-items: center; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+        <div class="search-container" style="display: flex; align-items: center; width: 100%;">
+            <button id="mobile-search-btn" style="background: none; border: none; cursor: pointer; padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <input type="text" id="mobile-search-input" placeholder="Search..." style="flex: 1; border: none; outline: none; padding: 0.8rem 0.5rem; font-size: 1rem; background: transparent; color: #333; font-family: var(--font-body);">
+            <button id="close-search-modal" style="background: none; border: none; cursor: pointer; padding: 0.5rem; color: #666; transition: color 0.3s; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+</body>
 </html>

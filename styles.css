@@ -370,7 +370,7 @@ h2 {
 }
 
 .card:hover .card-img.placeholder {
-    transform: scale(1.05);
+    transform: scale(1.08) !important;
 }
 
 .card:nth-child(1) .card-img { background-image: url('assets/gold_earrings.png'); }
@@ -1141,12 +1141,12 @@ h2 {
     overflow: hidden;
     text-decoration: none;
     color: var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
     display: flex;
     flex-direction: column;
 }
 .recipient-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 .recipient-img-wrapper {
@@ -1699,7 +1699,7 @@ h2 {
 }
 
 .sparkle-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) !important;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
@@ -1775,7 +1775,7 @@ h2 {
     transition: transform 0.3s ease;
 }
 .category-circle-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) !important;
 }
 .circle-img {
     width: 160px;
@@ -1823,7 +1823,7 @@ h2 {
     transition: transform 0.5s ease;
 }
 .product-card:hover .product-img-wrapper img {
-    transform: scale(1.05);
+    transform: scale(1.08) !important;
 }
 .badge.best-seller {
     position: absolute;
@@ -1925,7 +1925,7 @@ h2 {
     transition: transform 0.6s ease;
 }
 .staggered-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08) !important;
 }
 
 /* --- Palmonas Header Clone --- */
@@ -2588,7 +2588,7 @@ h2 {
     transition: transform 0.3s;
 }
 .square-category-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) !important;
 }
 .square-img {
     width: 120px;
@@ -3071,7 +3071,7 @@ h2 {
 }
 
 .hg-grid-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08) !important;
 }
 
 .hg-item-overlay {
@@ -3203,7 +3203,7 @@ h2 {
 }
 
 .fg-grid-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08) !important;
 }
 
 .fg-item-overlay {
@@ -3652,4 +3652,57 @@ h2 {
 }
 .product-card:hover .product-img-wrapper .secondary-img {
     opacity: 1;
+}
+/* Hover Effect for Product Cards */
+.product-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+}
+.product-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+}
+.product-card img {
+  transition: transform 0.4s ease;
+}
+.product-card:hover img {
+  transform: scale(1.08) !important;
+}
+
+/* Modal Overlays and Modals */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 3000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.search-modal, .login-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    z-index: 3001;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+.login-modal-overlay.show, .search-modal.show, .login-modal.show {
+    display: block !important;
+}
+.login-modal-overlay.open, .search-modal.open, .login-modal.open {
+    opacity: 1 !important;
+}
+.search-modal.open, .login-modal.open {
+    transform: translate(-50%, -50%) scale(1) !important;
 }

@@ -1,22 +1,21 @@
-import os
+import glob
+import re
+import time
 
-directory = r"c:\Users\gauri\OneDrive\Desktop\jweller"
+new_version = int(time.time())
 
-for filename in os.listdir(directory):
-    if filename.endswith(".html"):
-        filepath = os.path.join(directory, filename)
-        with open(filepath, 'r', encoding='utf-8') as f:
-            content = f.read()
+updated_files = []
+for file_name in glob.glob('*.html'):
+    with open(file_name, 'r', encoding='utf-8') as f:
+        content = f.read()
         
-        updated = False
-        if 'styles.css?v=12' in content:
-            content = content.replace('styles.css?v=12', 'styles.css?v=13')
-            updated = True
-        elif 'styles.css' in content and 'styles.css?v=' not in content:
-            content = content.replace('styles.css', 'styles.css?v=13')
-            updated = True
-            
-        if updated:
-            with open(filepath, 'w', encoding='utf-8') as f:
-                f.write(content)
-            print(f"Updated {filename}")
+    content = re.sub(r'styles\.css\?v=\d+', f'styles.css?v={new_version}', content)
+    content = re.sub(r'script\.js\?v=\d+', f'script.js?v={new_version}', content)
+    # Just in case script.js doesn't have a ?v= yet:
+    content = re.sub(r'src="script\.js"', f'src="script.js?v={new_version}"', content)
+    
+    with open(file_name, 'w', encoding='utf-8') as f:
+        f.write(content)
+    updated_files.append(file_name)
+        
+print('Bumped styles.css and script.js version in:', ', '.join(updated_files))

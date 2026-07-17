@@ -229,14 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
 
-    <!-- Search Modal -->
-    <div class="search-modal" id="search-modal">
-        <button class="close-modal" id="close-search" style="top: 20px; right: 30px; font-size: 3rem;">&times;</button>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search jewelry (e.g. Necklace, Rings)...">
-            <div id="search-results" class="search-results"></div>
-        </div>
-    </div>
+    
 
     <!-- Login Modal -->
     <div class="login-modal-overlay" id="login-modal-overlay"></div>
@@ -1280,4 +1273,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     startAutoPlay();
   }
+});
+
+// Modal Logic for Search
+document.addEventListener('DOMContentLoaded', () => {
+    const searchIcons = document.querySelectorAll('.search-icon');
+    const searchModal = document.getElementById('search-modal');
+    const searchOverlay = document.getElementById('search-modal-overlay') || document.querySelector('.login-modal-overlay');
+    const closeSearchBtn = document.getElementById('close-search-modal');
+
+    function openSearch(e) {
+        if(e) e.preventDefault();
+        if (!searchModal) return;
+        searchModal.classList.add('show');
+        if(searchOverlay) searchOverlay.classList.add('show');
+        setTimeout(() => {
+            searchModal.classList.add('open');
+            if(searchOverlay) searchOverlay.classList.add('open');
+            const input = document.getElementById('mobile-search-input');
+            if (input) input.focus();
+        }, 10);
+    }
+
+    function closeSearch() {
+        if (!searchModal) return;
+        searchModal.classList.remove('open');
+        if(searchOverlay) searchOverlay.classList.remove('open');
+        setTimeout(() => {
+            searchModal.classList.remove('show');
+            if(searchOverlay) searchOverlay.classList.remove('show');
+        }, 300);
+    }
+
+    searchIcons.forEach(icon => {
+        icon.addEventListener('click', openSearch);
+    });
+
+    if (closeSearchBtn) {
+        closeSearchBtn.addEventListener('click', closeSearch);
+    }
+    if (searchOverlay) {
+        searchOverlay.addEventListener('click', (e) => {
+            if(e.target === searchOverlay) {
+                closeSearch();
+            }
+        });
+    }
 });

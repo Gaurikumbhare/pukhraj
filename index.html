@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUKHRAJ JEWELLERS</title>
     <meta name="description" content="Discover premium, handcrafted jewelry.">
-    <link rel="stylesheet" href="styles.css?v=17">
+    <link rel="stylesheet" href="styles.css?v=1784290368">
     <link rel="stylesheet" href="footer.css?v=1">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
@@ -411,26 +411,102 @@
         }
     </style>
 
+
+<style>
+.product-card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    will-change: transform, box-shadow;
+}
+.product-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    z-index: 10;
+}
+.product-card img {
+    transition: transform 0.5s ease !important;
+}
+.product-card:hover img {
+    transform: scale(1.08) !important;
+}
+</style>
+
+<style>
+/* Guaranteed Modal Styles */
+.login-modal-overlay, #search-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6) !important;
+    backdrop-filter: blur(5px);
+    z-index: 3000 !important;
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Login Modal */
+.login-modal {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.95) !important;
+    background: #fff !important;
+    padding: 3rem !important;
+    border-radius: 12px !important;
+    z-index: 3001 !important;
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease !important;
+    width: 90% !important;
+    max-width: 450px !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important;
+}
+
+/* Premium Search Modal */
+.search-modal {
+    position: fixed !important;
+    top: 20% !important;
+    left: 50% !important;
+    transform: translate(-50%, -20px) !important;
+    background: #fff !important;
+    padding: 0 !important;
+    border-radius: 50px !important;
+    z-index: 3001 !important;
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    width: 90% !important;
+    max-width: 350px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    overflow: hidden !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
+}
+
+.login-modal-overlay.show, #search-modal-overlay.show, .search-modal.show, .login-modal.show {
+    display: block !important;
+}
+.login-modal-overlay.open, #search-modal-overlay.open, .search-modal.open, .login-modal.open {
+    opacity: 1 !important;
+}
+.login-modal.open {
+    transform: translate(-50%, -50%) scale(1) !important;
+}
+.search-modal.open {
+    transform: translate(-50%, 0) !important;
+}
+</style>
 </head>
+
+
 
 <body>
     <!-- Search Modal -->
-    <div class="login-modal-overlay" id="search-modal-overlay"></div>
-    <div class="search-modal" id="search-modal" style="width: 90%; max-width: 500px; text-align: center;">
-        <h2 style="font-family: var(--font-heading); margin-bottom: 1.5rem;">Search</h2>
-        <div class="search-container" style="display: flex; align-items: center; border-bottom: 2px solid #eee;">
-            <input type="text" id="mobile-search-input" placeholder="Search for Necklaces..."
-                style="flex: 1; border: none; outline: none; padding: 1rem; font-size: 1.2rem;">
-            <button id="mobile-search-btn" style="background: none; border: none; cursor: pointer; padding: 1rem;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-            </button>
-        </div>
-        <button id="close-search-modal"
-            style="margin-top: 1.5rem; padding: 0.8rem 2rem; background: var(--text-color); color: #fff; border: none; cursor: pointer;">Close</button>
-    </div>
+                
+    
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
@@ -1109,10 +1185,9 @@
         <div class="footer-new-container">
             <div class="footer-new-top">
                 <div class="footer-brand">
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cda975" stroke-width="1.5">
-                            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                        </svg>
+                    
+                    <div style="text-align: center; margin-bottom: -0.5rem; margin-top: -1.5rem;">
+                        <img src="assets/image copy 40.png" alt="Pukhraj Logo" style="width: 90px; height: auto; object-fit: contain; mix-blend-mode: screen;">
                     </div>
                     <h2 class="footer-logo-title">PUKHRAJ</h2>
                     <p class="footer-subtitle">TIMELESS LUXURY JEWELLERY</p>
@@ -1219,7 +1294,28 @@
         </ul>
     </div>
 
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=1784290368"></script>
+
+    <!-- Guaranteed Premium Search Modal -->
+    <div class="login-modal-overlay" id="search-modal-overlay"></div>
+    <div class="search-modal" id="search-modal" style="width: 90%; max-width: 350px; padding: 0.2rem 0.5rem; background: #fff; border-radius: 30px; display: flex; align-items: center; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+        <div class="search-container" style="display: flex; align-items: center; width: 100%;">
+            <button id="mobile-search-btn" style="background: none; border: none; cursor: pointer; padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <input type="text" id="mobile-search-input" placeholder="Search..." style="flex: 1; border: none; outline: none; padding: 0.8rem 0.5rem; font-size: 1rem; background: transparent; color: #333; font-family: var(--font-body);">
+            <button id="close-search-modal" style="background: none; border: none; cursor: pointer; padding: 0.5rem; color: #666; transition: color 0.3s; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
 </body>
 
 </html>
